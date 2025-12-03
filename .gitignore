@@ -1,0 +1,147 @@
+# =============================================================================
+# QO+R Project .gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# LARGE DATA FILES - Excluded from Git (see DATA_SOURCES.md for download)
+# -----------------------------------------------------------------------------
+
+# IllustrisTNG simulation data (several GB per simulation)
+*.hdf5
+*.h5
+TNG/Data/
+TNG/Data_TNG50/
+TNG/Data_TNG300/
+BTFR/TNG/Data/
+BTFR/TNG/Data_TNG50/
+BTFR/TNG/Data_TNG300/
+Paper3-ToE/tests/tng-simulations/Data*/
+
+# FITS files (astronomical data)
+*.fits
+*.fits.gz
+
+# Large CSV/Parquet files
+*.csv.gz
+*.parquet
+
+# Pickle cache files
+*.pkl
+*.pickle
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# -----------------------------------------------------------------------------
+# LaTeX auxiliary files
+# -----------------------------------------------------------------------------
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.pdfsync
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+*-blx.bib
+texput.log
+
+# -----------------------------------------------------------------------------
+# IDE and Editor
+# -----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# -----------------------------------------------------------------------------
+# OS generated files
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# -----------------------------------------------------------------------------
+# Temporary and backup files
+# -----------------------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# Cache directories
+.cache/
+*.cache
+
+# -----------------------------------------------------------------------------
+# Archives (keep source, not compressed)
+# -----------------------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# -----------------------------------------------------------------------------
+# Old/archive folders
+# -----------------------------------------------------------------------------
+OLD/
+archive/
+backup/
+Nouveau dossier/
+
+# -----------------------------------------------------------------------------
+# Keep these files even if they match patterns above
+# -----------------------------------------------------------------------------
+!requirements.txt
+!DATA_SOURCES.md
+!**/README.md

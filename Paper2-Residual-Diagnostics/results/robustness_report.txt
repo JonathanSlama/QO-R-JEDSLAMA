@@ -1,0 +1,21 @@
+======================================================================
+ROBUSTNESS ANALYSIS REPORT
+Paper 2: The Revelatory Division
+======================================================================
+
+1. BOOTSTRAP ANALYSIS
+----------------------------------------
+   Residuals with significant group differences: 2/6
+
+2. MULTIPLE TESTING CORRECTION
+----------------------------------------
+   U-shapes surviving FDR correction: 4
+
+3. SENSITIVITY ANALYSIS
+----------------------------------------
+   Findings stable after outlier removal: 6/6
+
+======================================================================
+OVERALL ROBUSTNESS ASSESSMENT
+======================================================================
+Findings show MODERATE robustness.

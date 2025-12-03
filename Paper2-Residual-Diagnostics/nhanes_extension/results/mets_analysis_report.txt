@@ -1,0 +1,48 @@
+======================================================================
+PAPER 2 EXTENDED: METABOLIC SYNDROME ANALYSIS REPORT
+The Revelatory Division - Testing Residual Diagnostics
+======================================================================
+
+Author: Jonathan Édouard Slama
+Affiliation: Metafund Research Division, Strasbourg, France
+
+1. METABOLIC SYNDROME DISTRIBUTION
+----------------------------------------
+   Overall MetS prevalence: 12.3%
+   Gray zone (2-3 components): 27.1%
+
+2. RESIDUALS BY MetS STATUS
+----------------------------------------
+   Location differences: 17/17
+   Shape differences: 17/17
+   Top findings:
+     - MetS_Count: d = 2.956, p = 0.0000
+     - NFS: d = 0.946, p = 0.0000
+     - TyG: d = 0.937, p = 0.0000
+
+3. RESIDUALS BY COMPONENT COUNT
+----------------------------------------
+   Group differences: 17/17
+   Non-linear patterns: 16/17
+
+4. GRAY ZONE DISCRIMINATION
+----------------------------------------
+   Ratios only: AUC = 0.738
+   Residuals only: AUC = 0.673
+   Combined: AUC = 0.754
+   Improvement: +0.016 AUC
+
+======================================================================
+INTERPRETATION
+======================================================================
+
+The metabolic syndrome represents a cluster of interrelated risk factors.
+The 'gray zone' (2-3 components) is clinically important because:
+  - These patients are at the diagnostic boundary
+  - Standard criteria give ambiguous guidance
+  - Progression risk varies substantially
+
+If residuals improve discrimination in the gray zone, it suggests that:
+  - The standard component count misses hidden metabolic dysfunction
+  - Residual patterns may identify different MetS subtypes
+  - Personalized risk stratification may be possible

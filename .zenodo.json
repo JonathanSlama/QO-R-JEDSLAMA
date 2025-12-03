@@ -1,0 +1,48 @@
+{
+    "title": "QO+R Framework: From String Theory to Galactic Observations",
+    "description": "Complete theoretical framework and empirical validation of the QO+R (Quotient Ontologique + Reliquat) modified gravity model. This repository contains three interconnected research papers:\n\n- Paper 1: Environmental Modulation of the BTFR - Discovery of U-shaped residual pattern\n- Paper 2: Residual Diagnostic Methodology - Extension to biomarkers (NHANES)\n- Paper 3: From String Theory to Galaxies - Complete derivation and validation on 708,086 galaxies\n\nKey findings include the confirmation of the 'killer prediction' (sign inversion for R-dominated systems at 6.3σ significance) and the natural emergence of λ_QR ≈ 1 from Calabi-Yau geometry.",
+    "creators": [
+        {
+            "name": "Slama, Jonathan Édouard",
+            "orcid": "0009-0002-1292-4350",
+            "affiliation": "Metafund Research Division, Strasbourg, France"
+        }
+    ],
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "access_right": "open",
+    "license": "MIT",
+    "keywords": [
+        "modified gravity",
+        "string theory",
+        "galaxy dynamics",
+        "Baryonic Tully-Fisher Relation",
+        "BTFR",
+        "Calabi-Yau compactification",
+        "dark matter",
+        "SPARC",
+        "IllustrisTNG",
+        "ALFALFA",
+        "WALLABY",
+        "Type IIB supergravity",
+        "moduli stabilization",
+        "KKLT",
+        "residual analysis",
+        "biomarkers",
+        "NHANES"
+    ],
+    "related_identifiers": [
+        {
+            "identifier": "https://github.com/JonathanSlama/QO-R-JEDSLAMA",
+            "relation": "isSupplementTo",
+            "scheme": "url"
+        }
+    ],
+    "references": [
+        "Lelli, F., McGaugh, S.S., & Schombert, J.M. (2016). SPARC: Mass Models for 175 Disk Galaxies. AJ, 152, 157",
+        "Pillepich, A., et al. (2018). First results from the IllustrisTNG simulations. MNRAS, 475, 648",
+        "Kachru, S., Kallosh, R., Linde, A., & Trivedi, S.P. (2003). De Sitter vacua in string theory. PRD, 68, 046005",
+        "Haynes, M.P., et al. (2018). The Arecibo Legacy Fast ALFA Survey. ApJ, 861, 49"
+    ],
+    "notes": "This work presents a hypothesis connecting string theory phenomenology to astrophysical observations. The connection remains tentative and requires further investigation."
+}

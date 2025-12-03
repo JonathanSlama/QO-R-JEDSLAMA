@@ -1,0 +1,20 @@
+======================================================================
+PAPER 2 EXTENDED: CHRONIC KIDNEY DISEASE ANALYSIS REPORT
+======================================================================
+
+1. CKD STAGE ANALYSIS
+----------------------------------------
+   Gray zone (eGFR 60-90): 25.5%
+
+2. RESIDUALS BY CKD STAGE
+----------------------------------------
+   Significant differences: 16/17
+
+3. ACR RESIDUAL PATTERNS
+----------------------------------------
+   Non-linear patterns: 3/5
+
+4. PREDICTION IN GRAY ZONE
+----------------------------------------
+   auc_ratios: 0.620
+   auc_residuals: 0.611

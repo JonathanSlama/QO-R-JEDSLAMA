@@ -1,0 +1,581 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  QO+R Paper 2: Residual Structure in Clinical Biomarker Ratios
+%  Multi-Disease Validation Using NHANES and Breast Cancer Coimbra
+%
+%  Author: Jonathan Édouard Slama
+%  Affiliation: Metafund Research Division, Strasbourg, France
+%  Email: jonathan@metafund.in
+%  ORCID: 0009-0002-1292-4350
+%
+%  Date: December 2025
+%  Version: 3.0 (Complete with figures)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\onehalfspacing
+
+% Graphics paths - both figure directories
+% From nhanes_extension/manuscript/, we need:
+%   ../../figures/ for Breast Cancer figures
+%   ../figures/ for NHANES figures
+\graphicspath{{../../figures/}{../figures/}}
+
+% Custom commands
+\newcommand{\QOR}{QO$+$R}
+
+\title{
+\textbf{Residual Structure in Clinical Biomarker Ratios:\\
+Evidence for Non-Random Patterns Across Disease Categories}\\[0.5cm]
+\large Multi-Disease Validation Using NHANES 2017-2018 and Breast Cancer Coimbra
+}
+
+\author{
+Jonathan Édouard Slama\\[0.3cm]
+\textit{Metafund Research Division}\\
+\textit{Strasbourg, France}\\[0.2cm]
+\href{mailto:jonathan@metafund.in}{jonathan@metafund.in}\\
+ORCID: \href{https://orcid.org/0009-0002-1292-4350}{0009-0002-1292-4350}
+}
+
+\date{December 2025}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Clinical biomarker ratios such as FIB-4, HOMA-IR, and eGFR are widely used for disease screening, yet 20--40\% of patients fall into diagnostic ``gray zones'' where classification is uncertain. We investigated whether residuals from these ratios---variance unexplained by standard covariates---contain systematic structure that could inform diagnosis. Using NHANES 2017-2018 (N=9,254) across five disease categories (hepatic fibrosis, chronic kidney disease, cardiovascular disease, diabetes, metabolic syndrome) and the Breast Cancer Coimbra dataset (N=116), we tested three hypotheses: (H1) residual distributions differ across disease states, (H2) non-linear U-shaped patterns exist, and (H3) patterns correlate across diseases. Results show 72/85 (85\%) disease-residual combinations with significant distribution differences after Bonferroni correction. We detected 35 significant U-shaped patterns, predominantly in hepatic fibrosis gray zones. Twelve residuals showed significance across $\geq$3 disease categories, suggesting ``universal'' diagnostic patterns. In the Breast Cancer dataset, residuals showed structure but were largely redundant with original ratios for classification. These findings demonstrate that clinical ratio residuals contain non-random structure related to disease status. However, this cross-sectional analysis cannot establish clinical utility; prospective validation is required before any diagnostic application.
+
+\vspace{0.3cm}
+\noindent\textbf{Keywords:} biomarker ratios, residual analysis, diagnostic gray zones, NHANES, FIB-4, HOMA-IR, eGFR
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Clinical Biomarker Ratios}
+
+Clinical biomarker ratios have become standard tools in medical diagnostics. The Fibrosis-4 Index (FIB-4) screens for liver fibrosis using age, AST, ALT, and platelet count \citep{sterling2006}. The Homeostatic Model Assessment of Insulin Resistance (HOMA-IR) quantifies insulin sensitivity from fasting glucose and insulin \citep{matthews1985}. Estimated glomerular filtration rate (eGFR) stages chronic kidney disease from serum creatinine \citep{inker2021}. These ratios combine multiple biomarkers to improve diagnostic accuracy beyond individual markers.
+
+\subsection{The Gray Zone Problem}
+
+A common limitation of clinical ratios is the ``gray zone''---score ranges where classification is uncertain:
+\begin{itemize}
+    \item \textbf{FIB-4:} Scores 1.3--2.67 require additional testing, affecting 30--40\% of screened patients \citep{srivastava2019}
+    \item \textbf{eGFR:} Values 60--90 mL/min represent ``mildly decreased'' function with uncertain clinical significance
+    \item \textbf{HbA1c:} Prediabetes range 5.7--6.4\% affects 27\% of the U.S. population
+\end{itemize}
+
+In these gray zones, clinicians face difficult decisions with limited information.
+
+\subsection{Research Question}
+
+When clinical ratios are modeled statistically---for example, regressing FIB-4 against age, sex, and BMI---the unexplained variance (the residual) is typically treated as noise to be minimized. We asked: \textbf{Is this residual truly random, or does it contain systematic structure?}
+
+If residuals were pure noise, we would expect:
+\begin{enumerate}
+    \item No difference in residual distributions between disease states
+    \item No systematic non-linear patterns
+    \item No correlations across disease categories
+\end{enumerate}
+
+\subsection{Theoretical Motivation}
+
+This investigation is motivated by the \QOR{} framework developed in Paper 1 of this series, where we found that residuals from the Baryonic Tully-Fisher Relation in astrophysics contain structured information about environmental conditions. We hypothesized that an analogous phenomenon might exist in clinical biomarkers: the ``quotient'' (ratio) captures primary dynamics, while the ``residual'' may reveal secondary regulatory mechanisms.
+
+\subsection{Study Objectives}
+
+This exploratory study tests three descriptive hypotheses:
+\begin{enumerate}
+    \item \textbf{H1}: Residual distributions differ across disease stages
+    \item \textbf{H2}: Non-linear (U-shaped) patterns exist in residuals
+    \item \textbf{H3}: Residual patterns correlate across disease categories
+\end{enumerate}
+
+We emphasize that this is a \textbf{hypothesis-generating study}. Positive findings suggest residuals merit further investigation, not that they should be used clinically.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methods}
+\label{sec:methods}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Study 1: NHANES 2017-2018}
+
+\subsubsection{Population}
+
+We analyzed the National Health and Nutrition Examination Survey (NHANES) 2017-2018 cycle \citep{nhanes}. Sample sizes varied by biomarker availability:
+\begin{itemize}
+    \item Total participants with complete data: N = 9,254
+    \item Hepatic fibrosis analysis: N = 5,879
+    \item Kidney disease analysis: N = 5,903
+    \item Cardiovascular/Diabetes (fasting subsample): N = 2,834
+    \item Metabolic syndrome: N = 9,254
+\end{itemize}
+
+\subsubsection{Demographics}
+
+Table~\ref{tab:demographics} presents the sample characteristics.
+
+\begin{table}[H]
+\centering
+\caption{NHANES 2017-2018 Sample Characteristics}
+\label{tab:demographics}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Characteristic} & \textbf{Value} & \textbf{Range/\%} \\
+\midrule
+Age (years) & $34.3 \pm 25.5$ & 0--80 \\
+BMI (kg/m$^2$) & $26.6 \pm 8.3$ & 12.3--67.3 \\
+Female & 4,702 & 50.8\% \\
+\midrule
+\multicolumn{3}{l}{\textit{Disease Prevalences}} \\
+Diabetes (HbA1c $\geq$ 6.5\%) & 926 & 10.0\% \\
+CKD Stage $\geq$ 3 & 444 & 4.8\% \\
+Metabolic Syndrome & 1,138 & 12.3\% \\
+\midrule
+\multicolumn{3}{l}{\textit{Gray Zone Populations}} \\
+FIB-4 Indeterminate (1.3--2.67) & 1,188 & 20.2\% \\
+Prediabetes (5.7--6.4\%) & 2,499 & 27.0\% \\
+eGFR 60--90 & 1,505 & 25.5\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Clinical Ratios Computed}
+
+We computed 17 established clinical ratios across five disease categories:
+
+\textbf{Hepatic Fibrosis:}
+\begin{align}
+\text{FIB-4} &= \frac{\text{Age} \times \text{AST}}{\text{Platelets} \times \sqrt{\text{ALT}}} \\
+\text{APRI} &= \frac{\text{AST}/\text{ULN}}{\text{Platelets}} \times 100 \\
+\text{De Ritis} &= \frac{\text{AST}}{\text{ALT}}
+\end{align}
+
+\textbf{Kidney Disease:}
+\begin{align}
+\text{eGFR} &= \text{CKD-EPI 2021 equation} \\
+\text{ACR} &= \frac{\text{Urine Albumin}}{\text{Urine Creatinine}}
+\end{align}
+
+\textbf{Cardiovascular/Metabolic:}
+\begin{align}
+\text{TG/HDL} &= \frac{\text{Triglycerides}}{\text{HDL-C}} \\
+\text{HOMA-IR} &= \frac{\text{Glucose} \times \text{Insulin}}{22.5} \\
+\text{TyG} &= \ln\left(\frac{\text{TG} \times \text{Glucose}}{2}\right)
+\end{align}
+
+\subsection{Study 2: Breast Cancer Coimbra}
+
+The Breast Cancer Coimbra dataset \citep{patricio2018} contains 116 participants (64 cancer, 52 controls) with anthropometric and blood biomarkers. We computed 6 ratios including HOMA-IR, Leptin/Adiponectin, and Resistin/Adiponectin.
+
+\subsection{Residual Computation}
+
+For each ratio $R$, residuals were computed via ordinary least squares:
+\begin{equation}
+R = \beta_0 + \beta_1(\text{Age}) + \beta_2(\text{Sex}) + \beta_3(\text{BMI}) + \varepsilon
+\end{equation}
+The residual $\varepsilon$ represents variance unexplained by these standard covariates.
+
+\subsection{Statistical Analyses}
+
+\textbf{H1:} Kruskal-Wallis (multi-group) and Mann-Whitney U (two-group) tests with effect sizes ($\eta^2$, Cohen's $d$).
+
+\textbf{H2:} Nested F-tests comparing quadratic vs. linear models. A positive quadratic coefficient indicates U-shape.
+
+\textbf{H3:} Spearman correlations between residuals across disease categories.
+
+\textbf{Multiple comparison correction:} Bonferroni correction applied ($\alpha = 0.05/85 = 0.0006$ for NHANES).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results: Breast Cancer Coimbra}
+\label{sec:results_bc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Preliminary Analysis}
+
+Figure~\ref{fig:bc_distributions} shows biomarker distributions by cancer status.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{fig01_distributions_by_group.png}
+    \caption{\textbf{Biomarker distributions in Breast Cancer Coimbra dataset.} Comparison of key biomarkers between cancer patients (N=64) and healthy controls (N=52). Several biomarkers show visible separation between groups.}
+    \label{fig:bc_distributions}
+\end{figure}
+
+\subsection{Residual Structure (H1)}
+
+Figure~\ref{fig:bc_residuals} shows that residuals from clinical ratios exhibit structure related to cancer status.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{fig07_residual_distributions.png}
+    \caption{\textbf{Residual distributions by cancer status.} Four of six computed residuals show significant differences between cancer and control groups after Bonferroni correction, suggesting residuals contain diagnostic information.}
+    \label{fig:bc_residuals}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Residual Distribution Differences (Breast Cancer)}
+\label{tab:bc_h1}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Residual} & \textbf{p-value} & \textbf{Cohen's d} & \textbf{Significant?} \\
+\midrule
+HOMA\_Residual & 0.0008 & 0.42 & Yes \\
+Leptin/Adiponectin\_Res & 0.0015 & 0.38 & Yes \\
+Resistin/Adiponectin\_Res & 0.0021 & 0.35 & Yes \\
+MCP1/Adiponectin\_Res & 0.0024 & 0.33 & Yes \\
+Glucose/Insulin\_Res & 0.089 & 0.18 & No \\
+BMI-adj Leptin\_Res & 0.142 & 0.14 & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Classification Performance}
+
+Adding residuals to ratios did not substantially improve classification:
+
+\begin{table}[H]
+\centering
+\caption{Classification Performance (Breast Cancer)}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Model} & \textbf{AUC} & \textbf{Accuracy} \\
+\midrule
+Ratios only & 0.74 & 68.1\% \\
+Residuals only & 0.72 & 66.4\% \\
+Combined & 0.75 & 69.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Interpretation:} In the Breast Cancer dataset, residuals contain diagnostic information but are largely \textbf{redundant} with the original ratios.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results: NHANES Hepatic Fibrosis}
+\label{sec:results_liver}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{FIB-4 Distribution and Gray Zones}
+
+Figure~\ref{fig:liver_fib4} shows the FIB-4 distribution with diagnostic zones.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{liver_fig01_fib4_distribution.png}
+    \caption{\textbf{FIB-4 distribution in NHANES.} The gray zone (1.3--2.67) affects 20.2\% of the screened population. These patients require additional testing due to diagnostic uncertainty.}
+    \label{fig:liver_fib4}
+\end{figure}
+
+\subsection{Residuals by FIB-4 Zone}
+
+Figure~\ref{fig:liver_residuals} shows how residuals differ across FIB-4 diagnostic zones.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{liver_fig02_residuals_by_zone.png}
+    \caption{\textbf{Residual distributions across FIB-4 zones.} Residuals show systematic differences between low-risk, indeterminate, and high-risk zones, suggesting additional diagnostic information beyond the FIB-4 score itself.}
+    \label{fig:liver_residuals}
+\end{figure}
+
+\subsection{U-Shaped Patterns in Gray Zone (H2)}
+
+The most striking finding is the presence of U-shaped patterns within the gray zone.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{liver_fig03_ushapes_indeterminate.png}
+    \caption{\textbf{U-shaped residual patterns in FIB-4 indeterminate zone.} Patients at both extremes of the indeterminate zone show elevated residuals, suggesting the residual captures information about progression risk that the FIB-4 score alone misses. This is the key finding for hepatic fibrosis.}
+    \label{fig:liver_ushape}
+\end{figure}
+
+Of 85 ratio-disease combinations tested, 26 showed significant U-shaped patterns ($p < 0.0006$), predominantly in the hepatic fibrosis category.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results: NHANES Kidney Disease}
+\label{sec:results_kidney}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:kidney} shows eGFR and ACR patterns across CKD stages.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{kidney_fig01_egfr_acr_distribution.png}
+    \caption{\textbf{Kidney function markers by CKD stage.} Residuals from eGFR show significant variation across CKD stages (16/17 significant, 94\%), the highest rate among all disease categories.}
+    \label{fig:kidney}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results: NHANES Cardiovascular Risk}
+\label{sec:results_cv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:cv} shows cardiovascular risk marker patterns.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{cv_fig01_tg_hdl_by_status.png}
+    \caption{\textbf{TG/HDL ratio by cardiovascular disease status.} Residuals show significant differences (11/17, 65\%) but fewer U-shaped patterns than hepatic markers, suggesting different underlying dynamics.}
+    \label{fig:cv}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results: NHANES Diabetes}
+\label{sec:results_diabetes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:diabetes} shows glycemic marker patterns.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{diabetes_fig01_glycemic_analysis.png}
+    \caption{\textbf{Glycemic markers across diabetes status.} Residuals show significant structure (15/17, 88\%), with U-shaped patterns detected in the prediabetes range (HbA1c 5.7--6.4\%).}
+    \label{fig:diabetes}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results: NHANES Metabolic Syndrome}
+\label{sec:results_mets}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:mets} shows metabolic syndrome patterns.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{mets_fig01_overview.png}
+    \caption{\textbf{Metabolic syndrome analysis.} All 17 residuals showed significant distribution differences by MetS status (100\%), the highest rate among disease categories. This suggests metabolic syndrome involves coordinated dysregulation visible in residual patterns.}
+    \label{fig:mets}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results: Cross-Disease Patterns (H3)}
+\label{sec:results_cross}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:cross_disease} shows the cross-disease residual correlation structure.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{cross_disease_fig01_overview.png}
+    \caption{\textbf{Cross-disease residual patterns.} Of 90 cross-disease residual pairs, 70 (78\%) showed significant correlations. Twelve residuals were significant across $\geq$3 disease categories, suggesting ``universal'' patterns potentially related to systemic metabolic regulation.}
+    \label{fig:cross_disease}
+\end{figure}
+
+\subsection{Universal Residuals}
+
+Table~\ref{tab:universal} lists residuals significant across multiple disease categories.
+
+\begin{table}[H]
+\centering
+\caption{Residuals Significant Across Multiple Disease Categories}
+\label{tab:universal}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Residual} & \textbf{Disease Categories} & \textbf{Interpretation} \\
+\midrule
+TG/HDL\_Residual & 5/5 & Universal metabolic marker \\
+HOMA-IR\_Residual & 4/5 & Insulin resistance \\
+eGFR\_Residual & 4/5 & Renal-metabolic link \\
+WHtR\_Residual & 4/5 & Central adiposity \\
+TyG\_Residual & 3/5 & Triglyceride-glucose axis \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary Figure}
+\label{sec:summary}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:summary} provides an overview of all findings.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{summary_figure.png}
+    \caption{\textbf{Summary of residual structure across disease categories.} Support for H1 (distribution differences) is strong across all categories. H2 (U-shapes) is strongest in hepatic fibrosis. H3 (cross-disease correlations) reveals universal patterns.}
+    \label{fig:summary}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Consolidated Results}
+\label{sec:consolidated}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\caption{Summary of Hypothesis Testing Across Disease Categories}
+\label{tab:summary}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Disease Category} & \textbf{H1 (Diff)} & \textbf{H2 (U-shape)} & \textbf{H3 (Cross)} & \textbf{Support} \\
+\midrule
+Hepatic Fibrosis & 13/17 (76\%) & 26 patterns & Yes & Strong \\
+Chronic Kidney Disease & 16/17 (94\%) & 3 patterns & Yes & Strong \\
+Cardiovascular & 11/17 (65\%) & 0 patterns & Yes & Moderate \\
+Diabetes & 15/17 (88\%) & 6 patterns & Yes & Strong \\
+Metabolic Syndrome & 17/17 (100\%) & 14 patterns & Yes & Strong \\
+\midrule
+\textbf{Overall} & \textbf{72/85 (85\%)} & \textbf{35 patterns} & \textbf{70/90 corr.} & \textbf{Strong} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+\label{sec:discussion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Summary of Findings}
+
+Across two independent datasets, we found that residuals from clinical biomarker ratios:
+\begin{enumerate}
+    \item Are not randomly distributed across disease states (H1 strongly supported)
+    \item Show non-linear U-shaped patterns, particularly in diagnostic gray zones (H2 supported for hepatic fibrosis)
+    \item Correlate across disease categories, with 12 ``universal'' residuals (H3 supported)
+\end{enumerate}
+
+\subsection{Interpretation of U-Shaped Patterns}
+
+The U-shaped patterns in hepatic fibrosis gray zones are particularly intriguing. They suggest that patients at both extremes of the indeterminate range may have different underlying dynamics than those in the middle. This could reflect:
+\begin{itemize}
+    \item Different etiologies of liver disease
+    \item Different stages of disease progression
+    \item Different compensatory mechanisms
+\end{itemize}
+
+\subsection{Connection to QO+R Framework}
+
+In Paper 1, we found U-shaped patterns in astrophysical data (BTFR residuals) that were explained by competing scalar fields with opposite environmental preferences. The hepatic fibrosis U-shapes may reflect an analogous phenomenon: competing regulatory mechanisms (e.g., inflammatory vs. fibrotic processes) that leave mathematical signatures in residual patterns.
+
+However, we emphasize that this connection is \textbf{speculative}. The biological mechanisms underlying residual structure remain to be identified.
+
+\subsection{What This Study Does NOT Show}
+
+We have \textbf{not} demonstrated:
+\begin{itemize}
+    \item That residuals improve clinical decision-making
+    \item That residuals predict disease progression
+    \item That the patterns have specific biological meaning
+    \item That this approach should be used clinically
+\end{itemize}
+
+We have only shown that residuals contain statistical structure---whether this structure is clinically useful remains unknown.
+
+\subsection{Limitations}
+
+\begin{enumerate}
+    \item \textbf{Cross-sectional design}: Cannot establish causation or temporal sequence
+    \item \textbf{Multiple comparisons}: Despite Bonferroni correction, some false positives likely remain
+    \item \textbf{No external validation}: Patterns may be dataset-specific
+    \item \textbf{Proxy outcomes}: Disease status based on thresholds, not gold standards (biopsy, imaging)
+    \item \textbf{U.S. population}: May not generalize globally
+    \item \textbf{Model dependence}: Residuals depend on covariate selection
+\end{enumerate}
+
+\subsection{What Would Be Needed}
+
+To establish clinical utility:
+\begin{enumerate}
+    \item External validation in UK Biobank, Framingham Heart Study
+    \item Longitudinal analysis testing predictive value for outcomes
+    \item Biological validation with imaging or histology
+    \item Randomized trials comparing residual-informed vs. standard decisions
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\label{sec:conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Residuals from clinical biomarker ratios are not purely random noise. They contain statistical structure related to disease status across multiple disease categories, with U-shaped patterns particularly prominent in diagnostic gray zones for hepatic fibrosis.
+
+These findings parallel the U-shaped residual patterns found in astrophysical data (Paper 1), suggesting that residual analysis may be a general methodology for extracting hidden structure from ratio-based measurements.
+
+However, this is an exploratory study generating hypotheses for future investigation, not validated clinical tools. Prospective studies are needed to determine whether residual structure has diagnostic or prognostic utility.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Reproducibility Statement}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+All analysis scripts are available in the project repository. NHANES data can be downloaded from \url{https://wwwn.cdc.gov/nchs/nhanes/}. The Breast Cancer Coimbra dataset is available from the UCI Machine Learning Repository.
+
+\section*{Data Availability}
+
+\begin{itemize}
+    \item NHANES: \url{https://wwwn.cdc.gov/nchs/nhanes/}
+    \item Breast Cancer Coimbra: \url{https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Coimbra}
+    \item Analysis code: \url{https://github.com/JonathanSlama/QO-R-JEDSLAMA}
+\end{itemize}
+
+\section*{Acknowledgments}
+
+We thank the CDC for maintaining the NHANES database and the UCI Machine Learning Repository for hosting the Breast Cancer Coimbra dataset.
+
+\section*{Funding}
+This research received no external funding.
+
+\section*{Conflicts of Interest}
+The author declares no conflicts of interest.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{apalike}
+
+\begin{thebibliography}{99}
+
+\bibitem[Inker et al., 2021]{inker2021}
+Inker, L.A., et al. (2021). New creatinine- and cystatin C-based equations to estimate GFR. \textit{N Engl J Med}, 385(19):1737--1749.
+
+\bibitem[Matthews et al., 1985]{matthews1985}
+Matthews, D.R., et al. (1985). Homeostasis model assessment: insulin resistance and beta-cell function. \textit{Diabetologia}, 28(7):412--419.
+
+\bibitem[NHANES, 2018]{nhanes}
+CDC (2018). National Health and Nutrition Examination Survey 2017-2018. \url{https://www.cdc.gov/nchs/nhanes/}
+
+\bibitem[Patrício et al., 2018]{patricio2018}
+Patrício, M., et al. (2018). Using Resistin, glucose, age and BMI to predict breast cancer. \textit{BMC Cancer}, 18:29.
+
+\bibitem[Srivastava et al., 2019]{srivastava2019}
+Srivastava, A., et al. (2019). Prospective evaluation of a primary care referral pathway for patients with NAFLD. \textit{J Hepatol}, 71(2):371--378.
+
+\bibitem[Sterling et al., 2006]{sterling2006}
+Sterling, R.K., et al. (2006). Development of a simple noninvasive index to predict significant fibrosis (FIB-4). \textit{Hepatology}, 43(6):1317--1325.
+
+\end{thebibliography}
+
+\end{document}

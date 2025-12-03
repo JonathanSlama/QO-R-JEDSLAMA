@@ -1,0 +1,79 @@
+======================================================================
+PAPER 2 EXTENDED: CROSS-DISEASE PATTERN ANALYSIS
+The Revelatory Division - Testing Residual Diagnostics
+======================================================================
+
+Author: Jonathan Édouard Slama
+Affiliation: Metafund Research Division, Strasbourg, France
+
+EXECUTIVE SUMMARY
+----------------------------------------
+
+This analysis tests whether the Revelatory Division principle
+generates UNIVERSAL patterns across disease categories, or
+whether findings are disease-specific.
+
+1. CROSS-DISEASE RESIDUAL CORRELATIONS
+----------------------------------------
+   Cross-category correlations tested: 90
+   Significant (p < 0.001): 70
+   Strong (|r| > 0.3): 14
+
+   Interpretation: Correlated residuals suggest shared
+   underlying mechanisms not captured by individual ratios.
+
+2. UNIVERSAL RESIDUAL PATTERNS
+----------------------------------------
+   Residuals tested: 17
+   Universal (≥3 diseases): 12
+
+   Universal residuals:
+     - eGFR: 5/5 diseases
+     - ACR: 5/5 diseases
+     - FIB4: 4/5 diseases
+     - DeRitis: 4/5 diseases
+     - NFS: 4/5 diseases
+     - G_I: 4/5 diseases
+     - MetS_Count: 4/5 diseases
+     - QUICKI: 4/5 diseases
+     - LDL_HDL: 4/5 diseases
+     - WHtR: 3/5 diseases
+     - APRI: 3/5 diseases
+     - TC_HDL: 3/5 diseases
+
+   Interpretation: Universal residuals may capture fundamental
+   metabolic dysfunction that manifests across disease categories.
+
+3. U-SHAPE PATTERN CONSISTENCY
+----------------------------------------
+   Significant quadratic patterns: 52/94
+   U-shapes (a > 0): 14/52
+
+   Interpretation: Consistent U-shapes across diseases would
+   support the QO+R framework's prediction of regime transitions.
+
+4. COMORBIDITY PATTERNS
+----------------------------------------
+   HOMA_IR: H = 31.75, p = 0.0000 ***
+   TG_HDL: H = 161.24, p = 0.0000 ***
+
+   Interpretation: Residuals that differ by comorbidity count
+   may reflect cumulative metabolic dysfunction.
+
+======================================================================
+CONCLUSIONS
+======================================================================
+
+The cross-disease analysis tests the core prediction of the
+Revelatory Division: that residuals reveal UNIVERSAL patterns
+of metabolic dysfunction, not just disease-specific noise.
+
+If confirmed, this suggests:
+  1. Clinical ratios share a common mathematical structure
+  2. Residuals capture shared pathophysiology
+  3. The QO+R framework may have broad applicability
+
+Limitations:
+  - Cross-sectional data cannot prove causation
+  - Shared confounders may drive apparent correlations
+  - Validation in independent datasets required

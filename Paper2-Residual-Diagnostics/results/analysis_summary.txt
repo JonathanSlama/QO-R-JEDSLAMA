@@ -1,0 +1,38 @@
+======================================================================
+PAPER 2: RESIDUAL ANALYSIS SUMMARY REPORT
+The Revelatory Division - Testing the Hypothesis
+======================================================================
+
+TEST 1: RESIDUAL DISTRIBUTION DIFFERENCES
+----------------------------------------
+  Residuals with different distributions: 3/6
+  Residuals with different locations: 2/6
+  → FINDING: Residuals contain group-discriminating information
+
+TEST 2: U-SHAPE DETECTION
+----------------------------------------
+  Significant U-shapes detected: 7/24
+  Patterns found:
+    - HOMA_IR vs Glucose: U-shape
+    - HOMA_IR vs Insulin: U-shape
+    - LAR vs Insulin: Inverted-U
+    - MCP1_Adiponectin vs Glucose: U-shape
+    - Leptin_BMI vs Age: U-shape
+    - Leptin_BMI vs Insulin: Inverted-U
+    - Glucose_Insulin vs Insulin: U-shape
+  → FINDING: Non-linear patterns exist in residuals
+
+TEST 3: CLASSIFICATION IMPROVEMENT
+----------------------------------------
+  AUC improvement from adding residuals: -0.024
+  Statistical significance: p = 0.3577
+  → FINDING: No improvement from adding residuals
+
+======================================================================
+OVERALL CONCLUSION
+======================================================================
+The hypothesis receives PARTIAL SUPPORT.
+Some evidence suggests residuals contain information, but findings are mixed.
+
+Note: This is exploratory research on a small dataset (N=116).
+Findings require replication on larger, independent datasets.

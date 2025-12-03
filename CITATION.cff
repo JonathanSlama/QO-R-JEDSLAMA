@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use this research, please cite it as below."
+type: software
+title: "QO+R Framework: From String Theory to Galactic Observations"
+abstract: >-
+  Complete theoretical framework and empirical validation of the QO+R 
+  (Quotient Ontologique + Reliquat) modified gravity model. Includes 
+  derivation from Type IIB string theory, validation on 708,086 galaxies 
+  across 5 independent datasets (SPARC, ALFALFA, WALLABY, IllustrisTNG), 
+  and extension to medical biomarkers (NHANES).
+authors:
+  - family-names: "Slama"
+    given-names: "Jonathan Édouard"
+    email: jonathan@metafund.in
+    orcid: "https://orcid.org/0009-0002-1292-4350"
+    affiliation: "Metafund Research Division, Strasbourg, France"
+version: "3.0"
+date-released: 2025-12-03
+license: MIT
+repository-code: "https://github.com/JonathanSlama/QO-R-JEDSLAMA"
+doi: "10.5281/zenodo.17806442"
+url: "https://doi.org/10.5281/zenodo.17806442"
+keywords:
+  - modified gravity
+  - string theory
+  - galaxy dynamics
+  - Baryonic Tully-Fisher Relation
+  - Calabi-Yau compactification
+  - dark matter
+  - SPARC
+  - IllustrisTNG
+  - biomarkers
+  - residual analysis
+references:
+  - type: article
+    title: "Environmental Modulation of the Baryonic Tully-Fisher Relation"
+    authors:
+      - family-names: "Slama"
+        given-names: "Jonathan Édouard"
+    year: 2025
+    notes: "Paper 1 - Discovery of U-shaped BTFR residual pattern"
+  - type: article
+    title: "Residual Structure in Clinical Biomarker Ratios"
+    authors:
+      - family-names: "Slama"
+        given-names: "Jonathan Édouard"
+    year: 2025
+    notes: "Paper 2 - Medical extension using NHANES data"
+  - type: article
+    title: "From String Theory to Galactic Observations"
+    authors:
+      - family-names: "Slama"
+        given-names: "Jonathan Édouard"
+    year: 2025
+    notes: "Paper 3 - Complete theoretical derivation and validation"

@@ -1,0 +1,34 @@
+BREAST CANCER COIMBRA DATASET - METADATA
+==================================================
+
+Download date: 2025-12-02T13:52:51.195380
+Source: UCI ML Repository (ID: 451)
+URL: https://archive.ics.uci.edu/dataset/451/breast+cancer+coimbra
+
+DATASET DESCRIPTION:
+------------------------------
+VARIABLES:
+------------------------------
+             name     role        type demographic                     description  units missing_values
+0             Age  Feature     Integer         Age                            None   year             no
+1             BMI  Feature  Continuous        None                            None  kg/m2             no
+2         Glucose  Feature     Integer        None                            None  mg/dL             no
+3         Insulin  Feature  Continuous        None                            None  µU/mL             no
+4            HOMA  Feature  Continuous        None                            None   None             no
+5          Leptin  Feature  Continuous        None                            None  ng/mL             no
+6     Adiponectin  Feature  Continuous        None                            None  µU/mL             no
+7        Resistin  Feature  Continuous        None                            None  ng/mL             no
+8           MCP.1  Feature  Continuous        None                            None  pg/dL             no
+9  Classification   Target     Integer        None  1=Healthy controls, 2=Patients   None             no
+
+CITATION:
+------------------------------
+Patrício, M., Pereira, J., Crisóstomo, J., Matafome, P., Gomes, M.,
+Seiça, R., & Caramelo, F. (2018).
+Using Resistin, glucose, age and BMI to predict the presence of breast cancer.
+BMC Cancer, 18(1), 29.
+DOI: 10.1186/s12885-017-3877-1
+
+LICENSE:
+------------------------------
+CC BY 4.0 (Creative Commons Attribution 4.0 International)

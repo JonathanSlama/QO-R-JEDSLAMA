@@ -1,0 +1,47 @@
+======================================================================
+PAPER 2 EXTENDED: HEPATIC FIBROSIS ANALYSIS REPORT
+The Revelatory Division - Testing Residual Diagnostics
+======================================================================
+
+1. FIB-4 ZONE ANALYSIS
+----------------------------------------
+   Indeterminate zone: 20.2% of population
+   → These patients need additional testing
+
+2. RESIDUAL DISTRIBUTION DIFFERENCES
+----------------------------------------
+   Significant differences: 13/17 residuals
+   • FIB4: p = 0.0000, η² = 0.330
+   • APRI: p = 0.0000, η² = 0.236
+   • NFS: p = 0.0000, η² = 0.095
+   • DeRitis: p = 0.0000, η² = 0.097
+   • eGFR: p = 0.0000, η² = 0.094
+   • ACR: p = 0.0000, η² = 0.050
+   • BUN_Cr: p = 0.0001, η² = 0.003
+   • TyG: p = 0.0000, η² = 0.009
+   • HOMA_IR: p = 0.0238, η² = 0.002
+   • QUICKI: p = 0.0000, η² = 0.028
+   • G_I: p = 0.0000, η² = 0.022
+   • MetS_Count: p = 0.0000, η² = 0.004
+   • WHtR: p = 0.0000, η² = 0.003
+
+3. U-SHAPES IN INDETERMINATE ZONE
+----------------------------------------
+   Significant non-linear patterns: 44
+   U-shapes detected: 26
+
+4. CLASSIFICATION IN INDETERMINATE ZONE
+----------------------------------------
+   Ratios only: AUC = 0.402
+   Residuals only: AUC = 0.483
+   Combined: AUC = 0.486
+   → Improvement: +0.084 AUC
+
+======================================================================
+CONCLUSION
+======================================================================
+   HYPOTHESIS SUPPORTED
+   Residuals contain diagnostic information in the FIB-4 indeterminate zone
+
+Note: This analysis uses NHANES data without biopsy-confirmed fibrosis.
+Findings should be validated with imaging or histological data.
