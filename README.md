@@ -9,7 +9,7 @@
 **Version:** 4.0
 **Date:** December 2025
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17806442.svg)](https://doi.org/10.5281/zenodo.17806442)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17943132.svg)](https://doi.org/10.5281/zenodo.17943132)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -200,7 +200,7 @@ If you use this work, please cite:
                    Observations - A Hidden Conservation Law of Gravity}},
   year         = 2025,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.17806442},
+  doi          = {10.5281/zenodo.17943132},
   url          = {https://github.com/JonathanSlama/QO-R-JEDSLAMA}
 }
 ```
