@@ -1,0 +1,104 @@
+{
+  "version": "v2",
+  "n_total": 401,
+  "n_train": 310,
+  "rho_range_dex": 6.719137618527819,
+  "data_limited": "False",
+  "criteria": {
+    "min_clusters": 500,
+    "z_min": 0.01,
+    "z_max": 1.5,
+    "cylinder_radii_mpc": [
+      10,
+      20,
+      30
+    ],
+    "dv_kms": 1500,
+    "min_rho_range_dex": 0.8,
+    "beta_Q": 1.0,
+    "beta_R": 0.5,
+    "rho_c_bounds": [
+      -5.0,
+      0.0
+    ],
+    "delta_bounds": [
+      0.05,
+      5.0
+    ],
+    "lambda_gal": 0.94,
+    "lambda_ratio_min": 0.3333333333333333,
+    "lambda_ratio_max": 3.0,
+    "n_bootstrap": 200,
+    "n_permutations": 200,
+    "holdout_fraction": 0.2,
+    "delta_aicc_threshold": 10,
+    "jackknife_z_cuts": [
+      0.2,
+      0.4,
+      0.6
+    ],
+    "jackknife_richness_percentiles": [
+      33,
+      67
+    ]
+  },
+  "toe": {
+    "alpha": 0.04188352916177999,
+    "lambda_QR": 1.2353141173663238,
+    "rho_c": -2.524630285509939,
+    "delta": 0.5728716572241098,
+    "aicc": -770.1167209997615
+  },
+  "null": {
+    "aicc": -935.2617426830165
+  },
+  "delta_aicc": -165.14502168325498,
+  "holdout": {
+    "r": 0.12809620415013973,
+    "p": 0.2262558766112051
+  },
+  "bootstrap": {
+    "lambda_QR_median": 1.2218127431822383,
+    "lambda_QR_ci_low": 1.0335711758769248,
+    "lambda_QR_ci_high": 1.4530033545550591,
+    "delta_aicc_median": -166.97576900133197,
+    "delta_aicc_ci_low": -235.9392855085027,
+    "delta_aicc_ci_high": -93.81227544343582,
+    "n_successful": 200
+  },
+  "permutation": {
+    "delta_aicc_obs": -165.14502168325498,
+    "delta_aicc_perm_mean": -4.990410488441527,
+    "delta_aicc_perm_std": 1.3319408609337493,
+    "p_value": 1.0
+  },
+  "jackknife": [],
+  "verdict": "QO+R TOE INCONCLUSIVE AT CLUSTER SCALE",
+  "evidence": [
+    {
+      "name": "\u03c1_range",
+      "status": "PASS",
+      "detail": "6.72 >= 0.8 dex"
+    },
+    {
+      "name": "\u0394AICc",
+      "status": "FAIL",
+      "detail": "-165.1 < 10"
+    },
+    {
+      "name": "Permutation",
+      "status": "FAIL",
+      "detail": "p = 1.0000"
+    },
+    {
+      "name": "\u03bb_QR range",
+      "status": "PASS",
+      "detail": "ratio = 1.31"
+    },
+    {
+      "name": "Hold-out",
+      "status": "WEAK",
+      "detail": "r = 0.128"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "a": 0.2618596004883676,
+  "a_err": 0.15301872715843098,
+  "a_sigma": 1.7112911952093683,
+  "b": -0.8745647505154631,
+  "b_err": 0.5321229940119004,
+  "c": 0.6885396172696093,
+  "c_err": 0.4061922843532518,
+  "r_squared": 0.13050383036726398,
+  "n_objects": 23,
+  "shape": "U-SHAPE",
+  "qor_prediction": "INCONSISTENT",
+  "verdict": "INCONCLUSIVE",
+  "status": "a = 0.2619 but only 1.7\u03c3 significance",
+  "alternative_test": {
+    "cluster_mean": 21.500621612337273,
+    "cluster_std": 15.584459421405189,
+    "non_cluster_mean": 18.516601240926448,
+    "non_cluster_std": 9.277207789995618,
+    "t_statistic": 0.4745814838797423,
+    "p_value": 0.6399832714168118,
+    "significant": false
+  }
+}

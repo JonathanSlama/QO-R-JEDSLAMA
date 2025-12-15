@@ -1,0 +1,28 @@
+{
+  "test_name": "KiDS DR4 Bright Sample",
+  "description": "Test for Q\u00b2R\u00b2 pattern in optical galaxy scaling relations",
+  "context": "Level 2 - Multi-context validation",
+  "full_sample": {
+    "n": 719879,
+    "a": -0.007834236025905774,
+    "a_err": 0.000522033132984528,
+    "p_value": 0.0,
+    "is_u_shape": "False"
+  },
+  "q_dominated": {
+    "n": 391873,
+    "a": -0.003870182684169812,
+    "a_err": 0.000737973504954965,
+    "p_value": 4.2887915441269797e-13
+  },
+  "r_dominated": {
+    "n": 7038,
+    "a": -0.012747092570082429,
+    "a_err": 0.00398704849275959,
+    "p_value": 0.012735311561399176
+  },
+  "sign_inversion": false,
+  "u_shape_detected": "False",
+  "status": "SUCCESS",
+  "conclusion": "U-shape NOT detected in full sample"
+}

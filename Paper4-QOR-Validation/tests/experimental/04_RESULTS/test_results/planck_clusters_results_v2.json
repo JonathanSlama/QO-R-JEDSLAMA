@@ -1,0 +1,24 @@
+{
+  "test_name": "Planck PSZ2 Galaxy Clusters v2",
+  "description": "Test for Q\u00b2R\u00b2 pattern in cluster M-Y relation",
+  "context": "Level 2 - Multi-context validation",
+  "version": "2.0 - Using MSZ column directly",
+  "my_relation": {
+    "slope": -0.37268807290092515,
+    "intercept": 0.7122311890523028,
+    "r_correlation": -0.19636751967339885,
+    "p_value": 5.813843949429642e-11,
+    "expected_slope": 1.67
+  },
+  "residual_scatter": 0.3611819669760374,
+  "q_dominated": {
+    "n": 437,
+    "a": 0.023572898334778467,
+    "a_err": 0.015943776924205472,
+    "p_value": 0.1990837068979523
+  },
+  "u_shape_detected": false,
+  "status": "SUCCESS",
+  "n_clusters": 1093,
+  "conclusion": "U-shape NOT detected in cluster M-Y residuals"
+}

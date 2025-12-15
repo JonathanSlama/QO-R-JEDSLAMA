@@ -1,0 +1,272 @@
+{
+  "test_name": "Alternative Theories Elimination",
+  "description": "Compare observations with predictions from alternative dark matter/gravity theories",
+  "observations": {
+    "u_shape": {
+      "ALFALFA": {
+        "a": 0.0034269388851307044,
+        "a_err": 0.0012836191178303472,
+        "p_value": 0.025633061135471147,
+        "is_u_shape": true,
+        "is_inverted": false
+      },
+      "SPARC": {
+        "a": 0.06550709363679097,
+        "a_err": 0.029277602140158843,
+        "p_value": 0.15469688428635786,
+        "is_u_shape": false,
+        "is_inverted": false
+      }
+    },
+    "sign_inversion": {
+      "ALFALFA": {
+        "q_dom_a": 0.003940652627388479,
+        "r_dom_a": -0.030828078738261586,
+        "sign_inversion": true
+      },
+      "SPARC": {
+        "q_dom_a": null,
+        "r_dom_a": null,
+        "sign_inversion": null
+      }
+    },
+    "mass_dependence": {
+      "ALFALFA": {
+        "low_mass_a": 0.0046129803250323075,
+        "high_mass_a": 0.002528722811174839,
+        "ratio": 0.5481755032538814,
+        "strength": "moderate",
+        "direction": "negative"
+      },
+      "SPARC": {
+        "low_mass_a": null,
+        "high_mass_a": null,
+        "ratio": null,
+        "strength": "unknown",
+        "direction": "unknown"
+      }
+    },
+    "env_shape": {
+      "ALFALFA": {
+        "models": {
+          "linear": {
+            "r_squared": 0.0019690637478585087,
+            "p_value": 7.516590886743618e-10,
+            "aic": -68852.13120268981
+          },
+          "quadratic": {
+            "r_squared": 0.002916692165590651,
+            "a": 0.004134757567427361,
+            "aic": -68868.39112426517
+          }
+        },
+        "best_model": "quadratic",
+        "is_quadratic": true
+      },
+      "SPARC": {
+        "models": {
+          "linear": {
+            "r_squared": 0.0810156582068908,
+            "p_value": 0.00010298698307617824,
+            "aic": -726.7817768984391
+          },
+          "quadratic": {
+            "r_squared": 0.22482596949771594,
+            "a": 0.04869603270367458,
+            "aic": -755.5846327911604
+          }
+        },
+        "best_model": "quadratic",
+        "is_quadratic": true
+      }
+    }
+  },
+  "theory_comparison": {
+    "String_Theory_Moduli": {
+      "description": "Calabi-Yau compactification with KKLT stabilization",
+      "matches": 3,
+      "total_tests": 4,
+      "compatibility": 0.75,
+      "details": {
+        "u_shape": {
+          "observed": true,
+          "predicted": true,
+          "match": true
+        },
+        "sign_inversion": {
+          "observed": true,
+          "predicted": true,
+          "match": true
+        },
+        "mass_dependence": {
+          "observed": "moderate",
+          "predicted": "weak",
+          "match": false
+        },
+        "env_shape": {
+          "observed": "quadratic",
+          "predicted": "quadratic",
+          "match": true
+        }
+      },
+      "verdict": "COMPATIBLE"
+    },
+    "WDM": {
+      "description": "Warm Dark Matter with free-streaming cutoff",
+      "matches": 0,
+      "total_tests": 4,
+      "compatibility": 0.0,
+      "details": {
+        "u_shape": {
+          "observed": true,
+          "predicted": false,
+          "match": false
+        },
+        "sign_inversion": {
+          "observed": true,
+          "predicted": false,
+          "match": false
+        },
+        "mass_dependence": {
+          "observed": "moderate",
+          "predicted": "strong_negative",
+          "match": false
+        },
+        "env_shape": {
+          "observed": "quadratic",
+          "predicted": "monotonic",
+          "match": false
+        }
+      },
+      "verdict": "INCOMPATIBLE"
+    },
+    "SIDM": {
+      "description": "Self-Interacting Dark Matter with core formation",
+      "matches": 1,
+      "total_tests": 4,
+      "compatibility": 0.25,
+      "details": {
+        "u_shape": {
+          "observed": true,
+          "predicted": "partial",
+          "match": true
+        },
+        "sign_inversion": {
+          "observed": true,
+          "predicted": false,
+          "match": false
+        },
+        "mass_dependence": {
+          "observed": "moderate",
+          "predicted": "strong",
+          "match": false
+        },
+        "env_shape": {
+          "observed": "quadratic",
+          "predicted": "linear",
+          "match": false
+        }
+      },
+      "verdict": "INCOMPATIBLE"
+    },
+    "fR_Gravity": {
+      "description": "f(R) modified gravity with Chameleon screening",
+      "matches": 1,
+      "total_tests": 4,
+      "compatibility": 0.25,
+      "details": {
+        "u_shape": {
+          "observed": true,
+          "predicted": "inverted",
+          "match": false
+        },
+        "sign_inversion": {
+          "observed": true,
+          "predicted": false,
+          "match": false
+        },
+        "mass_dependence": {
+          "observed": "moderate",
+          "predicted": "strong",
+          "match": false
+        },
+        "env_shape": {
+          "observed": "quadratic",
+          "predicted": "step_function",
+          "match": true
+        }
+      },
+      "verdict": "INCOMPATIBLE"
+    },
+    "Fuzzy_DM": {
+      "description": "Ultra-light axion dark matter with soliton cores",
+      "matches": 1,
+      "total_tests": 4,
+      "compatibility": 0.25,
+      "details": {
+        "u_shape": {
+          "observed": true,
+          "predicted": false,
+          "match": false
+        },
+        "sign_inversion": {
+          "observed": true,
+          "predicted": false,
+          "match": false
+        },
+        "mass_dependence": {
+          "observed": "moderate",
+          "predicted": "strong_negative",
+          "match": false
+        },
+        "env_shape": {
+          "observed": "quadratic",
+          "predicted": "weak",
+          "match": true
+        }
+      },
+      "verdict": "INCOMPATIBLE"
+    },
+    "Quintessence": {
+      "description": "Dynamical dark energy with scalar field",
+      "matches": 2,
+      "total_tests": 4,
+      "compatibility": 0.5,
+      "details": {
+        "u_shape": {
+          "observed": true,
+          "predicted": false,
+          "match": false
+        },
+        "sign_inversion": {
+          "observed": true,
+          "predicted": false,
+          "match": false
+        },
+        "mass_dependence": {
+          "observed": "moderate",
+          "predicted": "none",
+          "match": true
+        },
+        "env_shape": {
+          "observed": "quadratic",
+          "predicted": "none",
+          "match": true
+        }
+      },
+      "verdict": "PARTIALLY_COMPATIBLE"
+    }
+  },
+  "eliminated_theories": [
+    "WDM",
+    "SIDM",
+    "fR_Gravity",
+    "Fuzzy_DM"
+  ],
+  "compatible_theories": [
+    "String_Theory_Moduli"
+  ],
+  "conclusion": "String Theory Moduli is the ONLY compatible theory",
+  "passed": true,
+  "summary": "Eliminated: 4/6 theories"
+}

@@ -1,0 +1,32 @@
+{
+  "test_name": "Planck PSZ2 \u00d7 MCXC (Distance Corrected)",
+  "version": "4.0 - With D_A\u00b2 and E(z) corrections",
+  "uncorrected": {
+    "slope": -0.1903737063219773,
+    "r": -0.12881612756207828,
+    "interpretation": "Distance bias creates artificial anti-correlation"
+  },
+  "corrected": {
+    "slope": 1.2309518805925157,
+    "r": 0.7880307396873539,
+    "p_value": 9.413957261997891e-118,
+    "expected_slope": 1.67
+  },
+  "z_correlations": {
+    "z_vs_M": 0.6623034850569569,
+    "z_vs_Y_obs": -0.3095659347270634,
+    "z_vs_Y_scaled": 0.5725980684563327
+  },
+  "u_shape": {
+    "a": 0.02021060333202163,
+    "a_err": 0.015343837535158621,
+    "detected": "False"
+  },
+  "q_dominated": {
+    "a": 0.03481910503461728,
+    "a_err": 0.021888575003919653
+  },
+  "n_clusters": 551,
+  "status": "SUCCESS",
+  "conclusion": "Distance correction successful - positive M-Y correlation"
+}

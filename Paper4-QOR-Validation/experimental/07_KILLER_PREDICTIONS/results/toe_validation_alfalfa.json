@@ -1,0 +1,60 @@
+{
+  "criteria": {
+    "lambda_detection_sigma": 3.0,
+    "universality_ratio_max": 3.0,
+    "qr_correlation_threshold": -0.5,
+    "btfr_slope_min": 0.2,
+    "btfr_slope_max": 0.3,
+    "lambda_range_min": 0.1,
+    "lambda_range_max": 100.0,
+    "aic_difference_threshold": 2.0
+  },
+  "n_galaxies": 19210,
+  "dataset": "ALFALFA",
+  "tests": [
+    {
+      "name": "\u03bb_QR detection",
+      "lambda_QR": -0.028262541562938004,
+      "lambda_err": 0.03295588159641113,
+      "sigma": 0.8575871800078252,
+      "passed": false
+    },
+    {
+      "name": "Universality",
+      "lambda_values": [
+        0.05994594859356991
+      ],
+      "ratio": null,
+      "passed": false
+    },
+    {
+      "name": "Q-R anticorrelation",
+      "correlation": -0.7658329988696362,
+      "p_value": 0.0,
+      "passed": true
+    },
+    {
+      "name": "BTFR slope",
+      "slope": 0.2997926698954081,
+      "slope_err": 0.0018510570718008675,
+      "passed": true
+    },
+    {
+      "name": "String theory range",
+      "lambda_abs": 0.028262541562938004,
+      "passed": false
+    },
+    {
+      "name": "Model comparison",
+      "aic_linear": -68591.47964736236,
+      "aic_qor": -68590.2152033202,
+      "delta_aic": -1.2644440421572654,
+      "passed": false
+    }
+  ],
+  "summary": {
+    "tests_passed": 2,
+    "tests_total": 6,
+    "verdict": "MAJORITY FAILED - QO+R TOE NOT SUPPORTED BY THIS DATA"
+  }
+}

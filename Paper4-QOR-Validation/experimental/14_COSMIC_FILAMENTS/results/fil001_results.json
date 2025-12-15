@@ -1,0 +1,33 @@
+{
+  "test": "FIL-001",
+  "scale": "10^24 m",
+  "purpose": "Bridge Clusters (10^23) to Cosmic (10^27)",
+  "n_total": 27,
+  "sources": [
+    "Tempel2014",
+    "Kraljic2018",
+    "Chen2016",
+    "Malavasi2020"
+  ],
+  "velocity_analysis": {
+    "n": 10,
+    "delta_v_mean": 0.0526948314958795,
+    "delta_v_std": 0.026151083986650406,
+    "ttest_p": 0.00012946443135831355,
+    "correlation_r": -0.5659691145267185,
+    "correlation_p": 0.08811243879010494
+  },
+  "density_analysis": {
+    "n": 17,
+    "power_law_slope": -1.9080015633260161,
+    "power_law_err": 0.1425255194756996,
+    "deviation_from_LCDM": 0.09199843667398389
+  },
+  "toe_fit": {
+    "gamma": -0.027929650433412796,
+    "gamma_err": 0.037990585418566127,
+    "offset": 0.03619402089906605
+  },
+  "verdict": "QO+R SIGNAL DETECTED IN FILAMENTS",
+  "interpretation": "Intermediate density shows screening signature like UDGs"
+}

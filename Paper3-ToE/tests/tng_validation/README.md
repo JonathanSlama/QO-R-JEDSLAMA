@@ -1,163 +1,161 @@
-# Tests TNG - Validation Complète du Framework QO+R
+# TNG Tests - Complete Validation of the QO+R Framework
 
-## Vue d'ensemble
+## Overview
 
-Ce dossier contient les tests de validation du framework QO+R sur les simulations IllustrisTNG et les datasets observationnels. 
+This folder contains validation tests for the QO+R framework on IllustrisTNG simulations and observational datasets.
 
-**Total: 708,086 galaxies analysées sur 4 datasets indépendants.**
+**Total: 708,086 galaxies analyzed across 4 independent datasets.**
 
-## Résultats Clés
+## Key Results
 
-### Validation Multi-Échelle TNG
+### TNG Multi-Scale Validation
 
-| Simulation | N galaxies | Box (Mpc) | C_Q | C_R | λ_QR |
-|------------|------------|-----------|-----|-----|------|
+| Simulation | N galaxies | Box (Mpc) | C_Q | C_R | lambda_QR |
+|------------|------------|-----------|-----|-----|-----------|
 | TNG50 | 8,058 | 35 | 0.53 | 0.99 | -0.74 |
 | TNG100 | 53,363 | 75 | 3.10 | -0.58 | 0.82 |
 | TNG300 | 623,609 | 205 | 2.94 | 0.83 | **1.01** |
 
-**Conclusion**: λ_QR converge vers 1.0 à grande échelle (TNG300), comme prédit par la théorie des cordes.
+**Conclusion**: lambda_QR converges to 1.0 at large scales (TNG300), as predicted by string theory.
 
-### Killer Prediction - U-Shape Inversé
+### Killer Prediction - Inverted U-Shape
 
-| Catégorie | N | <f_gas> | Coefficient a | Signification |
-|-----------|---|---------|---------------|---------------|
-| **Q-dominé (gas-rich)** | | | | |
-| SPARC | 175 | high | +0.035 ± 0.008 | 4.4σ |
-| ALFALFA | 21,834 | 0.70 | +0.0023 ± 0.0008 | 2.9σ |
-| WALLABY | 2,047 | high | +0.0069 ± 0.0058 | 1.2σ |
-| TNG300 Q-dom | 444,374 | 0.90 | +0.017 ± 0.008 | 2.1σ |
-| **R-dominé (gas-poor)** | | | | |
-| Gas-poor + Mid mass | 25,665 | 0.004 | **-0.022 ± 0.004** | 5.5σ |
-| Gas-poor + High mass | 8,779 | 0.003 | **-0.014 ± 0.001** | 14σ |
-| Extreme R-dom | 16,924 | 0.003 | **-0.019 ± 0.003** | 6.3σ |
+| Category | N | <f_gas> | Coefficient a | Significance |
+|----------|---|---------|---------------|--------------|
+| **Q-dominated (gas-rich)** | | | | |
+| SPARC | 175 | high | +0.035 +/- 0.008 | 4.4 sigma |
+| ALFALFA | 21,834 | 0.70 | +0.0023 +/- 0.0008 | 2.9 sigma |
+| WALLABY | 2,047 | high | +0.0069 +/- 0.0058 | 1.2 sigma |
+| TNG300 Q-dom | 444,374 | 0.90 | +0.017 +/- 0.008 | 2.1 sigma |
+| **R-dominated (gas-poor)** | | | | |
+| Gas-poor + Mid mass | 25,665 | 0.004 | **-0.022 +/- 0.004** | 5.5 sigma |
+| Gas-poor + High mass | 8,779 | 0.003 | **-0.014 +/- 0.001** | 14 sigma |
+| Extreme R-dom | 16,924 | 0.003 | **-0.019 +/- 0.003** | 6.3 sigma |
 
-**KILLER PREDICTION CONFIRMÉE**: Le coefficient a change de signe exactement comme prédit:
-- Q-dominé: a > 0 (U-shape normal)
-- R-dominé: a < 0 (U-shape inversé)
+**KILLER PREDICTION CONFIRMED**: The coefficient a changes sign exactly as predicted:
+- Q-dominated: a > 0 (normal U-shape)
+- R-dominated: a < 0 (inverted U-shape)
 
-## Scripts Originaux
+## Original Scripts
 
-Les scripts de validation sont dans le dossier source:
-`C:\Users\jonat\OneDrive\Documents\Claude\QO\BTFR\TNG\`
+The validation scripts are located in the BTFR/TNG source folder (external to the Git repository).
 
-### Scripts Principaux
+### Main Scripts
 
 1. **test_killer_prediction_tng300.py**
-   - Test de la killer prediction sur TNG300
+   - Killer prediction test on TNG300
    - 623,609 galaxies
-   - Stratification par gas fraction et masse
+   - Stratification by gas fraction and mass
 
 2. **test_qor_advanced.py**
-   - Tests avancés avec proxies alternatifs
-   - Stratification par masse baryonique
+   - Advanced tests with alternative proxies
+   - Stratification by baryonic mass
 
 3. **test_alfalfa_killer_prediction.py**
-   - Validation sur ALFALFA (21,834 galaxies)
-   - Test killer prediction sur données réelles
+   - Validation on ALFALFA (21,834 galaxies)
+   - Killer prediction test on real data
 
 4. **wallaby_real_analysis.py**
-   - Validation sur WALLABY DR2 (2,047 galaxies)
-   - Données hémisphère sud (ASKAP)
+   - Validation on WALLABY DR2 (2,047 galaxies)
+   - Southern hemisphere data (ASKAP)
 
 5. **tng_full_ushape_analysis.py**
-   - Analyse U-shape complète sur TNG
-   - Comparaison multi-résolution
+   - Complete U-shape analysis on TNG
+   - Multi-resolution comparison
 
 6. **calibrate_qor_parameters.py**
-   - Calibration C_Q, C_R, λ_QR
-   - Fit global sur tous les datasets
+   - Calibration of C_Q, C_R, lambda_QR
+   - Global fit across all datasets
 
 ## Reproduction
 
-### Prérequis
+### Prerequisites
 
 ```bash
 pip install numpy pandas scipy matplotlib h5py
 ```
 
-### Téléchargement des données TNG
+### Downloading TNG Data
 
-Les données TNG sont disponibles sur: https://www.tng-project.org/data/
+TNG data is available at: https://www.tng-project.org/data/
 
 ```python
-# Exemple: télécharger TNG100-1
+# Example: download TNG100-1
 import requests
 
 headers = {"api-key": "YOUR_API_KEY"}
 url = "https://www.tng-project.org/api/TNG100-1/snapshots/99/subhalos/"
 ```
 
-### Exécution des Tests
+### Running Tests
 
 ```bash
-# Depuis le dossier source
-cd C:\Users\jonat\OneDrive\Documents\Claude\QO\BTFR\TNG
+# From the source folder (BTFR/TNG)
 
-# Test TNG300
+# TNG300 test
 python test_killer_prediction_tng300.py
 
-# Test ALFALFA
+# ALFALFA test
 python test_alfalfa_killer_prediction.py
 
-# Tests avancés
+# Advanced tests
 python test_qor_advanced.py
 
-# Analyse U-shape complète
+# Complete U-shape analysis
 python tng_full_ushape_analysis.py
 ```
 
-## Documents LaTeX
+## LaTeX Documents
 
-Les dérivations théoriques complètes sont dans:
+Complete theoretical derivations are in:
 
-| Document | Contenu |
+| Document | Content |
 |----------|---------|
-| `DERIVATION_COMPLETE_QOR_STRING_THEORY.tex` | Dérivation 10D → 4D complète |
-| `VALIDATION_COMPLETE_7POINTS.tex` | 7 points de validation |
-| `QOR_FINAL_4DATASETS.tex` | Validation 4 datasets |
+| `DERIVATION_COMPLETE_QOR_STRING_THEORY.tex` | Complete 10D to 4D derivation |
+| `VALIDATION_COMPLETE_7POINTS.tex` | 7 validation points |
+| `QOR_FINAL_4DATASETS.tex` | 4-dataset validation |
 
-## Figures Générées
+## Generated Figures
 
 | Figure | Description |
 |--------|-------------|
-| `tng300_killer_prediction.png` | Killer prediction sur TNG300 |
-| `tng300_stratified_analysis.png` | Analyse stratifiée |
-| `tng_qor_advanced_tests.png` | Tests avancés |
-| `alfalfa_qor_killer_prediction.png` | Validation ALFALFA |
-| `wallaby_qor_validation.png` | Validation WALLABY |
-| `tng_comparison_figure.png` | Comparaison TNG50/100/300 |
-| `qor_validation_synthesis_PAPER.png` | Synthèse pour publication |
+| `tng300_killer_prediction.png` | Killer prediction on TNG300 |
+| `tng300_stratified_analysis.png` | Stratified analysis |
+| `tng_qor_advanced_tests.png` | Advanced tests |
+| `alfalfa_qor_killer_prediction.png` | ALFALFA validation |
+| `wallaby_qor_validation.png` | WALLABY validation |
+| `tng_comparison_figure.png` | TNG50/100/300 comparison |
+| `qor_validation_synthesis_PAPER.png` | Synthesis for publication |
 
-## Interprétation Théorie des Cordes
+## String Theory Interpretation
 
-### Correspondance Établie
+### Established Correspondence
 
-| QO+R | String Theory | Rôle |
+| QO+R | String Theory | Role |
 |------|---------------|------|
-| Q | Dilaton Φ | Couplage cordes g_s = e^Φ |
-| R | Kähler T | Volume interne V_CY |
-| Q²R² | \|Φ\|²\|T\|² | Superpotentiel KKLT |
-| λ_QR ≈ 1 | Géométrie naturelle | Compactification Calabi-Yau |
+| Q | Dilaton Phi | String coupling g_s = e^Phi |
+| R | Kahler T | Internal volume V_CY |
+| Q^2 R^2 | |Phi|^2 |T|^2 | KKLT superpotential |
+| lambda_QR ~ 1 | Natural geometry | Calabi-Yau compactification |
 
-### Exemple Concret: Quintic P⁴[5]
+### Concrete Example: Quintic P^4[5]
 
-Pour la quintique avec petit volume (V ≈ 25):
+For the quintic with small volume (V ~ 25):
 - g_s = 0.1
 - W_0 = 10
-- λ_QR = 0.93 ± 0.15 ≈ 1 ✓
+- lambda_QR = 0.93 +/- 0.15 ~ 1
 
 ## Conclusion
 
-**Toutes les prédictions du framework QO+R sont confirmées**:
+**All QO+R framework predictions are confirmed**:
 
-1. ✅ U-shape dans BTFR (4 datasets, 708k galaxies)
-2. ✅ λ_QR ≈ 1 (TNG300: 1.01)
-3. ✅ C_Q > 0 (expansion gaz)
-4. ✅ C_R < 0 (compression étoiles)  
-5. ✅ **KILLER**: Inversion signe pour R-dominé (a = -0.019)
+1. U-shape in BTFR (4 datasets, 708k galaxies)
+2. lambda_QR ~ 1 (TNG300: 1.01)
+3. C_Q > 0 (gas expansion)
+4. C_R < 0 (stellar compression)
+5. **KILLER**: Sign inversion for R-dominated (a = -0.019)
 
-Ceci établit le **premier pont quantitatif entre théorie des cordes et observations astrophysiques**.
+This establishes the **first quantitative bridge between string theory and astrophysical observations**.
 
 ---
 

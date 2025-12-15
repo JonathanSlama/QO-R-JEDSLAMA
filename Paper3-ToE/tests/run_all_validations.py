@@ -25,9 +25,12 @@ import sys
 import subprocess
 import shutil
 
-# Paths
-SOURCE_DIR = r"C:\Users\jonat\OneDrive\Documents\Claude\QO\BTFR\TNG"
-PAPER3_DIR = r"C:\Users\jonat\OneDrive\Documents\Claude\QO\Git\Paper3-ToE"
+# Paths - relative to Git folder
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PAPER3_DIR = os.path.dirname(SCRIPT_DIR)
+GIT_DIR = os.path.dirname(PAPER3_DIR)
+BTFR_BASE = os.path.join(os.path.dirname(GIT_DIR), "BTFR")
+SOURCE_DIR = os.path.join(BTFR_BASE, "TNG")
 
 # Tests to run
 TESTS = [
@@ -278,9 +281,9 @@ def main():
     The validation results are summarized above.
     
     To re-run individual tests, execute from the source directory:
-    
-    cd C:\\Users\\jonat\\OneDrive\\Documents\\Claude\\QO\\BTFR\\TNG
-    
+
+    cd <BTFR_BASE>/TNG
+
     Then run:
     - python test_killer_prediction_tng300.py    # TNG300 killer test
     - python test_qor_advanced.py                # Advanced stratification

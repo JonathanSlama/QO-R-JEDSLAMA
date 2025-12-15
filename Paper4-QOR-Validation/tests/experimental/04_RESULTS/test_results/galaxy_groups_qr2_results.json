@@ -1,0 +1,74 @@
+{
+  "tempel": {
+    "catalog": "Tempel SDSS",
+    "n_groups": 81929,
+    "ushape_result": {
+      "a": 0.2487953125217971,
+      "a_err": 0.02744058837927642,
+      "significance": 9.06669015558323,
+      "ushape": 1.0,
+      "n": 81929
+    },
+    "sign_inversion_sigma": {
+      "high_sigma": {
+        "a": 0.4239651173900366,
+        "a_err": 0.042356736685663636,
+        "significance": 10.009390490498642,
+        "ushape": 1.0,
+        "n": 40943
+      },
+      "low_sigma": {
+        "a": 0.08752832432675084,
+        "a_err": 0.02386026447121419,
+        "significance": 3.6683719257323366,
+        "ushape": 1.0,
+        "n": 40986
+      },
+      "detected": false
+    },
+    "sign_inversion_ngal": {
+      "rich": {
+        "a": 0.2548821227079011,
+        "a_err": 0.04242144051819857,
+        "significance": 6.0083325694363925,
+        "ushape": 1.0,
+        "n": 32734
+      },
+      "poor": {
+        "a": -0.15210756706835027,
+        "a_err": 0.015989430387743652,
+        "significance": 9.513007241642892,
+        "ushape": 0.0,
+        "n": 49195
+      },
+      "detected": true
+    }
+  },
+  "saulder": {
+    "catalog": "Saulder 2MRS",
+    "n_groups": 198523,
+    "ushape_result": {
+      "a": -4.054538351667442,
+      "a_err": 0.11100524374320289,
+      "significance": 36.525647032018796,
+      "ushape": 0.0,
+      "n": 198523
+    },
+    "sign_inversion": {
+      "bright": {
+        "a": 0.655690840535607,
+        "a_err": 0.09003116127898057,
+        "significance": 7.282932167272733,
+        "ushape": 1.0,
+        "n": 99260
+      },
+      "faint": {
+        "a": -3.625650551418744,
+        "a_err": 0.09625922749026064,
+        "significance": 37.66548564692753,
+        "ushape": 0.0,
+        "n": 99263
+      }
+    }
+  }
+}

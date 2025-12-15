@@ -1,0 +1,81 @@
+{
+  "n_ell": 30,
+  "ell_range": [
+    10,
+    2000
+  ],
+  "z_eff": 0.5,
+  "rho_range": [
+    0.07447321505200992,
+    0.5617510175461101
+  ],
+  "toe": {
+    "alpha": -0.06097025305679644,
+    "lambda_QR": 1.1088280182979673,
+    "rho_c": -2.9639399482228588,
+    "delta": 0.07003991947828908,
+    "aicc": -160.31653251770678
+  },
+  "null": {
+    "aicc": -166.06870202142235
+  },
+  "delta_aicc": -5.752169503715578,
+  "holdout": {
+    "r": 0.4047332484620854,
+    "p": 0.2799045633424426
+  },
+  "bootstrap": {
+    "alpha_median": -0.061992339974960876,
+    "alpha_std": 0.04609734998581167,
+    "lambda_QR_median": 1.7444524310567184,
+    "lambda_QR_ci_low": 0.9409072691607662,
+    "lambda_QR_ci_high": 9.999999441369964,
+    "n_successful": 200
+  },
+  "permutation": {
+    "delta_aicc_obs": -5.752169503715578,
+    "p_value": 0.52
+  },
+  "jackknife": [
+    {
+      "cut": "\u2113>100",
+      "n": 17,
+      "alpha": 0.057812898898328184,
+      "lambda_QR": 2.0525394562857118
+    },
+    {
+      "cut": "\u2113>500",
+      "n": 8,
+      "alpha": 0.05043147780845914,
+      "lambda_QR": 1.2791056982314943
+    }
+  ],
+  "verdict": "QO+R TOE MOSTLY SCREENED AT COSMIC SCALE",
+  "evidence": [
+    {
+      "name": "\u03b1 amplitude",
+      "status": "UNEXPECTED",
+      "detail": "|\u03b1| = 0.060970 > 0.01"
+    },
+    {
+      "name": "\u0394AICc",
+      "status": "EXPECTED",
+      "detail": "-5.8 < 0 (GR preferred)"
+    },
+    {
+      "name": "Permutation",
+      "status": "EXPECTED",
+      "detail": "p = 0.5200 (no signal)"
+    },
+    {
+      "name": "\u03bb_QR coherence",
+      "status": "PASS",
+      "detail": "\u03bb_QR = 1.109 vs mean 1.38"
+    },
+    {
+      "name": "Bootstrap stability",
+      "status": "WEAK",
+      "detail": "\u03c3(\u03b1) = 0.04610"
+    }
+  ]
+}

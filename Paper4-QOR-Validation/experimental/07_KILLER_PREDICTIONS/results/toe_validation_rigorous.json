@@ -1,0 +1,66 @@
+{
+  "criteria": {
+    "lambda_detection_sigma": 3.0,
+    "universality_ratio_max": 3.0,
+    "qr_correlation_threshold": -0.5,
+    "btfr_slope_min": 0.2,
+    "btfr_slope_max": 0.3,
+    "lambda_range_min": 0.1,
+    "lambda_range_max": 100.0,
+    "aic_difference_threshold": 2.0
+  },
+  "n_galaxies": 181,
+  "tests": [
+    {
+      "name": "\u03bb_QR detection",
+      "lambda_QR": 0.9425790638144645,
+      "lambda_err": 0.22758546866099302,
+      "sigma": 4.141648714920865,
+      "criterion": "> 3.0\u03c3",
+      "passed": true
+    },
+    {
+      "name": "Universality",
+      "lambda_values": [
+        0.8316863716528602,
+        0.9634354368135767
+      ],
+      "ratio": 1.1584119562989637,
+      "criterion": "ratio < 3.0",
+      "passed": true
+    },
+    {
+      "name": "Q-R anticorrelation",
+      "correlation": -0.819392084181904,
+      "p_value": 3.995714678358817e-45,
+      "criterion": "r < -0.5",
+      "passed": true
+    },
+    {
+      "name": "BTFR slope",
+      "slope": 0.34422689077481006,
+      "slope_err": 0.013171371627961935,
+      "criterion": "0.2 \u2264 slope \u2264 0.3",
+      "passed": false
+    },
+    {
+      "name": "String theory range",
+      "lambda_abs": 0.9425790638144645,
+      "criterion": "0.1 < |\u03bb| < 100.0",
+      "passed": true
+    },
+    {
+      "name": "Model comparison",
+      "aic_linear": -860.2126675367241,
+      "aic_qor": -874.864960862845,
+      "delta_aic": 14.652293326120912,
+      "criterion": "\u0394AIC > 2.0",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "tests_passed": 5,
+    "tests_total": 6,
+    "verdict": "MOST TESTS PASSED - QO+R TOE SUPPORTED WITH CAVEATS"
+  }
+}

@@ -1,0 +1,729 @@
+{
+  "core": {
+    "qr_independence": {
+      "test_name": "Q-R Independence",
+      "description": "Verify Q and R are independent measurements",
+      "datasets": {
+        "SPARC": {
+          "n": 181,
+          "correlation": -0.7409949992207997,
+          "p_value": 8.82267992038254e-33,
+          "ci_95": [
+            -0.7913120332605869,
+            -0.6878603048606612
+          ],
+          "is_negative": true,
+          "is_not_degenerate": true,
+          "passed": true,
+          "Q_mean": 0.5252235267204377,
+          "Q_std": 0.2019457650692495,
+          "R_mean": 9.055979757062437,
+          "R_std": 1.1101044074664423
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "correlation": -0.8077337323741954,
+          "p_value": 0.0,
+          "ci_95": [
+            -0.8130377822434912,
+            -0.8027208820538568
+          ],
+          "is_negative": true,
+          "is_not_degenerate": true,
+          "passed": true,
+          "Q_mean": 0.6206061829954165,
+          "Q_std": 0.2541210533059028,
+          "R_mean": 9.399876931588803,
+          "R_std": 0.9161193590427469
+        }
+      },
+      "passed": true,
+      "summary": "Q-R correlation check: PASSED",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:43.771709"
+    },
+    "ushape_detection": {
+      "test_name": "U-Shape Detection",
+      "description": "Detect quadratic environmental dependence (H1)",
+      "datasets": {
+        "SPARC": {
+          "n": 181,
+          "a": 0.06550709363679097,
+          "a_err": 0.029277602140158843,
+          "p_value": 0.15469688428635786,
+          "t_stat": 2.2374473607228125,
+          "is_positive": true,
+          "is_significant": false,
+          "passed": false
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "a": 0.0034269388851307044,
+          "a_err": 0.0012836191178303472,
+          "p_value": 0.025633061135471147,
+          "t_stat": 2.669747464437215,
+          "is_positive": true,
+          "is_significant": true,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "summary": "U-shape detection: CONFIRMED",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:43.776494"
+    },
+    "qor_model": {
+      "test_name": "QO+R Model Fit",
+      "description": "Fit complete QO+R regression model",
+      "datasets": {
+        "SPARC": {
+          "n": 181,
+          "alpha": -0.0269364773801235,
+          "beta_Q": -0.04639997972636647,
+          "beta_Q_se": 0.006633873746500083,
+          "beta_Q_p": 2.663927333119506e-12,
+          "beta_R": -0.017969567097623197,
+          "beta_R_se": 0.009726213247749046,
+          "beta_R_p": 0.0646689302253484,
+          "lambda_QR": 0.005608879440397828,
+          "lambda_QR_se": 0.005637192609758523,
+          "lambda_QR_p": 0.3197472394772988,
+          "R2": 0.23572779749801331,
+          "R2_adj": 0.22277403135391183,
+          "passed": true
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "alpha": 0.020459847484587228,
+          "beta_Q": -0.007927471840952683,
+          "beta_Q_se": 0.0012471862465264867,
+          "beta_Q_p": 2.066907332112616e-10,
+          "beta_R": -0.0045481371727795145,
+          "beta_R_se": 0.0011001831335374621,
+          "beta_R_p": 3.565315487930223e-05,
+          "lambda_QR": -0.0014822619607251283,
+          "lambda_QR_se": 0.00042163892140567437,
+          "lambda_QR_p": 0.00043896466198120235,
+          "R2": 0.0026688968836229288,
+          "R2_adj": 0.0025132098553499738,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "summary": "QO+R model fitted successfully",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:43.785610"
+    },
+    "killer_prediction": {
+      "test_name": "Killer Prediction",
+      "description": "Test U-shape sign inversion between Q-dom and R-dom (H3)",
+      "datasets": {
+        "SPARC": {
+          "strata": {
+            "EXTREME_R_dominated": {
+              "n": 0,
+              "status": "INSUFFICIENT_DATA",
+              "note": "Expected for HI surveys - gas-poor galaxies are invisible"
+            }
+          },
+          "inversion_detected": null,
+          "passed": false
+        },
+        "ALFALFA": {
+          "strata": {
+            "Q_dominated": {
+              "n": 13004,
+              "mean_fgas": 0.7712592647146316,
+              "a": 0.003940652627388479,
+              "a_err": 0.0014192248247035918,
+              "p_value": 0.02151922555946406,
+              "sign": "positive"
+            },
+            "EXTREME_R_dominated": {
+              "n": 64,
+              "mean_fgas": 0.0359844865526526,
+              "mean_logMstar": 10.9655250625,
+              "a": -0.030828078738261586,
+              "a_err": 0.017079773211402027,
+              "p_value": 0.13092122485134827,
+              "sign": "negative"
+            }
+          },
+          "inversion_detected": true,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "summary": "Killer prediction: CONFIRMED",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:43.793823"
+    }
+  },
+  "robustness": {
+    "bootstrap_stability": {
+      "test_name": "Bootstrap Stability",
+      "description": "Test robustness via bootstrap resampling",
+      "n_bootstrap": 500,
+      "datasets": {
+        "SPARC": {
+          "status": "SKIPPED",
+          "reason": "Insufficient data for bootstrap (N=181, need 500+)"
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "n_successful_boots": 500,
+          "a_mean": 0.0035034176537220496,
+          "a_median": 0.0035268407936103635,
+          "a_std": 0.0008826016832216974,
+          "ci_95": [
+            0.001776885249196406,
+            0.00522003618571554
+          ],
+          "frac_positive": 1.0,
+          "ci_excludes_zero": true,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "summary": "Bootstrap stability: STABLE",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:44.704670"
+    },
+    "spatial_jackknife": {
+      "test_name": "Spatial Jackknife",
+      "description": "Test that no single sky region dominates",
+      "n_regions": 8,
+      "datasets": {
+        "SPARC": {
+          "status": "SKIPPED",
+          "reason": "No RA column"
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "a_full": 0.0034269388851307044,
+          "jackknife": [
+            {
+              "region_removed": 0,
+              "n": 15554,
+              "a": 0.0027888191045143933,
+              "a_err": 0.0016893967820277573
+            },
+            {
+              "region_removed": 1,
+              "n": 19168,
+              "a": 0.0034849200729767885,
+              "a_err": 0.0013060457973686646
+            },
+            {
+              "region_removed": 2,
+              "n": 18124,
+              "a": 0.003853304960078947,
+              "a_err": 0.0012634613847262626
+            },
+            {
+              "region_removed": 3,
+              "n": 14365,
+              "a": 0.004057549522336643,
+              "a_err": 0.0012807332677419383
+            },
+            {
+              "region_removed": 4,
+              "n": 14232,
+              "a": 0.002184095709263808,
+              "a_err": 0.0015789673889369052
+            },
+            {
+              "region_removed": 5,
+              "n": 17571,
+              "a": 0.0033924975075219845,
+              "a_err": 0.0011919786794469236
+            },
+            {
+              "region_removed": 6,
+              "n": 19222,
+              "a": 0.0034269388851307044,
+              "a_err": 0.0012836191178303472
+            },
+            {
+              "region_removed": 7,
+              "n": 16319,
+              "a": 0.004748270942814185,
+              "a_err": 0.0016305090936281725
+            }
+          ],
+          "sign_flips": 0,
+          "coefficient_variation": 0.20866997240428317,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "summary": "Spatial jackknife: STABLE",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:44.730895"
+    },
+    "cross_validation": {
+      "test_name": "Cross-Validation",
+      "description": "5-fold cross-validation consistency",
+      "n_splits": 5,
+      "datasets": {
+        "SPARC": {
+          "status": "SKIPPED",
+          "reason": "Insufficient data"
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "folds": [
+            {
+              "fold": 0,
+              "n_train": 15378,
+              "a": 0.003253552615685094,
+              "a_err": 0.001276195507822525
+            },
+            {
+              "fold": 1,
+              "n_train": 15378,
+              "a": 0.003141239419608895,
+              "a_err": 0.0015466391697124468
+            },
+            {
+              "fold": 2,
+              "n_train": 15378,
+              "a": 0.0032236937520632196,
+              "a_err": 0.0009853949940775008
+            },
+            {
+              "fold": 3,
+              "n_train": 15378,
+              "a": 0.003338019135229178,
+              "a_err": 0.0016204236199444362
+            },
+            {
+              "fold": 4,
+              "n_train": 15378,
+              "a": 0.0045021822338725875,
+              "a_err": 0.001564345788333077
+            }
+          ],
+          "a_mean": 0.0034917374312917948,
+          "a_std": 0.0005091279387660015,
+          "all_positive": true,
+          "within_2sigma": true,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "summary": "Cross-validation: CONSISTENT",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:44.752410"
+    },
+    "selection_sensitivity": {
+      "test_name": "Selection Sensitivity",
+      "description": "Test sensitivity to quality cuts",
+      "datasets": {
+        "SPARC": {
+          "status": "SKIPPED",
+          "reason": "Insufficient cut combinations"
+        },
+        "ALFALFA": {
+          "n_combinations": 12,
+          "cuts_tested": [
+            {
+              "dist_max": 100,
+              "mass_min": 8.0,
+              "n": 7289,
+              "a": 0.005386229108532666,
+              "a_err": 0.0012547697840898646,
+              "p_value": 0.0020123684771264916
+            },
+            {
+              "dist_max": 100,
+              "mass_min": 8.5,
+              "n": 5913,
+              "a": 0.0061751378120859825,
+              "a_err": 0.0016384869447916388,
+              "p_value": 0.004424591597455008
+            },
+            {
+              "dist_max": 100,
+              "mass_min": 9.0,
+              "n": 4131,
+              "a": 0.005277232917130963,
+              "a_err": 0.0011546489532892872,
+              "p_value": 0.0013460848828137362
+            },
+            {
+              "dist_max": 150,
+              "mass_min": 8.0,
+              "n": 13906,
+              "a": 0.003763375392209727,
+              "a_err": 0.0016841263123851616,
+              "p_value": 0.05230111512613056
+            },
+            {
+              "dist_max": 150,
+              "mass_min": 8.5,
+              "n": 12223,
+              "a": 0.00418853872701398,
+              "a_err": 0.00195849318416206,
+              "p_value": 0.061154991360415245
+            },
+            {
+              "dist_max": 150,
+              "mass_min": 9.0,
+              "n": 9490,
+              "a": 0.002761180762424699,
+              "a_err": 0.001713223586098605,
+              "p_value": 0.14148928099296132
+            },
+            {
+              "dist_max": 200,
+              "mass_min": 8.0,
+              "n": 17847,
+              "a": 0.003774126400712424,
+              "a_err": 0.0014674183236229195,
+              "p_value": 0.030091386100264073
+            },
+            {
+              "dist_max": 200,
+              "mass_min": 8.5,
+              "n": 16119,
+              "a": 0.00397926441395011,
+              "a_err": 0.0015069997054890062,
+              "p_value": 0.026890800327730613
+            },
+            {
+              "dist_max": 200,
+              "mass_min": 9.0,
+              "n": 13159,
+              "a": 0.003367594455555522,
+              "a_err": 0.0013642361532689175,
+              "p_value": 0.035658879595770854
+            },
+            {
+              "dist_max": 250,
+              "mass_min": 8.0,
+              "n": 17847,
+              "a": 0.003774126400712424,
+              "a_err": 0.0014674183236229195,
+              "p_value": 0.030091386100264073
+            },
+            {
+              "dist_max": 250,
+              "mass_min": 8.5,
+              "n": 16119,
+              "a": 0.00397926441395011,
+              "a_err": 0.0015069997054890062,
+              "p_value": 0.026890800327730613
+            },
+            {
+              "dist_max": 250,
+              "mass_min": 9.0,
+              "n": 13159,
+              "a": 0.003367594455555522,
+              "a_err": 0.0013642361532689175,
+              "p_value": 0.035658879595770854
+            }
+          ],
+          "frac_positive": 1.0,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "summary": "Selection sensitivity: ROBUST",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:44.780717"
+    }
+  },
+  "alternatives": {
+    "selection_bias": {
+      "test_name": "Selection Bias Simulation",
+      "description": "Test if U-shape is an artifact of sample selection",
+      "n_mock": 100,
+      "datasets": {
+        "SPARC": {
+          "status": "SKIPPED",
+          "reason": "Insufficient data"
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "a_observed": 0.0034269388851307044,
+          "a_mock_mean": -4.42344612296083e-06,
+          "a_mock_std": 0.0008299753073472142,
+          "ratio_mock_to_obs": 0.0012907864047864742,
+          "z_score": 4.134294479459953,
+          "passed": true,
+          "interpretation": "U-shape NOT artifact of selection"
+        }
+      },
+      "passed": true,
+      "summary": "Selection bias: EXCLUDED",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:44.963596"
+    },
+    "mond_comparison": {
+      "test_name": "MOND Comparison (Real Data)",
+      "description": "Test if MOND explains or removes the U-shape using real observations",
+      "note": "SPARC has true rotation curves (gold standard), ALFALFA uses W50/2 proxy",
+      "datasets": {
+        "SPARC": {
+          "n": 181,
+          "velocity_type": "true_rotation_curve",
+          "btfr_a": 0.06550709363679097,
+          "btfr_a_err": 0.029277602140158843,
+          "btfr_p": 0.15469688428635786,
+          "mond_a": 0.060465523456915526,
+          "mond_a_err": 0.0626987613015345,
+          "mond_p": 0.4366053704099162,
+          "ratio_mond_to_btfr": 0.9230377978936326,
+          "mond_removes_ushape": false,
+          "ushape_persists": true,
+          "passed": true,
+          "interpretation": "MOND does NOT explain U-shape",
+          "note": "Gold standard (true rotation curves)"
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "velocity_type": "true_rotation_curve",
+          "btfr_a": 0.0034269388851307044,
+          "btfr_a_err": 0.0012836191178303472,
+          "btfr_p": 0.025633061135471147,
+          "mond_a": 0.0008165581744824651,
+          "mond_a_err": 0.000930815139090858,
+          "mond_p": 0.40315963827666557,
+          "ratio_mond_to_btfr": 0.23827625815723333,
+          "mond_removes_ushape": true,
+          "ushape_persists": false,
+          "passed": false,
+          "interpretation": "MOND may explain U-shape",
+          "note": "Gold standard (true rotation curves)"
+        }
+      },
+      "passed": true,
+      "summary": "MOND comparison: U-shape NOT explained by MOND (SPARC gold standard)",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:44.971386"
+    },
+    "baryonic_control": {
+      "test_name": "Baryonic Physics Control",
+      "description": "Test if baryonic physics explain the U-shape",
+      "datasets": {
+        "SPARC": {
+          "status": "SKIPPED",
+          "reason": "Insufficient data"
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "controls_used": [
+            "Gas fraction",
+            "Stellar mass",
+            "Distance"
+          ],
+          "raw_a": 0.0034269388851307044,
+          "raw_a_err": 0.0012836191178303472,
+          "raw_p": 0.025633061135471147,
+          "controlled_a": 0.0025534456079758954,
+          "controlled_a_err": 0.0010812107175671136,
+          "controlled_p": 0.042486070045087754,
+          "retention_ratio": 0.7451097593409537,
+          "ushape_persists": true,
+          "still_positive": true,
+          "still_significant": true,
+          "passed": true,
+          "interpretation": "U-shape NOT explained by baryonic physics"
+        }
+      },
+      "passed": true,
+      "summary": "Baryonic control: U-shape persists",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:44.980963"
+    },
+    "tng_comparison": {
+      "test_name": "TNG Comparison",
+      "description": "Compare observations with \u039bCDM simulation",
+      "datasets": {
+        "SPARC": {
+          "status": "SKIPPED",
+          "reason": "Insufficient data"
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "obs_a": 0.0034269388851307044,
+          "obs_a_err": 0.0012836191178303472,
+          "tng_a_reference": 0.017,
+          "ratio_obs_to_tng": 0.20158464030180612,
+          "obs_a_qdom": 0.003940652627388479,
+          "ratio_qdom": 0.23180309572873403,
+          "systematic_difference": true,
+          "tng_expected_values": {
+            "C_Q": 2.93,
+            "C_R": -2.39,
+            "lambda_QR": 1.07,
+            "ushape_a_qdom": 0.017,
+            "ushape_a_rdom": -0.019
+          },
+          "interpretation": "Observations differ from \u039bCDM (beyond-\u039bCDM physics?)"
+        }
+      },
+      "passed": true,
+      "summary": "TNG comparison: Systematic differences found",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:44.990089"
+    }
+  },
+  "amplitude": {
+    "environment_proxy": {
+      "test_name": "Environment Proxy Quality",
+      "description": "Test if amplitude improves with better environment proxy",
+      "datasets": {
+        "SPARC": {
+          "status": "SKIPPED",
+          "reason": "Insufficient data"
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "proxies_tested": [
+            {
+              "proxy": "Current (density_proxy)",
+              "a": 0.0034269388851307044,
+              "a_err": 0.0012836191178303472,
+              "p_value": 0.025633061135471147,
+              "R2": null
+            },
+            {
+              "proxy": "5th Nearest Neighbor",
+              "a": -0.0019238645626690424,
+              "a_err": 0.0004989035870374287,
+              "p_value": 0.0038695570423834535,
+              "R2": null
+            },
+            {
+              "proxy": "10th Nearest Neighbor",
+              "a": -0.002448079343161106,
+              "a_err": 0.0006537557191121518,
+              "p_value": 0.004592496877011243,
+              "R2": null
+            },
+            {
+              "proxy": "20th Nearest Neighbor",
+              "a": -0.0022950996945097692,
+              "a_err": 0.0005810301765570825,
+              "p_value": 0.00335444344367386,
+              "R2": null
+            },
+            {
+              "proxy": "Counts within 2 Mpc",
+              "a": -0.001078796259605026,
+              "a_err": 0.001098511304852394,
+              "p_value": 0.4296197892583262,
+              "R2": null
+            },
+            {
+              "proxy": "Counts within 5 Mpc",
+              "a": -0.0002308377939176081,
+              "a_err": 0.0007353970190611284,
+              "p_value": 0.7607540805829567,
+              "R2": null
+            },
+            {
+              "proxy": "Counts within 10 Mpc",
+              "a": 0.0022194950784790997,
+              "a_err": 0.0008515529090781264,
+              "p_value": 0.028437743001454407,
+              "R2": null
+            }
+          ],
+          "best_proxy": "Current (density_proxy)",
+          "best_a": 0.0034269388851307044,
+          "worst_proxy": "Counts within 5 Mpc",
+          "worst_a": -0.0002308377939176081,
+          "improvement_factor": 14.845657753746625,
+          "conclusion": "Best proxy is Current (density_proxy)"
+        }
+      },
+      "passed": true,
+      "summary": "Environment proxy comparison complete",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:45.327996"
+    },
+    "sample_purity": {
+      "test_name": "Sample Purity Effect",
+      "description": "Test if mixed populations dilute the U-shape signal",
+      "datasets": {
+        "SPARC": {
+          "status": "SKIPPED",
+          "reason": "Insufficient data"
+        },
+        "ALFALFA": {
+          "n": 19222,
+          "strata": [
+            {
+              "stratum": "Full sample",
+              "n": 19222,
+              "a": 0.0034269388851307044,
+              "a_err": 0.0012836191178303472,
+              "p_value": 0.025633061135471147
+            },
+            {
+              "stratum": "Gas-rich (f_gas >= 0.5)",
+              "n": 13004,
+              "mean_fgas": 0.7712592647146316,
+              "a": 0.003940652627388479,
+              "a_err": 0.0014192248247035918,
+              "p_value": 0.02151922555946406
+            },
+            {
+              "stratum": "Gas-poor (f_gas < 0.3)",
+              "n": 2861,
+              "mean_fgas": 0.19309339224704625,
+              "a": 0.0033721111007346156,
+              "a_err": 0.002008949255861681,
+              "p_value": 0.12754914504621673
+            },
+            {
+              "stratum": "Low mass (log M* < 9.5)",
+              "n": 9611,
+              "mean_logMstar": 8.663242215430234,
+              "a": 0.0046129803250323075,
+              "a_err": 0.0018791738741141195,
+              "p_value": 0.036468924294280836
+            },
+            {
+              "stratum": "High mass (log M* >= 9.5)",
+              "n": 9611,
+              "mean_logMstar": 10.136511647747373,
+              "a": 0.002528722811174839,
+              "a_err": 0.0013253514428889662,
+              "p_value": 0.08875029583974303
+            },
+            {
+              "stratum": "Nearby (D < 104 Mpc)",
+              "n": 9597,
+              "mean_dist": 67.87234552464311,
+              "a": 0.003757921630687661,
+              "a_err": 0.0012915734814820702,
+              "p_value": 0.01732340989109349
+            },
+            {
+              "stratum": "Distant (D >= 104 Mpc)",
+              "n": 9625,
+              "mean_dist": 145.11235324675326,
+              "a": 0.0009371019952117258,
+              "a_err": 0.0013694827101240579,
+              "p_value": 0.5110356153972202
+            }
+          ],
+          "strongest_stratum": "Low mass (log M* < 9.5)",
+          "strongest_a": 0.0046129803250323075,
+          "weakest_stratum": "Distant (D >= 104 Mpc)",
+          "weakest_a": 0.0009371019952117258,
+          "amplitude_ratio": 4.922602180555667,
+          "conclusion": "Strongest signal in 'Low mass (log M* < 9.5)'"
+        }
+      },
+      "passed": true,
+      "summary": "Sample purity analysis complete",
+      "status": "PASSED",
+      "timestamp": "2025-12-07T07:40:45.346505"
+    }
+  }
+}

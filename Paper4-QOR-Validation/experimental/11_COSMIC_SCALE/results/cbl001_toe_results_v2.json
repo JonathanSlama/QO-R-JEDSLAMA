@@ -1,0 +1,48 @@
+{
+  "version": "v2",
+  "data_source": "Published CMB lensing cross-correlations",
+  "n_measurements": 8,
+  "weighted_mean_residual": -0.13815272460184405,
+  "weighted_mean_err": 0.05665608910673275,
+  "p_value_gr": 0.014750626643104559,
+  "toe": {
+    "alpha": 0.49079613722113996,
+    "lambda_QR": 4.2208186594394626,
+    "rho_c": -2.2280077980358195,
+    "delta": 0.1876808539996385,
+    "aicc": 17.544187731486474
+  },
+  "null": {
+    "aicc": -2.870572974018686
+  },
+  "delta_aicc": -20.41476070550516,
+  "verdict": "QO+R TOE INCONCLUSIVE AT COSMIC SCALE",
+  "universal_coupling": {
+    "lambda_mean": 1.9541637318878926,
+    "lambda_std": 1.1688482109104044,
+    "n_scales": 5,
+    "scale_range": "10^13 - 10^27 m"
+  },
+  "evidence": [
+    {
+      "name": "\u03b1 amplitude",
+      "status": "UNEXPECTED",
+      "detail": "|\u03b1| = 0.4908 > 0.05"
+    },
+    {
+      "name": "\u0394AICc",
+      "status": "EXPECTED",
+      "detail": "-20.4 < 0 (GR preferred)"
+    },
+    {
+      "name": "GR consistency",
+      "status": "UNEXPECTED",
+      "detail": "p = 0.015"
+    },
+    {
+      "name": "\u03bb_QR coherence",
+      "status": "FAIL",
+      "detail": "\u03bb_QR = 4.22 out of range"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "test_name": "Planck SZ Galaxy Clusters",
+  "description": "Test for Q\u00b2R\u00b2 pattern in M-Y scaling relation",
+  "context": "Level 2 - Multi-context validation",
+  "gas_rich": {
+    "n": 546,
+    "a": 0.026797385841076188,
+    "a_err": 0.009683908235988357,
+    "p_value": 0.020261092413218718
+  },
+  "status": "ANALYSIS_FAILED",
+  "conclusion": "Could not fit U-shape (sample too small?)"
+}

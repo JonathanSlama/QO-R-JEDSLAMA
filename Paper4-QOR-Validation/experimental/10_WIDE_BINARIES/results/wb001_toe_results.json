@@ -1,0 +1,118 @@
+{
+  "n_total": 22843,
+  "n_train": 18300,
+  "rho_range_dex": 2.123191965767226,
+  "data_limited": "False",
+  "criteria": {
+    "min_pairs": 1000,
+    "sep_min_au": 1000,
+    "sep_max_au": 100000,
+    "ruwe_max": 1.4,
+    "parallax_snr_min": 10,
+    "cylinder_radius_pc": 50,
+    "dv_kms": 3,
+    "min_rho_range_dex": 0.5,
+    "beta_Q": 1.0,
+    "beta_R": 0.5,
+    "rho_c_bounds": [
+      -3.0,
+      2.0
+    ],
+    "delta_bounds": [
+      0.05,
+      5.0
+    ],
+    "lambda_gal": 0.94,
+    "lambda_ratio_min": 0.3333333333333333,
+    "lambda_ratio_max": 3.0,
+    "n_bootstrap": 200,
+    "n_permutations": 200,
+    "holdout_fraction": 0.2,
+    "delta_aicc_threshold": 10,
+    "galactic_latitude_cuts": [
+      20,
+      40
+    ],
+    "ruwe_strict": 1.2
+  },
+  "toe": {
+    "alpha": -0.01075151288817153,
+    "lambda_QR": 0.989902926750754,
+    "rho_c": 1.9804919014493043,
+    "delta": 0.0917675191399,
+    "aicc": -46070.45383068624
+  },
+  "null": {
+    "aicc": -46141.79803428141
+  },
+  "delta_aicc": -71.3442035951739,
+  "holdout": {
+    "r": 0.006909781054366635,
+    "p": 0.6414954416369983
+  },
+  "bootstrap": {
+    "alpha_median": -0.010855779010169955,
+    "lambda_QR_median": 0.990537303836911,
+    "lambda_QR_ci_low": 0.9797734416743904,
+    "lambda_QR_ci_high": 1.0006314661296423,
+    "delta_aicc_median": -71.32456148192068,
+    "n_successful": 200
+  },
+  "permutation": {
+    "delta_aicc_obs": -71.3442035951739,
+    "p_value": 1.0
+  },
+  "jackknife": [
+    {
+      "cut": "|b|>20",
+      "n": 15543,
+      "lambda_QR": -0.01102322940060227,
+      "delta_aicc": -73.62607668141573
+    },
+    {
+      "cut": "|b|>40",
+      "n": 8549,
+      "lambda_QR": -0.012869632136889603,
+      "delta_aicc": -42.10692774409472
+    },
+    {
+      "cut": "RUWE<1.2",
+      "n": 22843,
+      "lambda_QR": 0.9906046774986865,
+      "delta_aicc": -87.29268353615771
+    }
+  ],
+  "verdict": "QO+R TOE INCONCLUSIVE AT STELLAR SCALE",
+  "evidence": [
+    {
+      "name": "\u03c1_range",
+      "status": "PASS",
+      "detail": "2.12 >= 0.5 dex"
+    },
+    {
+      "name": "\u0394AICc",
+      "status": "FAIL",
+      "detail": "-71.3 < 10"
+    },
+    {
+      "name": "Permutation",
+      "status": "FAIL",
+      "detail": "p = 1.0000"
+    },
+    {
+      "name": "\u03bb_QR range",
+      "status": "PASS",
+      "detail": "ratio = 1.05"
+    },
+    {
+      "name": "Hold-out",
+      "status": "WEAK",
+      "detail": "r = 0.007"
+    },
+    {
+      "name": "\u03b1 amplitude",
+      "status": "ANOMALY",
+      "detail": "|\u03b1| = 0.0108 > 0 (unexpected)"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "n_total": 37359,
+  "n_train": 29918,
+  "n_holdout": 7441,
+  "rho_range_dex": 1.9486746793592737,
+  "criteria": {
+    "min_groups": 500,
+    "min_ngal": 3,
+    "z_min": 0.01,
+    "z_max": 0.15,
+    "mass_bin_width": 0.1,
+    "ngal_bin_width": 2,
+    "z_bin_width": 0.01,
+    "beta_Q": 1.0,
+    "beta_R": 0.5,
+    "rho_c_bounds": [
+      -4.0,
+      0.0
+    ],
+    "delta_bounds": [
+      0.05,
+      5.0
+    ],
+    "lambda_gal": 0.94,
+    "lambda_ratio_min": 0.3333333333333333,
+    "lambda_ratio_max": 3.0,
+    "n_bootstrap": 1000,
+    "n_permutations": 1000,
+    "holdout_fraction": 0.2,
+    "delta_aicc_threshold": 10,
+    "jackknife_ngal_cuts": [
+      3,
+      5,
+      10
+    ],
+    "jackknife_dist_cuts": [
+      100,
+      200,
+      300
+    ]
+  },
+  "toe": {
+    "alpha": 0.6293250063812367,
+    "lambda_QR": 1.6719553309610444,
+    "rho_c": -3.286596116668469,
+    "delta": 4.999999999999833,
+    "aicc": -86846.69014711425
+  },
+  "null": {
+    "aicc": -86933.92525155115
+  },
+  "delta_aicc": -87.23510443689884,
+  "holdout": {
+    "r": 0.028025281949165814,
+    "p": 0.015624786239714528
+  },
+  "bootstrap": {
+    "lambda_QR_median": 1.6801560064293546,
+    "lambda_QR_ci_low": 1.6375350322703879,
+    "lambda_QR_ci_high": 1.903544298280846,
+    "delta_aicc_median": -91.3350090585518,
+    "delta_aicc_ci_low": -147.32483715082853,
+    "delta_aicc_ci_high": -32.75240637872812,
+    "n_successful": 200
+  },
+  "permutation": {
+    "delta_aicc_obs": -87.23510443550185,
+    "delta_aicc_perm_mean": -1026.2477290353504,
+    "delta_aicc_perm_std": 88.05929798474818,
+    "p_value": 0.005,
+    "n_successful": 200
+  },
+  "jackknife": [
+    {
+      "cut_type": "Ngal",
+      "cut_value": 3,
+      "n": 37359,
+      "lambda_QR": 1.66632998835229,
+      "delta_aicc": -102.06861856827163
+    },
+    {
+      "cut_type": "Ngal",
+      "cut_value": 5,
+      "n": 10085,
+      "lambda_QR": 1.8732883676187755,
+      "delta_aicc": -190.96356399617798
+    },
+    {
+      "cut_type": "Ngal",
+      "cut_value": 10,
+      "n": 2283,
+      "lambda_QR": 1.1244340531232284,
+      "delta_aicc": -17.169917984849235
+    },
+    {
+      "cut_type": "Dist",
+      "cut_value": 100,
+      "n": 998,
+      "lambda_QR": 2.7148068502203926,
+      "delta_aicc": -14.641897508891361
+    },
+    {
+      "cut_type": "Dist",
+      "cut_value": 200,
+      "n": 5750,
+      "lambda_QR": 1.792741816676207,
+      "delta_aicc": -48.626622048046556
+    },
+    {
+      "cut_type": "Dist",
+      "cut_value": 300,
+      "n": 12074,
+      "lambda_QR": 1.6177008140779863,
+      "delta_aicc": -81.63945993895322
+    }
+  ],
+  "verdict": "QO+R TOE PARTIALLY SUPPORTED",
+  "evidence": [
+    {
+      "name": "\u0394AICc",
+      "status": "FAIL",
+      "detail": "-87.2 < 0"
+    },
+    {
+      "name": "Permutation",
+      "status": "PASS",
+      "detail": "p = 0.0050 < 0.05"
+    },
+    {
+      "name": "\u03bb_QR range",
+      "status": "PASS",
+      "detail": "ratio = 1.78 \u2208 [0.33, 3.00]"
+    },
+    {
+      "name": "Hold-out",
+      "status": "PASS",
+      "detail": "r = 0.028, p = 1.56e-02"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "version": "v2",
+  "n_total": 7604,
+  "n_train": 6038,
+  "rho_range_dex": 1.4117876248964136,
+  "delta_WB_mean": -0.04020542880572151,
+  "delta_WB_std": 0.1687873819212639,
+  "toe": {
+    "alpha": 0.024775863369483325,
+    "lambda_QR": 1.7071046283547846,
+    "rho_c": 1.4789753686673244,
+    "delta": 0.08522546050083907,
+    "aicc": -20901.24671518251
+  },
+  "null": {
+    "aicc": -21216.76941784733
+  },
+  "delta_aicc": -315.5227026648172,
+  "holdout": {
+    "r": -0.1412910940789751,
+    "p": 1.965648894279861e-08
+  },
+  "bootstrap": {
+    "alpha_median": 0.02489848338413774,
+    "alpha_std": 0.0021954732522529944,
+    "lambda_QR_median": 1.7087770436203698,
+    "lambda_QR_ci_low": 1.693402540345912,
+    "lambda_QR_ci_high": 1.722103315720754,
+    "delta_aicc_median": -316.35732927790923,
+    "n_successful": 500
+  },
+  "permutation": {
+    "delta_aicc_obs": -315.5227026648172,
+    "p_value": 1.0
+  },
+  "jackknife": [
+    {
+      "cut": "|b|>30\u00b0",
+      "n": 7604,
+      "alpha": 0.022613653628179547,
+      "lambda_QR": 1.693858903583202,
+      "delta_aicc": -385.591194104989
+    },
+    {
+      "cut": "|b|>40\u00b0",
+      "n": 5410,
+      "alpha": 0.023548909578140213,
+      "lambda_QR": 1.7072772811029573,
+      "delta_aicc": -272.4654760050216
+    },
+    {
+      "cut": "|b|>50\u00b0",
+      "n": 3624,
+      "alpha": 0.022335989459518944,
+      "lambda_QR": 1.720121263572333,
+      "delta_aicc": -185.52697087270826
+    },
+    {
+      "cut": "sep_1-3kAU",
+      "n": 5288,
+      "alpha": 0.022295215432193396,
+      "lambda_QR": 1.718443203342322
+    },
+    {
+      "cut": "sep_3-10kAU",
+      "n": 2001,
+      "alpha": 0.023738952725986726,
+      "lambda_QR": 1.6933159123029236
+    },
+    {
+      "cut": "sep_10-30kAU",
+      "n": 289,
+      "alpha": 0.01855198084343226,
+      "lambda_QR": 1.6398463546856221
+    }
+  ],
+  "verdict": "QO+R TOE MOSTLY SCREENED AT STELLAR SCALE",
+  "evidence": [
+    {
+      "name": "\u03b1 amplitude",
+      "status": "UNEXPECTED",
+      "detail": "|\u03b1| = 0.02478 > 0.01"
+    },
+    {
+      "name": "\u0394AICc",
+      "status": "EXPECTED",
+      "detail": "-315.5 < 0 (null preferred)"
+    },
+    {
+      "name": "Permutation",
+      "status": "EXPECTED",
+      "detail": "p = 1.0000 (no signal)"
+    },
+    {
+      "name": "\u03bb_QR coherence",
+      "status": "WEAK",
+      "detail": "\u03bb_QR = 1.707"
+    },
+    {
+      "name": "Bootstrap stability",
+      "status": "PASS",
+      "detail": "CI width = 0.029"
+    }
+  ]
+}

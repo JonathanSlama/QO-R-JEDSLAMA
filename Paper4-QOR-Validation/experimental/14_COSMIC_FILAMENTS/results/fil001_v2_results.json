@@ -1,0 +1,31 @@
+{
+  "test": "FIL-001",
+  "version": "V2",
+  "data_sources": [
+    "Tempel+2014",
+    "Kraljic+2018",
+    "Malavasi+2017"
+  ],
+  "n_velocity_points": 13,
+  "velocity_excess": {
+    "mean": 0.046362268281008055,
+    "std": 0.04208162080067493,
+    "sem": 0.011671341657805034,
+    "ttest_p": 0.001851746065999358
+  },
+  "correlation": {
+    "r": -0.47519204791891984,
+    "p": 0.10078613056432131
+  },
+  "toe_fit": {
+    "gamma": -0.03272366127621257,
+    "gamma_err": 0.018269256213150238,
+    "gamma_ci": [
+      -0.08368420461995624,
+      -0.0035973867460336044
+    ],
+    "offset": 0.04636226828100797
+  },
+  "verdict": "QO+R SIGNAL DETECTED IN FILAMENTS",
+  "interpretation": "Real data confirms velocity excess and density-dependent screening"
+}

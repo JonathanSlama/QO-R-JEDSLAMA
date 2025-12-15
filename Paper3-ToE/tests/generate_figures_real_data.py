@@ -29,8 +29,11 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-# Paths - Adjust these to your local setup
-BTFR_BASE = os.path.expanduser("~/OneDrive/Documents/Claude/QO/BTFR")
+# Paths - relative to Git folder
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+GIT_DIR = os.path.dirname(PROJECT_DIR)
+BTFR_BASE = os.path.join(os.path.dirname(GIT_DIR), "BTFR")
 TNG_DATA = {
     'TNG50': os.path.join(BTFR_BASE, "TNG/Data_TNG50"),
     'TNG100': os.path.join(BTFR_BASE, "TNG/Data"),

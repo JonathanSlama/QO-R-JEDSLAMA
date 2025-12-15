@@ -20,8 +20,11 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-# Paths
-BTFR_BASE = r"C:\Users\jonat\OneDrive\Documents\Claude\QO\BTFR"
+# Paths - relative to Git folder
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+GIT_DIR = os.path.dirname(PROJECT_DIR)
+BTFR_BASE = os.path.join(os.path.dirname(GIT_DIR), "BTFR")
 OUTPUT_DIR = '../figures/'
 
 # Load existing results

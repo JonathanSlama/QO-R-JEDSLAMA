@@ -1,0 +1,34 @@
+{
+  "test_name": "Planck PSZ2 \u00d7 MCXC Cross-match",
+  "description": "Test for Q\u00b2R\u00b2 pattern using independent X-ray masses",
+  "context": "Level 2 - Multi-context validation",
+  "version": "3.0 - Using MCXC X-ray masses",
+  "lx_y_relation": {
+    "slope": -0.15392944001308753,
+    "r_correlation": -0.18216756012199184,
+    "p_value": 1.6893471995586772e-05
+  },
+  "mx_y_relation": {
+    "slope": -0.190373705728011,
+    "intercept": 0.7281868902161689,
+    "r_correlation": -0.12881612669292514,
+    "p_value": 0.00244946626645897,
+    "expected_slope": 1.67
+  },
+  "residual_scatter": 0.36626002170223426,
+  "full_sample": {
+    "n": 551,
+    "a": -0.03497802455243779,
+    "a_err": 0.022530186389135683,
+    "is_u_shape": "False"
+  },
+  "q_dominated": {
+    "n": 221,
+    "a": -0.0007455634247455111,
+    "a_err": 0.021302751562832147
+  },
+  "u_shape_detected": "False",
+  "status": "SUCCESS",
+  "n_clusters": 551,
+  "conclusion": "Weak M-Y correlation - inconclusive"
+}

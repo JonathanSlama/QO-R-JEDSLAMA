@@ -1,0 +1,15 @@
+{
+  "test": "GC-001",
+  "version": "V2",
+  "correction": "Using M_* from photometry, not M_dyn",
+  "n_gc": 83,
+  "delta_mean": -0.3650743685943107,
+  "delta_std": 0.07058204098081479,
+  "ttest_p": 3.694139054126568e-61,
+  "correlation": {
+    "r": 0.05626515192076435,
+    "p": 0.6133997337880209
+  },
+  "verdict": "DEFICIT DETECTED",
+  "interpretation": "GCs show deficit \u03c3 - possible mass loss or systematics"
+}

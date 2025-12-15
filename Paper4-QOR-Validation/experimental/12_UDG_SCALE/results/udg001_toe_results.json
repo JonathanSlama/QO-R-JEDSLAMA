@@ -1,0 +1,75 @@
+{
+  "n_udg": 24,
+  "rho_range_dex": 1.171793564421023,
+  "Delta_UDG_mean": 0.1977773308304881,
+  "Delta_UDG_std": 0.27008159071861954,
+  "toe": {
+    "alpha": -0.38945226372022496,
+    "lambda_QR": 4.908042996114546,
+    "rho_c": -29.54945052021146,
+    "delta": 0.19396715457160085,
+    "aicc": -119.26288158299843
+  },
+  "null": {
+    "aicc": -141.42334309961515
+  },
+  "delta_aicc": -22.16046151661672,
+  "bootstrap": {
+    "alpha_median": 0.3232550531958654,
+    "alpha_ci_low": -0.49999999999999983,
+    "alpha_ci_high": 0.9999999999999943,
+    "lambda_QR_median": 5.2609453581774375,
+    "lambda_QR_ci_low": 1.8008234769005018,
+    "lambda_QR_ci_high": 9.999999999999996,
+    "delta_aicc_median": -24.043305663356975,
+    "n_successful": 500
+  },
+  "permutation": {
+    "delta_aicc_obs": -22.16046151661672,
+    "p_value": 0.994
+  },
+  "jackknife": [
+    {
+      "environment": "field",
+      "n": 10,
+      "alpha": 0.2873679207570491,
+      "lambda_QR": 0.8980802724934456,
+      "mean_Delta": 0.06247776136385993
+    },
+    {
+      "environment": "cluster",
+      "n": 12,
+      "alpha": 0.6443685817373642,
+      "lambda_QR": 5.957057773240167,
+      "mean_Delta": 0.4055912061544822
+    }
+  ],
+  "verdict": "QO+R TOE INCONCLUSIVE IN UDGs",
+  "evidence": [
+    {
+      "name": "\u03b1 amplitude",
+      "status": "UNEXPECTED",
+      "detail": "\u03b1 = -0.3895 < 0 (wrong sign)"
+    },
+    {
+      "name": "\u0394AICc",
+      "status": "SCREENED",
+      "detail": "-22.2 < 0 (null preferred)"
+    },
+    {
+      "name": "Permutation",
+      "status": "NON-SIGNIFICANT",
+      "detail": "p = 0.9940"
+    },
+    {
+      "name": "\u03bb_QR coherence",
+      "status": "FAIL",
+      "detail": "\u03bb_QR = 4.908 out of range"
+    },
+    {
+      "name": "Mean residual",
+      "status": "POSITIVE",
+      "detail": "<\u0394_UDG> = 0.198 > 0 (excess \u03c3)"
+    }
+  ]
+}

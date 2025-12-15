@@ -1,0 +1,76 @@
+{
+  "test_name": "Mass Scaling",
+  "description": "Test stellar mass dependence of U-shape amplitude",
+  "theoretical_prediction": "a \u221d M_star^\u03b1 with \u03b1 predicted by string theory",
+  "datasets": {
+    "ALFALFA": {
+      "n": 19222,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 3845,
+          "log_Mstar_min": 4.4912434,
+          "log_Mstar_max": 8.65118,
+          "log_Mstar_mean": 8.042268741742523,
+          "a": 0.0013470231505078555,
+          "a_err": 0.0020502638814652893,
+          "p_value": 0.5276223919415566
+        },
+        {
+          "bin": 1,
+          "n": 3844,
+          "log_Mstar_min": 8.6517105,
+          "log_Mstar_max": 9.213394,
+          "log_Mstar_mean": 8.947803363423516,
+          "a": 0.005897936521376059,
+          "a_err": 0.0030338049236100185,
+          "p_value": 0.08376008955239223
+        },
+        {
+          "bin": 2,
+          "n": 3844,
+          "log_Mstar_min": 9.213545,
+          "log_Mstar_max": 9.701832,
+          "log_Mstar_mean": 9.457443253121749,
+          "a": 0.006210749932335821,
+          "a_err": 0.0018898195146296259,
+          "p_value": 0.009432015918841241
+        },
+        {
+          "bin": 3,
+          "n": 3844,
+          "log_Mstar_min": 9.702276,
+          "log_Mstar_max": 10.241854,
+          "log_Mstar_mean": 9.971548887096775,
+          "a": 0.0028148777956046797,
+          "a_err": 0.0016171316237873824,
+          "p_value": 0.11573094486223012
+        },
+        {
+          "bin": 4,
+          "n": 3845,
+          "log_Mstar_min": 10.242679,
+          "log_Mstar_max": 12.449672,
+          "log_Mstar_mean": 10.580366489206762,
+          "a": 0.0004962665846686472,
+          "a_err": 0.0017594252725845068,
+          "p_value": 0.784274886189505
+        }
+      ],
+      "scaling_exponent_alpha": -0.1539780517964693,
+      "scaling_exponent_err": 0.26072292088680454,
+      "scaling_p_value": 0.596339366366403,
+      "scaling_r_squared": 0.104153004344323,
+      "a_0_at_logM10": 0.001884839580970233,
+      "interpretation": "No significant mass dependence (\u03b1 \u2248 0)",
+      "status": "SUCCESS"
+    },
+    "SPARC": {
+      "status": "SKIPPED",
+      "reason": "Insufficient data (N=181, need 2500)"
+    }
+  },
+  "summary": "Mass scaling: \u03b1 = -0.154",
+  "passed": true
+}

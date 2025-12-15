@@ -1,0 +1,43 @@
+{
+  "mock_data": true,
+  "true_params": {
+    "alpha": 0.03,
+    "lambda_QR": 0.8,
+    "rho_c": 0.5,
+    "delta": 0.3,
+    "beta_Q": 1.0,
+    "beta_R": 0.5
+  },
+  "toe_fit": {
+    "error": "array must not contain infs or NaNs"
+  },
+  "null_fit": {
+    "error": "array must not contain infs or NaNs"
+  },
+  "tests": {
+    "phase_flip": {
+      "tested": false
+    },
+    "fhi_correlation": {
+      "pearson_r": NaN,
+      "pearson_p": NaN,
+      "spearman_rho": NaN,
+      "spearman_p": NaN,
+      "correct_sign": false,
+      "significant": false
+    },
+    "lambda_constraint": {
+      "tested": false
+    },
+    "amplitude_constraint": {
+      "tested": false
+    }
+  },
+  "verdict": {
+    "falsified": true,
+    "reasons": [
+      "No significant \u0394_g - f_HI correlation"
+    ],
+    "toe_preferred": false
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "data_source": "Gannon+2024 MNRAS 531, 1856",
+  "n_udg": 23,
+  "rho_range_dex": 3.0304591835021704,
+  "Delta_UDG_mean": 0.2732917011701017,
+  "Delta_UDG_std": 0.3283711603412918,
+  "simple_analysis": {
+    "correlation_r": -0.6471344694546705,
+    "correlation_p": 0.0008451094127278044,
+    "mean_delta_overall": 0.2732917011701017,
+    "std_delta_overall": 0.3283711603412918
+  },
+  "toe": {
+    "alpha": 0.017083363656819145,
+    "lambda_QR": 0.8437124318080579,
+    "rho_c": -22.792889153682506,
+    "delta": 0.18992402515961546,
+    "aicc": -107.42885730268897
+  },
+  "null": {
+    "aicc": -125.01781967723164
+  },
+  "delta_aicc": -17.588962374542675,
+  "bootstrap": {
+    "alpha_median": 0.01752052492825202,
+    "alpha_ci_low": 0.010642880204265435,
+    "alpha_ci_high": 0.5444706956696048,
+    "lambda_QR_median": 0.8491421984893774,
+    "lambda_QR_ci_low": 0.8390695980350585,
+    "lambda_QR_ci_high": 2.6583247672645354,
+    "delta_aicc_median": -19.510870978903554,
+    "n_successful": 500
+  },
+  "permutation": {
+    "delta_aicc_obs": -17.588962374542675,
+    "p_value": 0.368
+  },
+  "jackknife": [
+    {
+      "environment": "cluster",
+      "n": 15,
+      "alpha": 0.4013829758741799,
+      "lambda_QR": 1.7503746927573425,
+      "mean_Delta": 0.2276160270443568,
+      "mean_sigma_obs": 23.933333333333334,
+      "mean_sigma_bar": 13.61088384860229
+    },
+    {
+      "environment": "group",
+      "n": 7,
+      "alpha": 0.030340552988722052,
+      "lambda_QR": 0.8753096381536946,
+      "mean_Delta": 0.3220798992804226,
+      "mean_sigma_obs": 11.882857142857144,
+      "mean_sigma_bar": 7.5914888806439285
+    }
+  ],
+  "verdict": "QO+R TOE PARTIALLY SUPPORTED IN UDGs",
+  "evidence": [
+    {
+      "name": "Mean \u0394_UDG",
+      "status": "STRONG_POSITIVE",
+      "detail": "<\u0394> = 0.273 >> 0"
+    },
+    {
+      "name": "\u0394AICc",
+      "status": "NULL_PREFERRED",
+      "detail": "-17.6 < 0"
+    },
+    {
+      "name": "\u03bb_QR coherence",
+      "status": "PASS",
+      "detail": "\u03bb_QR = 0.844 (ratio = 0.90)"
+    },
+    {
+      "name": "Permutation",
+      "status": "NON_SIG",
+      "detail": "p = 0.3680"
+    }
+  ]
+}

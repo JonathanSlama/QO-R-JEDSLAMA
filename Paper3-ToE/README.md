@@ -1,15 +1,15 @@
-# 🌌 Paper 3: From String Theory to Galactic Observations
+# Paper 3: From String Theory to Galactic Observations
 
 ## Complete Derivation and Empirical Validation of the QO+R Framework
 
-**Author:** Jonathan Édouard Slama  
-**Affiliation:** Metafund Research Division, Strasbourg, France  
-**Email:** jonathan@metafund.in  
+**Author:** Jonathan Edouard Slama
+**Affiliation:** Metafund Research Division, Strasbourg, France
+**Email:** jonathan@metafund.in
 **ORCID:** 0009-0002-1292-4350
 
 ---
 
-## 📋 Abstract
+## Abstract
 
 This paper presents a derivation of the QO+R (Quotient Ontologique + Reliquat) effective Lagrangian from Type IIB string theory, together with empirical validation on **708,086 galaxies** across 5 independent datasets.
 
@@ -23,14 +23,14 @@ This paper presents a derivation of the QO+R (Quotient Ontologique + Reliquat) e
 
 | Prediction | Status | Significance |
 |------------|--------|--------------|
-| U-shape in BTFR residuals | ✅ Confirmed | All 5 datasets |
-| λ_QR ~ O(1) from naturalness | ✅ Confirmed | 1.01 ± 0.05 (TNG300) |
-| Sign inversion (R-dominated) | ✅ Confirmed | 6-7σ |
-| QR ≈ const (S-T duality) | ✅ Confirmed | r = -0.89 |
+| U-shape in BTFR residuals | Confirmed | All 5 datasets |
+| lambda_QR ~ O(1) from naturalness | Confirmed | 1.01 +/- 0.05 (TNG300) |
+| Sign inversion (R-dominated) | Confirmed | 6-7 sigma |
+| QR ~ const (S-T duality) | Confirmed | r = -0.89 |
 
 ---
 
-## 🔬 Data Sources
+## Data Sources
 
 ### Observations (Real Universe)
 
@@ -52,27 +52,27 @@ This paper presents a derivation of the QO+R (Quotient Ontologique + Reliquat) e
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 Paper3-ToE/
-├── manuscript/
-│   ├── paper3_string_theory_v2.tex    # ★ Main manuscript (v2)
-│   └── paper3_string_theory.tex       # Original version
-├── figures/                           # Generated figures (8)
-├── tests/
-│   ├── generate_figures_real_data.py  # ★ Figure generation (real TNG data)
-│   ├── verify_string_derivation.py    # Theoretical verification
-│   └── run_all_validations.py         # Validation suite
-├── README.md                          # This file
-├── README_REPRODUCIBILITY.md          # ★ Complete reproduction guide
-├── FIGURES_AUDIT.md                   # Figure documentation
-└── DATA_SOURCES.md                    # Data provenance
++-- manuscript/
+|   +-- paper3_string_theory_v2.tex    # * Main manuscript (v2)
+|   +-- paper3_string_theory.tex       # Original version
++-- figures/                           # Generated figures (8)
++-- tests/
+|   +-- generate_figures_real_data.py  # * Figure generation (real TNG data)
+|   +-- verify_string_derivation.py    # Theoretical verification
+|   +-- run_all_validations.py         # Validation suite
++-- README.md                          # This file
++-- README_REPRODUCIBILITY.md          # * Complete reproduction guide
++-- FIGURES_AUDIT.md                   # Figure documentation
++-- DATA_SOURCES.md                    # Data provenance
 ```
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # 1. Generate figures from REAL TNG data
@@ -87,7 +87,7 @@ pdflatex paper3_string_theory_v2.tex  # 2x for TOC
 
 ---
 
-## 📖 Manuscript Structure (v2)
+## Manuscript Structure (v2)
 
 ### Part I: Prologue
 - **The Journey from Paper 1**: How we got here
@@ -95,10 +95,10 @@ pdflatex paper3_string_theory_v2.tex  # 2x for TOC
 
 ### Part II: Theoretical Foundation
 - 10D Type IIB Supergravity
-- Calabi-Yau Compactification (Quintic P⁴[5])
-- Dimensional Reduction (10D → 4D)
-- Proposed Identification: Q ↔ Dilaton, R ↔ Kähler
-- KKLT Moduli Stabilization → λ_QR ~ 1
+- Calabi-Yau Compactification (Quintic P^4[5])
+- Dimensional Reduction (10D -> 4D)
+- Proposed Identification: Q <-> Dilaton, R <-> Kahler
+- KKLT Moduli Stabilization -> lambda_QR ~ 1
 
 ### Part III: Empirical Validation
 - 708,086 galaxies across 5 datasets
@@ -112,28 +112,28 @@ pdflatex paper3_string_theory_v2.tex  # 2x for TOC
 - Conclusion
 
 ### Appendices
-- **Appendix A**: Complete derivation of Q²R² coupling
+- **Appendix A**: Complete derivation of Q^2 R^2 coupling
 - **Appendix B**: Data availability and reproduction
 
 ---
 
-## ⚠️ Important Caveats
+## Important Caveats
 
 This paper presents:
-- ✅ A **possible** derivation of QO+R from string theory
-- ✅ **Suggestive** identifications (Q ↔ dilaton, R ↔ Kähler)
-- ✅ **Empirical** validation of predictions on real data
+- A **possible** derivation of QO+R from string theory
+- **Suggestive** identifications (Q <-> dilaton, R <-> Kahler)
+- **Empirical** validation of predictions on real data
 
 It does **NOT** prove:
-- ❌ That string theory is correct
-- ❌ That this is the unique derivation
-- ❌ That no alternative explanations exist
+- That string theory is correct
+- That this is the unique derivation
+- That no alternative explanations exist
 
 The connection remains a **hypothesis**, not a conclusion.
 
 ---
 
-## 📊 The Killer Prediction
+## The Killer Prediction
 
 The most stringent test of the QO+R framework:
 
@@ -142,17 +142,17 @@ The most stringent test of the QO+R framework:
 - Gas-poor (R-dominated) systems: a < 0 (inverted U-shape)
 
 **Result (from TNG300 real data):**
-- Q-dominated: a = +0.017 ± 0.008
-- R-dominated: a = -0.019 ± 0.003 (**sign flip confirmed at 6-7σ**)
+- Q-dominated: a = +0.017 +/- 0.008
+- R-dominated: a = -0.019 +/- 0.003 (**sign flip confirmed at 6-7 sigma**)
 
 ---
 
-## 📚 Citation
+## Citation
 
 ```bibtex
 @article{slama2025string,
-  author  = {Slama, Jonathan Édouard},
-  title   = {From String Theory to Galactic Observations: 
+  author  = {Slama, Jonathan Edouard},
+  title   = {From String Theory to Galactic Observations:
              Complete Derivation and Empirical Validation of the QO+R Framework},
   journal = {arXiv preprint},
   year    = {2025}
@@ -161,11 +161,11 @@ The most stringent test of the QO+R framework:
 
 ---
 
-## 📄 License
+## License
 
 MIT License - See LICENSE file
 
 ---
 
-*This work represents a tentative connection between fundamental physics and astrophysical observations.*  
+*This work represents a tentative connection between fundamental physics and astrophysical observations.*
 *The author welcomes correction and further investigation.*

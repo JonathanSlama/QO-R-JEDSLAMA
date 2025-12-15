@@ -1,0 +1,78 @@
+{
+  "SPARC": {
+    "dataset": "SPARC",
+    "regimes": {
+      "Q_dominated": {
+        "n": 111,
+        "mean_f_gas": 0.6678022627663336,
+        "lambda_QR": 4.308431287691615,
+        "lambda_err": 3.7409168243741107,
+        "sigma": 1.1517046462032619,
+        "sign": "positive",
+        "significant": "False"
+      },
+      "Intermediate": {
+        "n": 34,
+        "mean_f_gas": 0.41176858947236167,
+        "lambda_QR": 6.860959010440606,
+        "lambda_err": 5.050159994973855,
+        "sigma": 1.3585627024230795,
+        "sign": "positive",
+        "significant": "False"
+      },
+      "R_dominated": {
+        "n": 36,
+        "mean_f_gas": 0.19275764242433027,
+        "lambda_QR": 2.058371696363975,
+        "lambda_err": 1.2816628407548294,
+        "sigma": 1.6060165208126862,
+        "sign": "positive",
+        "significant": "False"
+      }
+    }
+  },
+  "ALFALFA": {
+    "dataset": "ALFALFA",
+    "regimes": {
+      "Q_dominated": {
+        "n": 13004,
+        "mean_f_gas": 0.7712592647146316,
+        "lambda_QR": 0.3089828334739875,
+        "lambda_err": 0.11009332454243695,
+        "sigma": 2.806553755717368,
+        "sign": "positive",
+        "significant": "False"
+      },
+      "Intermediate": {
+        "n": 3357,
+        "mean_f_gas": 0.40136919153113704,
+        "lambda_QR": -2.3814218850780033,
+        "lambda_err": 1.8634206622612732,
+        "sigma": 1.2779840501436386,
+        "sign": "negative",
+        "significant": "False"
+      },
+      "R_dominated": {
+        "n": 2861,
+        "mean_f_gas": 0.19309339224704625,
+        "lambda_QR": -0.3799730402697315,
+        "lambda_err": 0.5798067268629196,
+        "sigma": 0.6553443115874135,
+        "sign": "negative",
+        "significant": "False"
+      }
+    }
+  },
+  "sign_inversion_test": {
+    "Q_dominated_mean_lambda": 2.308707060582801,
+    "R_dominated_mean_lambda": 0.8391993280471218,
+    "sign_inversion_detected": false,
+    "Q_dominated_sign": "positive",
+    "R_dominated_sign": "positive",
+    "n_Q_samples": 2,
+    "n_R_samples": 2
+  },
+  "verdict": "QO+R MULTI-REGIME TOE NOT SUPPORTED",
+  "tests_passed": 0,
+  "tests_total": 3
+}

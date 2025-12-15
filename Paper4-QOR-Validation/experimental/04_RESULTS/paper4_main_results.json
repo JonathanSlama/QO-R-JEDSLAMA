@@ -1,0 +1,54 @@
+{
+  "SPARC": {
+    "lambda_qr": 0.9999999999999993,
+    "lambda_qr_err": 2.8554539065720886e-16,
+    "beta_Q": -0.019907478896652016,
+    "beta_R": 0.019907478896652002,
+    "a_ushape": 0.052354384597314826,
+    "a_ushape_err": 0.007271311295005532,
+    "n_galaxies": 181,
+    "mean_gas_fraction": 0.5252235267204377
+  },
+  "SPARC_inversion": {
+    "Q_dominated": {
+      "a": 0.009894781901863822,
+      "a_err": 0.005882366781924782,
+      "n": 90
+    },
+    "R_dominated": {
+      "a": 0.04096466799756679,
+      "a_err": 0.010625310408265231,
+      "n": 91
+    },
+    "inversion_confirmed": false,
+    "median_gas_fraction": 0.6038330270412182
+  },
+  "ALFALFA": {
+    "lambda_qr": 1.0000000000000013,
+    "lambda_qr_err": 3.092723472249785e-16,
+    "beta_Q": -0.0003391159485234387,
+    "beta_R": 0.0003391159485234392,
+    "a_ushape": 0.0012738139385532234,
+    "a_ushape_err": 0.0007527960768354096,
+    "n_galaxies": 21834,
+    "mean_gas_fraction": 0.6887580811317275
+  },
+  "ALFALFA_inversion": {
+    "Q_dominated": {
+      "a": 0.0007269085205982052,
+      "a_err": 0.0010434445917811388,
+      "n": 10813
+    },
+    "R_dominated": {
+      "a": 4.4572762133489666e-05,
+      "a_err": 0.0012117929493794207,
+      "n": 11021
+    },
+    "inversion_confirmed": false,
+    "median_gas_fraction": 0.7100662035222225
+  },
+  "WALLABY_status": "loaded",
+  "WALLABY_columns": [
+    "<?xml version=\"1.0\"?>"
+  ]
+}

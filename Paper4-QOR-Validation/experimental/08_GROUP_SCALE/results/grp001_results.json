@@ -1,0 +1,52 @@
+{
+  "using_mock_data": true,
+  "n_groups": 4901,
+  "criteria": {
+    "detection_sigma": 3.0,
+    "min_group_size": 5,
+    "min_sigma_v": 50,
+    "z_min": 0.01,
+    "z_max": 0.1,
+    "crossmatch_radius_deg": 0.5
+  },
+  "tests": [
+    {
+      "a": 0.005519088354190529,
+      "a_err": 0.0014152293622660894,
+      "b": -0.0008878178659007376,
+      "c": -0.005519088353081504,
+      "sigma": 3.8997836685307816,
+      "shape": "U-shape",
+      "n": 4901,
+      "label": "Full sample"
+    },
+    {
+      "a": 0.0012319851615908385,
+      "a_err": 0.001970852261686988,
+      "b": 0.0005805912300785668,
+      "c": -0.00426029400178825,
+      "sigma": 0.6251027464312813,
+      "shape": "flat",
+      "n": 2450,
+      "label": "Gas-rich (Q-dominated)"
+    },
+    {
+      "a": 0.010996995403235652,
+      "a_err": 0.0020513334175074273,
+      "b": -0.0021728865621634614,
+      "c": -0.007969922008746572,
+      "sigma": 5.360901016568086,
+      "shape": "U-shape",
+      "n": 2451,
+      "label": "Gas-poor (R-dominated)"
+    }
+  ],
+  "sign_inversion": {
+    "detected": false,
+    "gas_rich_a": 0.0012319851615908385,
+    "gas_poor_a": 0.010996995403235652
+  },
+  "verdict": "QO+R PARTIALLY SUPPORTED AT GROUP SCALE",
+  "tests_passed": 1.5,
+  "tests_total": 3
+}

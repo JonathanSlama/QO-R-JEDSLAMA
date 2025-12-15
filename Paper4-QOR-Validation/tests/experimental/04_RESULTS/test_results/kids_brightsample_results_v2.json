@@ -1,0 +1,35 @@
+{
+  "test_name": "KiDS DR4 Bright Sample (Corrected)",
+  "description": "Test for Q\u00b2R\u00b2 pattern in optical M/L relation",
+  "context": "Level 2 - Multi-context validation",
+  "version": "2.0",
+  "ml_relation": {
+    "slope": -0.5844420890052472,
+    "intercept": -2.1770672844808594,
+    "r_correlation": -0.8887259765797565,
+    "scatter": 0.31899237364399063
+  },
+  "full_sample": {
+    "n": 663323,
+    "a": 0.001583507328776863,
+    "a_err": 0.0003022975516194412,
+    "p_value": 0.0,
+    "is_u_shape": "True"
+  },
+  "q_dominated": {
+    "n": 280814,
+    "a": 0.002708131613274869,
+    "a_err": 0.0003954847843229189,
+    "p_value": 2.9976021664879227e-13
+  },
+  "r_dominated": {
+    "n": 140861,
+    "a": -0.002579495353289616,
+    "a_err": 0.0004038257704365425,
+    "p_value": 0.0
+  },
+  "sign_inversion": true,
+  "u_shape_detected": "True",
+  "status": "SUCCESS",
+  "conclusion": "U-shape WITH sign inversion detected - Strong support for String Theory"
+}

@@ -1,0 +1,121 @@
+{
+  "version": "V3",
+  "model": "Hierarchical Bayesian + Jeans + Student-t",
+  "data_source": "Gannon+2024",
+  "n_udg": 23,
+  "rho_range_dex": 3.0304591835021704,
+  "delta_mean": 0.20617562742339277,
+  "delta_std": 0.32152571502348776,
+  "correlation": {
+    "r": -0.6474624112987356,
+    "p": 0.0008382956677347002,
+    "significant": "True"
+  },
+  "posterior": {
+    "alpha": {
+      "mean": -0.029476281419337932,
+      "std": 0.0578010510695222,
+      "median": -1.736711399570487e-05,
+      "ci_low": -0.20073688989555272,
+      "ci_high": 0.027530608856912112
+    },
+    "lambda_QR": {
+      "mean": 1.0662995619130966,
+      "std": 0.5553209002215727,
+      "median": 0.9382059953457943,
+      "ci_low": 0.21154210193650452,
+      "ci_high": 2.3096427262710604
+    },
+    "rho_c": {
+      "mean": -25.941553676249715,
+      "std": 1.996086535729841,
+      "median": -26.604779293868386,
+      "ci_low": -28.805664532460145,
+      "ci_high": -20.541817567473263
+    },
+    "delta": {
+      "mean": 0.9406104847847406,
+      "std": 0.41109446541463246,
+      "median": 0.9816511124657961,
+      "ci_low": 0.2382308239079276,
+      "ci_high": 1.8018617258861
+    },
+    "tau": {
+      "mean": 0.2186253276439712,
+      "std": 0.051420811142592025,
+      "median": 0.22289325107054103,
+      "ci_low": 0.11206138226165076,
+      "ci_high": 0.3173705510381747
+    },
+    "gamma": {
+      "mean": -0.11699809549031058,
+      "std": 0.057585425398226496,
+      "median": -0.11124569849269522,
+      "ci_low": -0.2321030815359806,
+      "ci_high": -0.007371299452099393
+    }
+  },
+  "mcmc": {
+    "accept_rate": 0.2245,
+    "n_samples": 2000
+  },
+  "waic": {
+    "waic": 15.696295450175862,
+    "lppd": -6.793104708167109,
+    "p_waic": 1.0550430169208214
+  },
+  "model_comparison": {
+    "null_aic": 43.43316027721573,
+    "toe_aic": 22.664793384228105,
+    "delta_aic": 20.768366892987622
+  },
+  "jackknife": [
+    {
+      "environment": "cluster",
+      "n": 15,
+      "mean_delta": 0.1599735047376231,
+      "std_delta": 0.30910909159322064,
+      "mean_log_rho": -24.805888805480077
+    },
+    {
+      "environment": "group",
+      "n": 7,
+      "mean_delta": 0.25538839853586254,
+      "std_delta": 0.38069659472161504,
+      "mean_log_rho": -25.505444485458362
+    }
+  ],
+  "sensitivity_no_lg": {
+    "n": 19,
+    "r": -0.49374013444561826,
+    "p": 0.031678365872624965
+  },
+  "verdict": "QO+R TOE SUPPORTED IN UDGs (V3 Bayesian)",
+  "evidence": [
+    {
+      "name": "Correlation \u0394-\u03c1",
+      "status": "SIGNIFICANT",
+      "detail": "r=-0.647, p=0.0008"
+    },
+    {
+      "name": "\u03bb_QR posterior",
+      "status": "COHERENT",
+      "detail": "1.07 \u00b1 0.56"
+    },
+    {
+      "name": "\u03b1 posterior",
+      "status": "NEGATIVE",
+      "detail": "-0.029"
+    },
+    {
+      "name": "\u0394AIC",
+      "status": "TOE_PREFERRED",
+      "detail": "20.8"
+    },
+    {
+      "name": "Mean \u0394",
+      "status": "STRONG_EXCESS",
+      "detail": "0.206"
+    }
+  ]
+}

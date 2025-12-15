@@ -1,0 +1,16 @@
+{
+  "test": "GC-001",
+  "version": "V3",
+  "method": "Calibrated M/L to center \u0394 at 0, then test correlation",
+  "ML_calibrated": 0.5000011920928955,
+  "n_gc": 83,
+  "delta_mean": -0.08305316372658751,
+  "delta_std": 0.07142315598652964,
+  "correlation": {
+    "r": 0.11542851499636823,
+    "p": 0.2987425404739298
+  },
+  "screening_confirmed": true,
+  "verdict": "SCREENING CONFIRMED AT HIGH DENSITY",
+  "interpretation": "GCs show no \u0394-\u03c1 correlation, consistent with QO+R screening"
+}

@@ -1,5 +1,6 @@
 # QO+R Project Dependencies
 # Install with: pip install -r requirements.txt
+# Last updated: December 2025
 
 # Core scientific computing
 numpy>=1.21.0
@@ -16,14 +17,19 @@ statsmodels>=0.12.0
 
 # Astronomy-specific
 astropy>=5.0
+astroquery>=0.4.6     # For VizieR, Gaia, ESO archive queries
 
 # Data handling
 h5py>=3.0.0           # For HDF5 files (TNG data)
 requests>=2.25.0      # For API downloads
+lxml>=4.9.0           # For XML parsing (WALLABY catalog)
 
 # Optional: Jupyter support
 jupyter>=1.0.0
 ipython>=7.0.0
+
+# Optional: NHANES data (Paper 2)
+# nhanes>=0.1.0
 
 # Optional: LaTeX figure export
 # (requires LaTeX installation on system)

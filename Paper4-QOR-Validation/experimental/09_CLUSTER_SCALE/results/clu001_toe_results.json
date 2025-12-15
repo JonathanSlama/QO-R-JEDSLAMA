@@ -1,0 +1,64 @@
+{
+  "n_total": 3764,
+  "n_train": 2991,
+  "rho_range_dex": 0.20325896513241348,
+  "criteria": {
+    "min_clusters": 500,
+    "z_min": 0.01,
+    "z_max": 1.5,
+    "beta_Q": 1.0,
+    "beta_R": 0.5,
+    "rho_c_bounds": [
+      -5.0,
+      0.0
+    ],
+    "delta_bounds": [
+      0.05,
+      5.0
+    ],
+    "lambda_gal": 0.94,
+    "lambda_ratio_min": 0.3333333333333333,
+    "lambda_ratio_max": 3.0,
+    "n_bootstrap": 200,
+    "n_permutations": 200,
+    "holdout_fraction": 0.2,
+    "delta_aicc_threshold": 10,
+    "jackknife_z_cuts": [
+      0.2,
+      0.4,
+      0.6
+    ],
+    "jackknife_richness_cuts": [
+      20,
+      50,
+      100
+    ]
+  },
+  "toe": {
+    "alpha": 0.363606017448262,
+    "lambda_QR": 1.7047597093729279,
+    "rho_c": -1.2292229749715262,
+    "delta": 0.29511801539237104,
+    "aicc": -11929.08063099386
+  },
+  "null": {
+    "aicc": -11970.34270121145
+  },
+  "delta_aicc": -41.26207021759001,
+  "holdout": {
+    "r": 0.7915383074377803,
+    "p": 4.599917579884045e-167
+  },
+  "bootstrap": {
+    "lambda_QR_median": 1.709030469055596,
+    "lambda_QR_ci_low": 1.6854499017936344,
+    "lambda_QR_ci_high": 2.4308111634787424,
+    "delta_aicc_median": -42.94270655863784,
+    "n_successful": 200
+  },
+  "permutation": {
+    "delta_aicc_obs": -41.26207021759001,
+    "p_value": 1.0
+  },
+  "verdict": "QO+R TOE INCONCLUSIVE AT CLUSTER SCALE"
+}

@@ -1,0 +1,72 @@
+{
+  "n_total": 18558,
+  "n_train": 14827,
+  "n_holdout": 3731,
+  "rho_range_dex": 1.8315183339293442,
+  "toe": {
+    "alpha": 0.13346277430515271,
+    "lambda_QR": 1.8643994169909257,
+    "rho_c": -2.9999999999999853,
+    "delta": 2.9999999999635705,
+    "ss_res": 997.1552075624093,
+    "aicc": -40014.498971801244
+  },
+  "null": {
+    "a": 0.041330961880564114,
+    "b": 2.999145511068509,
+    "ss_res": 993.1038675588027,
+    "aicc": -40078.864159373086
+  },
+  "delta_aicc": -64.3651875718424,
+  "holdout": {
+    "r": 0.034044719348272676,
+    "p": 0.03757853410943883
+  },
+  "falsification_tests": {
+    "phase_flip": {
+      "delta_low": -9.545015626468874e-16,
+      "delta_high": 0.06963817582506011,
+      "flip_detected": true,
+      "status": "PASS"
+    },
+    "fhi_correlation": {
+      "r": 0.017823322270484904,
+      "p": 0.015179815005754365,
+      "significant": "True",
+      "correct_sign": "True",
+      "status": "PASS"
+    },
+    "lambda_constraint": {
+      "lambda_QR": 1.8643994169909257,
+      "ratio": 1.9834036350967297,
+      "in_range": true,
+      "status": "PASS"
+    },
+    "amplitude": {
+      "alpha": 0.13346277430515271,
+      "ratio": 2.669255486103054,
+      "in_range": false,
+      "status": "PASS"
+    }
+  },
+  "verdict": "QO+R TOE SUPPORTED AT GROUP SCALE",
+  "criteria": {
+    "min_groups": 500,
+    "min_ngal": 3,
+    "z_min": 0.01,
+    "z_max": 0.15,
+    "beta_Q": 1.0,
+    "beta_R": 0.5,
+    "lambda_gal": 0.94,
+    "lambda_ratio_min": 0.3333333333333333,
+    "lambda_ratio_max": 3.0,
+    "amplitude_gal": 0.05,
+    "amplitude_ratio_min": 0.1,
+    "amplitude_ratio_max": 1.0,
+    "min_rho_range_dex": 1.5,
+    "delta_aicc_threshold": 10,
+    "correlation_p_threshold": 0.05,
+    "holdout_fraction": 0.2,
+    "n_bootstrap": 1000
+  }
+}

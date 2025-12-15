@@ -1,0 +1,103 @@
+{
+  "framework": "QO+R",
+  "alpha_0": 0.05,
+  "rho_c": 1e-25,
+  "scales": {
+    "laboratory": {
+      "densities": {
+        "Air": {
+          "rho": 0.0012,
+          "f_rho": 8.333333333333335e-23,
+          "alpha_eff": 4.166666666666668e-24
+        },
+        "Water": {
+          "rho": 1.0,
+          "f_rho": 1.0000000000000002e-25,
+          "alpha_eff": 5.000000000000001e-27
+        },
+        "Aluminum": {
+          "rho": 2.7,
+          "f_rho": 3.7037037037037035e-26,
+          "alpha_eff": 1.8518518518518517e-27
+        },
+        "Tungsten (E\u00f6t-Wash)": {
+          "rho": 19.3,
+          "f_rho": 5.1813471502590674e-27,
+          "alpha_eff": 2.590673575129534e-28
+        },
+        "Platinum (MICROSCOPE)": {
+          "rho": 21.4,
+          "f_rho": 4.672897196261683e-27,
+          "alpha_eff": 2.3364485981308415e-28
+        }
+      },
+      "eot_wash": {
+        "limit": 0.001,
+        "prediction": 2.590673575129534e-28,
+        "compatible": true
+      },
+      "microscope": {
+        "limit": 1e-15,
+        "prediction": 0,
+        "compatible": true
+      },
+      "verdict": "COMPATIBLE"
+    },
+    "solar_system": {
+      "environments": {
+        "Sun (average)": {
+          "rho": 1.4,
+          "alpha_eff": 3.5714285714285716e-27,
+          "gamma_deviation": -2.5510204081632657e-53
+        },
+        "Sun (core)": {
+          "rho": 150,
+          "alpha_eff": 3.333333333333334e-29,
+          "gamma_deviation": -2.2222222222222232e-57
+        },
+        "Earth (average)": {
+          "rho": 5.5,
+          "alpha_eff": 9.09090909090909e-28,
+          "gamma_deviation": -1.6528925619834706e-54
+        },
+        "Solar wind (1 AU)": {
+          "rho": 1e-23,
+          "alpha_eff": 0.0004950495049504952,
+          "gamma_deviation": -4.90147904580947e-07
+        },
+        "Interplanetary": {
+          "rho": 1e-24,
+          "alpha_eff": 0.004545454545454546,
+          "gamma_deviation": -4.132146030040702e-05
+        }
+      },
+      "cassini": {
+        "limit": 2.3e-05,
+        "prediction": -2.5510204081632657e-53,
+        "compatible": true
+      },
+      "verdict": "COMPATIBLE"
+    },
+    "quantum": {
+      "qbounce": {
+        "E1_measured": 1.407,
+        "E1_error": 0.001,
+        "alpha_eff": 1.8518518518518517e-27,
+        "delta_E1": 2.6055555555555555e-27,
+        "verdict": "COMPATIBLE"
+      },
+      "interferometer": {
+        "phi_newton": 20529400947.8673,
+        "phi_qor": 3.8017409162717214e-17,
+        "miga_precision": 1e-10,
+        "verdict": "COMPATIBLE"
+      },
+      "clocks": {
+        "precision": 1e-18,
+        "prediction": 1.8518518518518517e-27,
+        "verdict": "COMPATIBLE"
+      }
+    }
+  },
+  "global_verdict": "FULLY COMPATIBLE"
+}

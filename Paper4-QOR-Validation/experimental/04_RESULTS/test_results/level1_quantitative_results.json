@@ -1,0 +1,35 @@
+{
+  "lambda_qr": {
+    "value": 31.38422986752704,
+    "error": 2.8739448218914467,
+    "sources": [
+      "KiDS",
+      "ALFALFA"
+    ]
+  },
+  "btf_slope": {
+    "standard": 4.0,
+    "predicted": 4.1046140995584235,
+    "predicted_err": 0.00957981607297149,
+    "observed": 3.85
+  },
+  "scatter": {
+    "intrinsic": 0.1,
+    "qr_contribution": 0.004707634480129056,
+    "total": 0.10011074778663129,
+    "observed": 0.12
+  },
+  "sign_inversion": {
+    "a_kids": 1.84,
+    "a_alfalfa": -0.42,
+    "delta_a": 2.2600000000000002,
+    "delta_a_err": 0.08692525524840293,
+    "significance": 25.999348446451908,
+    "ratio": 4.380952380952381
+  },
+  "moduli_constraints": {
+    "coupling_ratio": 5.602162963313995,
+    "M_moduli_eV": 2.142029797880304e+26,
+    "lambda_compton_kpc": 2.978304799639346e-53
+  }
+}

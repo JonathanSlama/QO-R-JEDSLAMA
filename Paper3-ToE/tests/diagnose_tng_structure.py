@@ -7,8 +7,11 @@ import h5py
 import os
 import numpy as np
 
-# Paths
-BTFR_BASE = r"C:\Users\jonat\OneDrive\Documents\Claude\QO\BTFR"
+# Paths - relative to Git folder
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+GIT_DIR = os.path.dirname(PROJECT_DIR)
+BTFR_BASE = os.path.join(os.path.dirname(GIT_DIR), "BTFR")
 TNG_PATHS = {
     'TNG50': os.path.join(BTFR_BASE, "TNG/Data_TNG50"),
     'TNG100': os.path.join(BTFR_BASE, "TNG/Data"),

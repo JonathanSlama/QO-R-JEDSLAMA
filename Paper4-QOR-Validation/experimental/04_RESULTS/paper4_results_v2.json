@@ -1,0 +1,76 @@
+{
+  "SPARC": {
+    "lambda_qr": 0.9999999999999998,
+    "lambda_qr_err": 0.0,
+    "lambda_qr_err_boot": 5.891509130072236e-16,
+    "beta_Q": -0.015066256083734153,
+    "beta_R": 0.01506625608373415,
+    "delta_env2": 0.03086849971420801,
+    "a_ushape": 0.052354384691191136,
+    "a_ushape_err": 0.00727131125655177,
+    "n_galaxies": 181,
+    "mean_gas_fraction": 0.5252235267204377,
+    "std_gas_fraction": 0.2019457650692495,
+    "method": "HC3"
+  },
+  "SPARC_inversion": {
+    "q20_threshold": 0.3062991077373818,
+    "q80_threshold": 0.7095158597662772,
+    "method": "quintiles_20_80",
+    "Q_dominated": {
+      "a": 0.009052696631311422,
+      "a_err": 0.013439642289717594,
+      "n": 37,
+      "t_stat": 0.6735816650594535,
+      "p_value": 0.5051308519752351,
+      "significant": "False"
+    },
+    "R_dominated": {
+      "a": 0.011265217615623917,
+      "a_err": 0.012815382238824138,
+      "n": 37,
+      "t_stat": 0.8790387524685761,
+      "p_value": 0.3855507784694674,
+      "significant": "False"
+    },
+    "inversion_confirmed": "False",
+    "both_significant": "False"
+  },
+  "ALFALFA": {
+    "lambda_qr": 0.9999999999999639,
+    "lambda_qr_err": 0.0,
+    "lambda_qr_err_boot": 2.4524594554145664e-13,
+    "beta_Q": 8.529139513108896e-05,
+    "beta_R": -8.529139513108588e-05,
+    "delta_env2": 0.002720669181970047,
+    "a_ushape": 0.0012738145624189867,
+    "a_ushape_err": 0.0007527960752523271,
+    "n_galaxies": 21834,
+    "mean_gas_fraction": 0.6887580811317275,
+    "std_gas_fraction": 0.08752239272704677,
+    "method": "HC3"
+  },
+  "ALFALFA_inversion": {
+    "q20_threshold": 0.6390033695254341,
+    "q80_threshold": 0.7559439425222614,
+    "method": "quintiles_20_80",
+    "Q_dominated": {
+      "a": -3.133448172311891e-05,
+      "a_err": 0.0016936408204315664,
+      "n": 4388,
+      "t_stat": -0.018501255605739585,
+      "p_value": 0.9852398176407533,
+      "significant": "False"
+    },
+    "R_dominated": {
+      "a": -0.004106324964928352,
+      "a_err": 0.0022165096800771562,
+      "n": 4444,
+      "t_stat": -1.8526086314161334,
+      "p_value": 0.06400477716821307,
+      "significant": "False"
+    },
+    "inversion_confirmed": "False",
+    "both_significant": "False"
+  }
+}
