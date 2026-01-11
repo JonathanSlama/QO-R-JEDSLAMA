@@ -1,17 +1,17 @@
-# THE SLAMA DENSITY-SCREENING RELATION
+# THE QO+R DENSITY-SCREENING RELATION
 ## A Generalized Gravity Law from QO+R Empirical Validation
 
 **Author:** Jonathan Édouard Slama  
 **Institution:** Metafund Research Division, Strasbourg, France  
 **Document Type:** Theoretical Formalization  
 **Date:** December 2025  
-**Version:** 1.0
+**Version:** 1.1
 
 ---
 
 ## Abstract
 
-This document formalizes the Slama Density-Screening Relation, an empirically-derived modification to the gravitational law that emerges from the QO+R (Quotient Ontologique + Reliquat) framework. The relation describes how effective gravitational strength varies with local baryonic density through a chameleon-type screening mechanism. Validated across 14 orders of magnitude in spatial scale (10^13 to 10^27 meters), the relation provides a unified description of gravitational phenomena from stellar systems to cosmic filaments while preserving compatibility with precision tests in laboratory and Solar System environments.
+This document formalizes the QO+R Density-Screening Relation, an empirically-derived modification to the gravitational law that emerges from the QO+R (Quotient Ontologique + Reliquat) framework. The relation describes how effective gravitational strength varies with local baryonic density through a chameleon-type screening mechanism. Validated across 14 orders of magnitude in spatial scale (10^13 to 10^27 meters), the relation provides a unified description of gravitational phenomena from stellar systems to cosmic filaments while preserving compatibility with precision tests in laboratory and Solar System environments.
 
 ---
 
@@ -19,7 +19,7 @@ This document formalizes the Slama Density-Screening Relation, an empirically-de
 
 ### 1.1 The Complete Form
 
-The Slama Density-Screening Relation states:
+The QO+R Density-Screening Relation states:
 
 ```
 G_eff(rho) = G_N * [1 + Lambda_QR * alpha_0 / (1 + (rho / rho_c)^delta)]
@@ -113,7 +113,7 @@ Cosmological interpretation:
 
 ### 3.1 Origin in String Theory
 
-The Slama Relation is not phenomenological but derived from fundamental physics:
+The QO+R Density-Screening Relation is not phenomenological but derived from fundamental physics:
 
 1. Type IIB string theory compactified on Calabi-Yau manifolds produces moduli fields.
 
@@ -151,7 +151,7 @@ L = sqrt(-g) * [(M_P^2/2)*F(chi)*R - (1/2)*(d phi)^2 - (Z(chi)/2)*(d chi)^2 - V(
   + L_m[A^2(phi,chi)*g_mu_nu, Psi_m]
 ```
 
-The Slama Relation emerges as the weak-field, quasi-static limit of this Lagrangian when applied to astrophysical systems with spatially-varying density.
+The QO+R Density-Screening Relation emerges as the weak-field, quasi-static limit of this Lagrangian when applied to astrophysical systems with spatially-varying density.
 
 ---
 
@@ -208,7 +208,7 @@ Observations:
 
 ## 5. Implications for Fundamental Physics
 
-### 5.1 What the Slama Relation Tells Us
+### 5.1 What the QO+R Relation Tells Us
 
 1. Extra dimensions may be dynamically active:
    The moduli controlling extra-dimensional geometry are not frozen but respond to local matter density.
@@ -222,7 +222,7 @@ Observations:
 4. String theory is testable:
    Lambda_QR of order unity is a prediction, and it is observed. This is either coincidence or evidence.
 
-### 5.2 What the Slama Relation Does NOT Explain
+### 5.2 What the QO+R Relation Does NOT Explain
 
 1. The dark energy component (Lambda):
    The cosmological constant is separate from the QO+R mechanism.
@@ -245,7 +245,7 @@ Observations:
 | TeVeS | Vector + scalar | a_0 (MOND scale) | gamma_PPN deviation |
 | Chameleon | Single scalar + screening | Environment-dependent | No Lambda_QR |
 
-The Slama Relation differs from alternatives by predicting a universal coupling constant independent of scale, coupled with pure density (not scale) dependence.
+The QO+R Density-Screening Relation differs from alternatives by predicting a universal coupling constant independent of scale, coupled with pure density (not scale) dependence.
 
 ---
 
@@ -272,7 +272,7 @@ The Slama Relation differs from alternatives by predicting a universal coupling 
 
 ### 6.2 Falsification Criteria
 
-The Slama Relation would be falsified if:
+The QO+R Density-Screening Relation would be falsified if:
 
 1. Lambda_QR varies by more than factor 10 across scales
    - Current variation: factor 2.1 (consistent)
@@ -343,7 +343,7 @@ beta^2 = Lambda_QR * alpha_0 / 2
 
 ## 8. Conclusion
 
-The Slama Density-Screening Relation represents the first empirically-validated modification to Newton's gravitational law derived from string theory. Its key features:
+The QO+R Density-Screening Relation represents the first empirically-validated modification to Newton's gravitational law derived from string theory. Its key features:
 
 1. Theoretical foundation in Type IIB compactification and KKLT stabilization
 2. Universal coupling constant Lambda_QR = 1.23 of order unity as predicted
@@ -353,7 +353,7 @@ The Slama Density-Screening Relation represents the first empirically-validated 
 
 Whether this relation survives continued scrutiny will determine whether we have glimpsed the first astrophysical signature of extra dimensions, or merely constructed an elaborate coincidence.
 
-The next critical test is CMB compatibility. If the Slama Relation passes this test, the case for a string theory origin of galactic dynamics becomes compelling.
+The next critical test is CMB compatibility. If the QO+R Density-Screening Relation passes this test, the case for a string theory origin of galactic dynamics becomes compelling.
 
 ---
 
@@ -423,4 +423,4 @@ follows the screening form with parameters determined by the Calabi-Yau geometry
 **Institution:** Metafund Research Division, Strasbourg, France  
 **Date:** December 2025
 
-*"Gravity is not a force but a relation. The Slama Relation quantifies how this relation varies with cosmic environment."*
+*"Gravity is not a force but a relation. The QO+R framework quantifies how this relation varies with cosmic environment."*

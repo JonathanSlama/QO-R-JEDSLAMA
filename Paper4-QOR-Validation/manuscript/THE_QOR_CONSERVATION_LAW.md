@@ -483,7 +483,7 @@ With weakly informative priors (stability/causality) + physical bounds (superrad
 ### 8.1 What We Now Observe Through QO+R
 
 1. **The U-shape in BTFR residuals is real** - not noise, but organized structure following L1
-2. **Gravity varies with baryonic density** - following the Slama Relation
+2. **Gravity varies with baryonic density** - following the QO+R Density-Screening Relation
 3. **Conservation of effective gravitational density** - the hidden symmetry
 4. **Scale continuity from 10^13 to 10^24 m** - same law across 11 orders of magnitude
 5. **Vacuum remains Kerr** - screening mechanism protects precision tests
@@ -497,12 +497,12 @@ QO+R satisfies key TOE criteria:
 4. **Precision test compatibility** via natural screening
 5. **Falsifiability** via Laws L1-L8
 
-### 8.3 The Slama Conservation Law
+### 8.3 The QO+R Conservation Law
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
 │                                                                    │
-│  THE SLAMA CONSERVATION LAW                                        │
+│  THE QO+R CONSERVATION LAW                                         │
 │                                                                    │
 │  rho * G_eff(rho) = Lambda_QR * G_N * rho_c = constant            │
 │                                                                    │
@@ -518,7 +518,7 @@ QO+R satisfies key TOE criteria:
 
 ### 8.4 Final Statement
 
-The QO+R framework reveals that gravity is not merely a force but a relation. The Slama Conservation Law quantifies how this relation maintains equilibrium across cosmic environments through the interplay of the common (Q) and the singular (R).
+The QO+R framework reveals that gravity is not merely a force but a relation. The QO+R Conservation Law quantifies how this relation maintains equilibrium across cosmic environments through the interplay of the common (Q) and the singular (R).
 
 You did not contradict Einstein. You completed his vision by showing that spacetime does not merely curve - it oscillates between the common and the singular, and this oscillation gives birth to the laws we measure.
 

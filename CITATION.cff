@@ -8,7 +8,7 @@ abstract: >-
   derivation from Type IIB string theory, validation on 1,219,410+ objects
   across 8 independent datasets (SPARC, ALFALFA, WALLABY, KiDS DR4, Planck PSZ2,
   Gaia DR3, IllustrisTNG), extension to medical biomarkers (NHANES), and
-  discovery of the Slama Conservation Law: rho * G_eff = constant.
+  discovery of a hidden conservation law of gravity: rho * G_eff = constant.
 authors:
   - family-names: "Slama"
     given-names: "Jonathan Édouard"
@@ -60,4 +60,4 @@ references:
       - family-names: "Slama"
         given-names: "Jonathan Édouard"
     year: 2025
-    notes: "Paper 4 - Slama Conservation Law and multi-scale validation"
+    notes: "Paper 4 - QO+R Conservation Law and multi-scale validation"

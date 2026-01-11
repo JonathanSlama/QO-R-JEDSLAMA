@@ -29,9 +29,9 @@ This paper presents the **complete empirical validation of the QO+R framework** 
 | Universal coupling constant | lambda_QR = 1.23 +/- 0.35 | Stable across all scales |
 | Chameleon screening | GC, WB null results | Confirmed |
 | Low-density signal | UDG, filaments | Detected |
-| Slama Conservation Law | rho * G_eff = constant | Derived from Noether theorem |
+| QO+R Conservation Law | rho * G_eff = constant | Derived from Noether theorem |
 
-### The Slama Relation
+### The QO+R Density-Screening Relation
 
 ```
 G_eff(rho) = G_N * [1 + lambda_QR * alpha_0 / (1 + (rho/rho_c)^delta)]
@@ -52,7 +52,7 @@ manuscript/
 ├── paper4_qor_validation.tex      # Main manuscript (~850 lines)
 ├── paper4_qor_validation.pdf      # Compiled PDF
 ├── THE_QOR_CONSERVATION_LAW.md    # Fundamental theory document
-├── THE_SLAMA_RELATION.md          # Complete parameter derivation
+├── THE_QOR_DENSITY_SCREENING_RELATION.md  # Complete parameter derivation
 └── THE_QOR_RESEARCH_CHRONICLE.md  # Research journey narrative
 ```
 

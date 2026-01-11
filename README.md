@@ -14,6 +14,34 @@
 
 ---
 
+## System Requirements
+
+### Software Dependencies
+- Python 3.9+ (tested on 3.9, 3.10, 3.11)
+- See `requirements.txt` for complete list with version numbers
+
+### Operating System
+Tested on:
+- Windows 10/11 (64-bit)
+- Ubuntu 20.04/22.04
+- macOS 12+ (Intel and Apple Silicon)
+
+### Hardware
+- No special hardware required
+- Standard desktop computer with 8GB+ RAM
+- ~5GB disk space for full data downloads
+
+### Installation Time
+- Dependencies installation: ~5 minutes on normal desktop
+- Data downloads (optional): ~30 minutes for complete dataset (~2GB)
+
+### Demo Run Time
+- Quick demo (SPARC only): ~30 seconds
+- Full validation suite: ~5 minutes
+- Complete reproduction with downloads: ~2 hours
+
+---
+
 ## Overview
 
 This repository contains the complete **QO+R (Quotient Ontologique + Reliquat)** research framework, including:
@@ -33,13 +61,13 @@ This repository contains the complete **QO+R (Quotient Ontologique + Reliquat)**
 | **Paper 1** | Environmental Modulation of the BTFR: Discovery of a U-Shaped Pattern | U-shape detection (4.4 sigma) | 24,056 | [paper1_qor_btfr_v3.pdf](Paper1-BTFR-UShape/manuscript/paper1_qor_btfr_v3.pdf) |
 | **Paper 2** | Residual Diagnostic Methodology: From Galaxies to Biomarkers | 85% significant ratios | 9,254 | [paper2_residuals_v3.pdf](Paper2-Residual-Diagnostics/nhanes_extension/manuscript/paper2_residuals_v3.pdf) |
 | **Paper 3** | From String Theory to Galactic Observations | lambda_QR ~ 1 confirmed | 708,086 | [paper3_string_theory_v2.pdf](Paper3-ToE/manuscript/paper3_string_theory_v2.pdf) |
-| **Paper 4** | **A Hidden Conservation Law of Gravity** | **Slama Conservation Law** | **1,219,410** | [paper4_qor_validation.pdf](Paper4-QOR-Validation/manuscript/paper4_qor_validation.pdf) |
+| **Paper 4** | **A Hidden Conservation Law of Gravity** | **QO+R Conservation Law** | **1,219,410** | [paper4_qor_validation.pdf](Paper4-QOR-Validation/manuscript/paper4_qor_validation.pdf) |
 
 ---
 
 ## Key Discoveries
 
-### The Slama Conservation Law
+### The QO+R Conservation Law
 
 ```
 rho * G_eff(rho) = constant
@@ -47,7 +75,7 @@ rho * G_eff(rho) = constant
 
 The product of matter density and effective gravitational strength is conserved across cosmic environments. This is a hidden symmetry of gravity, analogous to energy conservation in mechanics.
 
-### The Slama Relation
+### The QO+R Density-Screening Relation
 
 ```
 G_eff(rho) = G_N * [1 + lambda_QR * alpha_0 / (1 + (rho/rho_c)^delta)]
@@ -184,7 +212,7 @@ KKLT Moduli Stabilization
 QO+R with lambda_QR ~ O(1)
          |
          v
-Slama Conservation Law: rho * G_eff = constant
+QO+R Conservation Law: rho * G_eff = constant
 ```
 
 ---
