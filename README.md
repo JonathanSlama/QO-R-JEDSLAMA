@@ -272,4 +272,4 @@ The connection to string theory remains a **hypothesis**, not a conclusion.
 
 ---
 
-*Last updated: December 15, 2025*
+*Last updated: January 11, 2026*
