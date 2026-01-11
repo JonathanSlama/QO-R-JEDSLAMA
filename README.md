@@ -7,10 +7,54 @@
 **Contact:** jonathan@metafund.in
 **ORCID:** [0009-0002-1292-4350](https://orcid.org/0009-0002-1292-4350)
 **Version:** 4.0
-**Date:** December 2025
+**Date:** January 2026
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17943132.svg)](https://doi.org/10.5281/zenodo.17943132)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+---
+
+## 📋 Nature Submission Guide (Manuscript #2025-12-33523)
+
+**Title:** *A non-monotonic environmental signature in galaxy dynamics suggests dual scalar fields*
+
+This repository supports the Nature Article submission. **Reviewers should focus on the following directories:**
+
+| Manuscript Section | Repository Location | Key Files |
+|--------------------|---------------------|----------|
+| **Figure 1** (U-shape discovery) | `Paper1-BTFR-UShape/figures/` | `fig06_replicability.png` |
+| **Figure 2** (Sign inversion) | `Paper1-BTFR-UShape/figures/` | `fig11_tng_multiscale.png` |
+| **Figure 3** (Robustness) | `Paper1-BTFR-UShape/figures/` | `fig05_robustness.png` |
+| **Figure 4** (Screening) | `Paper1-BTFR-UShape/figures/` | `fig09_solar_system.png` |
+| **SPARC analysis** | `Paper1-BTFR-UShape/tests/03_ushape_discovery/` | `discover_ushape.py` |
+| **ALFALFA analysis** | `Paper1-BTFR-UShape/tests/06_replicability/` | Scripts in folder |
+| **TNG sign inversion** | `Paper1-BTFR-UShape/tests/10_tng_validation/` | Scripts in folder |
+| **Statistical robustness** | `Paper1-BTFR-UShape/tests/05_robustness/` | Scripts in folder |
+| **Multi-scale validation** | `Paper4-QOR-Validation/tests/` | Full test suite |
+| **Methods details** | `Paper4-QOR-Validation/experimental/` | Complete methodology |
+
+### Quick Reproduction
+```bash
+# Figure 1A: SPARC U-shape discovery
+cd Paper1-BTFR-UShape/tests/03_ushape_discovery
+python discover_ushape.py
+
+# Figure 1B: ALFALFA replication  
+cd ../06_replicability
+python *.py
+
+# Figure 2: TNG sign inversion
+cd ../10_tng_validation
+python *.py
+
+# Figure 3: Statistical robustness
+cd ../05_robustness
+python *.py
+```
+
+### Papers NOT directly part of Nature submission
+- `Paper2-Residual-Diagnostics/` — Medical extension (separate research line)
+- `Paper3-ToE/` — String theory derivation (theoretical background, not submitted)
 
 ---
 
