@@ -145,6 +145,14 @@ backup/
 Nouveau dossier/
 
 # -----------------------------------------------------------------------------
+# Combined papers - deposited on Zenodo only (DOI 10.5281/zenodo.17806441)
+# -----------------------------------------------------------------------------
+# The combined Papers 1+2+3 PDF for v3.1 is published on Zenodo and not
+# duplicated in this Git repository. Individual paper sources remain in
+# Paper1-BTFR-UShape/, Paper2-Residual-Diagnostics/, Paper3-ToE/.
+combined_papers/
+
+# -----------------------------------------------------------------------------
 # Keep these files even if they match patterns above
 # -----------------------------------------------------------------------------
 !requirements.txt
