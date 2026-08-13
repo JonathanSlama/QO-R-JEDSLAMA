@@ -1,4 +1,4 @@
-# QO+R Paper 1: U-Shaped BTFR Residuals
+﻿# QO+R Paper 1: U-Shaped BTFR Residuals
 
 ## Environmental Modulation of the Baryonic Tully-Fisher Relation
 
@@ -159,7 +159,7 @@ pdflatex paper1_qor_btfr_v3.tex  # 2x for TOC and refs
 ### The Story in Brief
 
 1. **We started with a prediction** that a single scalar field would produce monotonic environmental dependence in BTFR residuals
-2. **The prediction failed** — data showed the opposite of what was expected
+2. **The prediction failed** â€” data showed the opposite of what was expected
 3. **Forensic analysis revealed** a U-shaped pattern: both voids AND clusters show elevated residuals
 4. **We reformulated** with two antagonistic fields (Q and R) that naturally produce the U-shape
 5. **The pattern was replicated** on 21,834 independent ALFALFA galaxies
@@ -200,8 +200,7 @@ See `README_REPRODUCIBILITY.md` for complete scientific discussion.
 
 ## Related Work
 
-- **Paper 2:** QO+R Signatures in Human Health Data (NHANES)
-- **Paper 3:** String Theory Embedding of the QO+R Framework
+Historical exploratory documents (December 2025) are preserved under `legacy/` at the repository root; they are superseded by the published version (see `legacy/README.md`).
 
 ---
 
@@ -212,3 +211,4 @@ MIT License - See LICENSE file.
 ---
 
 *Last updated: December 3, 2025*
+

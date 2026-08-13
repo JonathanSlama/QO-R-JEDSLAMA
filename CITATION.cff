@@ -1,63 +1,42 @@
 cff-version: 1.2.0
-message: "If you use this research, please cite it as below."
+message: "If you use this code or data, please cite both the paper and the Zenodo deposit."
 type: software
-title: "QO+R Framework: From String Theory to Galactic Observations"
+title: "QO+R: Analysis code and data for 'A non-monotonic environmental trend in Baryonic Tully-Fisher residuals'"
 abstract: >-
-  Complete theoretical framework and empirical validation of the QO+R
-  (Quotient Ontologique + Reliquat) modified gravity model. Includes
-  derivation from Type IIB string theory, validation on 1,219,410+ objects
-  across 8 independent datasets (SPARC, ALFALFA, WALLABY, KiDS DR4, Planck PSZ2,
-  Gaia DR3, IllustrisTNG), extension to medical biomarkers (NHANES), and
-  discovery of a hidden conservation law of gravity: rho * G_eff = constant.
+  Analysis code and derived data tables for Slama (2026), "A non-monotonic
+  environmental trend in Baryonic Tully-Fisher residuals: empirical evidence
+  and a two-field phenomenological interpretation", Scientific Reports
+  (accepted). Includes the BTFR residual analysis (SPARC, ALFALFA), the
+  environmental sensitivity tests, the statistical robustness suite, and the
+  stratified and multivariate IllustrisTNG analyses. The work is a
+  phenomenological consistency test; it does not constitute a quantitative
+  test of the two-field framework.
 authors:
   - family-names: "Slama"
     given-names: "Jonathan Édouard"
-    email: jonathan@metafund.in
+    email: jonathan.slama@outlook.fr
     orcid: "https://orcid.org/0009-0002-1292-4350"
     affiliation: "Metafund Research Division, Strasbourg, France"
 version: "4.0"
-date-released: 2025-12-15
+date-released: 2026-08-13
 license: MIT
 repository-code: "https://github.com/JonathanSlama/QO-R-JEDSLAMA"
-doi: "10.5281/zenodo.17943132"
-url: "https://doi.org/10.5281/zenodo.17943132"
+doi: 10.5281/zenodo.17806441
 keywords:
-  - modified gravity
-  - string theory
-  - galaxy dynamics
   - Baryonic Tully-Fisher Relation
-  - Calabi-Yau compactification
-  - dark matter
+  - galaxy dynamics
+  - galaxy environment
+  - modified gravity
   - SPARC
+  - ALFALFA
   - IllustrisTNG
-  - biomarkers
-  - residual analysis
-references:
-  - type: article
-    title: "Environmental Modulation of the Baryonic Tully-Fisher Relation"
-    authors:
-      - family-names: "Slama"
-        given-names: "Jonathan Édouard"
-    year: 2025
-    notes: "Paper 1 - Discovery of U-shaped BTFR residual pattern"
-  - type: article
-    title: "Residual Structure in Clinical Biomarker Ratios"
-    authors:
-      - family-names: "Slama"
-        given-names: "Jonathan Édouard"
-    year: 2025
-    notes: "Paper 2 - Medical extension using NHANES data"
-  - type: article
-    title: "From String Theory to Galactic Observations"
-    authors:
-      - family-names: "Slama"
-        given-names: "Jonathan Édouard"
-    year: 2025
-    notes: "Paper 3 - Complete theoretical derivation and validation"
-  - type: article
-    title: "A Hidden Conservation Law of Gravity"
-    authors:
-      - family-names: "Slama"
-        given-names: "Jonathan Édouard"
-    year: 2025
-    notes: "Paper 4 - QO+R Conservation Law and multi-scale validation"
+preferred-citation:
+  type: article
+  title: "A non-monotonic environmental trend in Baryonic Tully-Fisher residuals: empirical evidence and a two-field phenomenological interpretation"
+  authors:
+    - family-names: "Slama"
+      given-names: "Jonathan Édouard"
+      orcid: "https://orcid.org/0009-0002-1292-4350"
+  journal: "Scientific Reports"
+  year: 2026
+  notes: "Accepted; volume, pages and article DOI to be added upon publication."

@@ -1,6 +1,6 @@
 {
-    "title": "QO+R Framework: From String Theory to Galactic Observations",
-    "description": "Complete theoretical framework and empirical validation of the QO+R (Quotient Ontologique + Reliquat) modified gravity model. This repository contains three interconnected research papers:\n\n- Paper 1: Environmental Modulation of the BTFR - Discovery of U-shaped residual pattern\n- Paper 2: Residual Diagnostic Methodology - Extension to biomarkers (NHANES)\n- Paper 3: From String Theory to Galaxies - Complete derivation and validation on 708,086 galaxies\n\nKey findings include the confirmation of the 'killer prediction' (sign inversion for R-dominated systems at 6.3σ significance) and the natural emergence of λ_QR ≈ 1 from Calabi-Yau geometry.",
+    "title": "QO+R: Analysis code and data for 'A non-monotonic environmental trend in Baryonic Tully-Fisher residuals'",
+    "description": "Analysis code and derived data tables for Slama (2026), 'A non-monotonic environmental trend in Baryonic Tully-Fisher residuals: empirical evidence and a two-field phenomenological interpretation', Scientific Reports (accepted). The deposit contains the BTFR fitting and residual computation, the environmental sensitivity analysis (SPARC/2MRS), the statistical resampling tests, the stratified and multivariate IllustrisTNG analyses (including the nested-model regression of Supplementary Section S4), the derived data tables required to reproduce every figure and table in the manuscript and its Supplementary Information, and the figure-generation scripts. The paper reports a statistically significant non-monotonic (U-shaped) dependence of BTFR residuals on environment in SPARC, a qualitatively similar trend in ALFALFA, and a simulation-based sign-inversion test in IllustrisTNG. The work constitutes a phenomenological consistency test of a two-field description; it is not a quantitative test of the framework and does not measure any coupling constant. Historical exploratory documents (December 2025) are preserved under legacy/ and are superseded by the published version.",
     "creators": [
         {
             "name": "Slama, Jonathan Édouard",
@@ -8,28 +8,21 @@
             "affiliation": "Metafund Research Division, Strasbourg, France"
         }
     ],
-    "upload_type": "publication",
-    "publication_type": "preprint",
+    "upload_type": "software",
     "access_right": "open",
     "license": "MIT",
     "keywords": [
-        "modified gravity",
-        "string theory",
-        "galaxy dynamics",
         "Baryonic Tully-Fisher Relation",
         "BTFR",
-        "Calabi-Yau compactification",
-        "dark matter",
+        "galaxy dynamics",
+        "galaxy environment",
+        "modified gravity",
+        "scalar fields",
         "SPARC",
-        "IllustrisTNG",
         "ALFALFA",
-        "WALLABY",
-        "Type IIB supergravity",
-        "moduli stabilization",
-        "KKLT",
-        "residual analysis",
-        "biomarkers",
-        "NHANES"
+        "IllustrisTNG",
+        "environmental dependence",
+        "reproducibility"
     ],
     "related_identifiers": [
         {
@@ -40,9 +33,10 @@
     ],
     "references": [
         "Lelli, F., McGaugh, S.S., & Schombert, J.M. (2016). SPARC: Mass Models for 175 Disk Galaxies. AJ, 152, 157",
+        "Haynes, M.P., et al. (2018). The Arecibo Legacy Fast ALFA Survey. ApJ, 861, 49",
         "Pillepich, A., et al. (2018). First results from the IllustrisTNG simulations. MNRAS, 475, 648",
-        "Kachru, S., Kallosh, R., Linde, A., & Trivedi, S.P. (2003). De Sitter vacua in string theory. PRD, 68, 046005",
-        "Haynes, M.P., et al. (2018). The Arecibo Legacy Fast ALFA Survey. ApJ, 861, 49"
+        "Nelson, D., et al. (2019). The IllustrisTNG simulations: public data release. Comput. Astrophys. Cosmol., 6, 2",
+        "Huchra, J.P., et al. (2012). The 2MASS Redshift Survey. ApJS, 199, 26"
     ],
-    "notes": "This work presents a hypothesis connecting string theory phenomenology to astrophysical observations. The connection remains tentative and requires further investigation."
+    "notes": "Version 4.0 accompanies the accepted Scientific Reports paper. The interpretation offered in the paper is explicitly phenomenological; connections to fundamental theory are interpretive context only and are neither derived nor tested in this work."
 }
