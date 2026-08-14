@@ -79,7 +79,7 @@ ORCID: \href{https://orcid.org/0009-0002-1292-4350}{0009-0002-1292-4350}
 \begin{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The Baryonic Tully-Fisher Relation (BTFR) represents one of the tightest empirical correlations in extragalactic astronomy. We report a systematic investigation of environmental dependence in BTFR residuals that began with the \textit{falsification} of a single-field hypothesis and led to the discovery of a robust U-shaped pattern. Using 175 galaxies from the SPARC database, we find that galaxies in both low-density (voids) and high-density (clusters) environments show elevated BTFR residuals compared to intermediate-density (field) environments, with quadratic coefficient $a = 1.36 \pm 0.24$ ($p < 10^{-6}$). This pattern is \textbf{independently replicated} on 21,834 galaxies from the ALFALFA survey ($a = 0.07$, $p = 0.0065$). We propose a two-field framework (\QOR{}) where antagonistic scalar fields $Q$ (gas-coupled) and $R$ (star-coupled) generate the observed pattern. Analysis of 623,609 IllustrisTNG galaxies confirms a \textbf{discriminating prediction}: gas-poor, high-mass systems show an \textit{inverted} U-shape ($a < 0$), a signature difficult to explain with standard astrophysics alone. We demonstrate that \QOR{} satisfies solar system constraints through environmental screening. This work establishes the empirical foundation for a broader theoretical framework connecting galaxy dynamics to fundamental physics, with testable predictions for next-generation surveys.
+The Baryonic Tully-Fisher Relation (BTFR) represents one of the tightest empirical correlations in extragalactic astronomy. We report a systematic investigation of environmental dependence in BTFR residuals that began with the \textit{falsification} of a single-field hypothesis and led to the discovery of a robust U-shaped pattern. Using the SPARC database, we find that galaxies in both low-density (voids) and high-density (clusters) environments show elevated BTFR residuals compared to intermediate-density (field) environments. For the 175 galaxies carrying a documented environmental classification the quadratic coefficient is $a = 1.33 \pm 0.25$ ($5.26\sigma$, $p < 10^{-6}$); fitted to the full quality-cut sample of 181 galaxies the coefficient is $a = 1.36$. This pattern is \textbf{independently replicated} on 21,834 galaxies from the ALFALFA survey ($a = 0.07$, $p = 0.0065$). We propose a two-field framework (\QOR{}) where antagonistic scalar fields $Q$ (gas-coupled) and $R$ (star-coupled) generate the observed pattern. Analysis of 623,609 IllustrisTNG galaxies confirms a \textbf{discriminating prediction}: gas-poor, high-mass systems show an \textit{inverted} U-shape ($a < 0$), a signature difficult to explain with standard astrophysics alone. We demonstrate that \QOR{} satisfies solar system constraints through environmental screening. This work records the empirical investigation and the reasoning that led to a two-field phenomenological description. It is a consistency test, not a derivation: no forward model links the parameters of the framework to the fitted observables, and no coupling constant is measured here. The peer-reviewed results are published in Slama (2026), Scientific Reports.
 
 \vspace{0.3cm}
 \noindent\textbf{Keywords:} galaxies: kinematics and dynamics -- dark matter -- modified gravity -- cosmology: theory
@@ -227,13 +227,13 @@ Figure~\ref{fig:ushape} presents the formal detection of the U-shaped pattern.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{fig03_ushape_discovery.png}
-    \caption{\textbf{Discovery of the U-shaped pattern in SPARC.} BTFR residuals plotted against environmental density proxy for 175 galaxies. Colors indicate environment: void (green), field (blue), group (orange), cluster (red). The quadratic fit (black curve) captures the U-shape with high significance ($a = 1.36 \pm 0.24$, $p < 10^{-6}$).}
+    \caption{\textbf{Discovery of the U-shaped pattern in SPARC.} BTFR residuals plotted against environmental density proxy for the 175 galaxies carrying a documented environmental classification. Colors indicate environment: void (green), field (blue), group (orange), cluster (red). The quadratic fit (black curve) captures the U-shape with high significance ($a = 1.33 \pm 0.25$, $5.26\sigma$, $p < 10^{-6}$).}
     \label{fig:ushape}
 \end{figure}
 
 The quadratic regression yields:
 \begin{equation}
-a = 1.36 \pm 0.24, \quad z = 5.75, \quad p < 10^{-6}
+a = 1.33 \pm 0.25, \quad \sigma = 5.26, \quad p < 10^{-6}
 \end{equation}
 
 Model comparison using AIC/BIC strongly prefers the quadratic model over linear ($\Delta$AIC = 28.8).
@@ -266,6 +266,8 @@ C_R &= -0.72 \pm 0.08 \quad \text{(stellar coupling)}
 \end{align}
 
 The opposite signs are physically meaningful: $Q$ enhances gravitational effects (positive residuals) while $R$ suppresses them (negative residuals), but they dominate in opposite environments.
+
+These two coupling values are specific to this document. They are the output of a grid search calibrated on the SPARC sample, they are not reported in the peer-reviewed article, and they should not be read as measurements of physical constants: the framework contains no forward model that would give them a scale-independent meaning, and a calibration performed on a different sample returns different values. They are retained here because they document how the two-field description was tuned to the data, which is what this narrative records.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results III: Robustness Testing}
@@ -314,9 +316,9 @@ The most stringent test is replication on independent data.
 \toprule
 \textbf{Dataset} & \textbf{N} & \textbf{$a$} & \textbf{$\sigma_a$} & \textbf{$p$-value} & \textbf{Result} \\
 \midrule
-SPARC & 175 & $+1.36$ & $0.24$ & $< 10^{-6}$ & U-shape detected \\
+SPARC & 175 & $+1.33$ & $0.25$ & $< 10^{-6}$ & U-shape detected \\
 ALFALFA & 21,834 & $+0.07$ & $0.03$ & $0.0065$ & \textbf{U-shape replicated} \\
-Little THINGS & 40 & $+0.29$ & $0.32$ & $0.19$ & Consistent (low N) \\
+Little THINGS & 40 & $+0.29$ & $0.32$ & $0.39$ & Consistent (low N) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -437,9 +439,9 @@ The \QOR{} framework makes a \textbf{discriminating prediction}: systems dominat
 \midrule
 Gas-rich (Q-dominated) & 444,374 & $+0.017$ & $0.008$ & Standard U-shape \\
 Intermediate & 28,810 & $+0.010$ & $0.004$ & Weak U-shape \\
-Gas-poor (low mass) & 115,980 & $+0.052$ & $0.012$ & Standard U-shape \\
-\textbf{Gas-poor (high mass)} & \textbf{8,779} & $\mathbf{-0.014}$ & $\mathbf{0.003}$ & \textbf{Inverted U!} \\
-\textbf{Extreme R-dominated} & \textbf{16,924} & $\mathbf{-0.019}$ & $\mathbf{0.004}$ & \textbf{Inverted U!} \\
+Gas-poor (low mass) & 115,980 & $+0.052$ & $0.014$ & Standard U-shape \\
+\textbf{Gas-poor (high mass)} & \textbf{8,779} & $\mathbf{-0.014}$ & $\mathbf{0.001}$ & \textbf{Inverted U!} \\
+\textbf{Extreme R-dominated} & \textbf{16,924} & $\mathbf{-0.019}$ & $\mathbf{0.003}$ & \textbf{Inverted U!} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -475,18 +477,13 @@ The U-shape emerges from the competition:
     \item \textbf{Clusters:} High density, gas-poor $\rightarrow$ $R$ dominates $\rightarrow$ positive residuals (for gas-rich) or negative (for gas-poor high-mass)
 \end{itemize}
 
-\subsection{Connection to Fundamental Physics}
+\subsection{Connection to Fundamental Physics: a line of inquiry that did not hold}
 
-Figure~\ref{fig:string_theory} illustrates a suggestive connection to string theory.
+The two-field structure of \QOR{} is superficially reminiscent of string compactifications, in which the dilaton and a K\"ahler modulus provide two scalars with distinct couplings to matter. In the December 2025 version of this work we described that resemblance as suggestive, and a companion document attempted to make it quantitative by deriving the cross-coupling $\lambda_{QR}$ from a Type IIB compactification with KKLT moduli stabilisation. The argument concluded that $\lambda_{QR} \sim \mathcal{O}(1)$, and that this matched the value inferred from the data.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{fig12_string_theory.png}
-    \caption{\textbf{Suggestive connection to string theory.} The two-field structure of \QOR{} is reminiscent of string theory compactifications, where the dilaton and Kähler moduli provide natural candidates for $Q$ and $R$. This connection is explored in detail in Paper 3 of this series.}
-    \label{fig:string_theory}
-\end{figure}
+That argument does not survive computation. Evaluating the cross-coupling from the moduli stabilisation potential itself, rather than assuming its magnitude, gives values in the range $10^{-11}$ to $10^{-3}$ across the compactification scenarios examined --- between eight and fifteen orders of magnitude below the value the resemblance was taken to explain. The agreement previously reported was not obtained from the compactification; it was presupposed and then found.
 
-We emphasize that this connection is \textit{suggestive}, not derived. A rigorous embedding of \QOR{} in string theory is the subject of Paper 3 in this series.
+We therefore withdraw the claim entirely and do not pursue this line here. What remains is a structural analogy with no quantitative content: two scalars with opposite matter couplings arise naturally in several settings, string compactifications among them, and that observation constrains nothing. The framework as used in this document is phenomenological throughout, and the peer-reviewed article makes no claim of a derivation from fundamental theory. The historical material, including the attempted derivation, is preserved unchanged under \texttt{legacy/} in the repository, so that the reasoning and its failure can be examined.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
@@ -556,7 +553,7 @@ This paper documents a conceptual motivation from failed prediction to robust di
 
 \begin{enumerate}
     \item \textbf{Falsification:} The single-field (QO) model fails to describe SPARC data
-    \item \textbf{Discovery:} BTFR residuals show a U-shaped environmental dependence ($a = 1.36$, $p < 10^{-6}$)
+    \item \textbf{Discovery:} BTFR residuals show a U-shaped environmental dependence ($a = 1.33 \pm 0.25$ for the 175 environmentally classified galaxies, $p < 10^{-6}$)
     \item \textbf{Replication:} The pattern is confirmed on 21,834 ALFALFA galaxies ($p = 0.0065$)
     \item \textbf{Mechanism:} A two-field model (\QOR{}) with antagonistic couplings explains the pattern
     \item \textbf{Discriminating Prediction:} Gas-poor, high-mass systems show inverted U-shape, as predicted
@@ -568,11 +565,13 @@ This paper documents a conceptual motivation from failed prediction to robust di
 Several questions motivate further investigation:
 
 \begin{itemize}
-    \item \textbf{Does the \QOR{} pattern appear in other astronomical contexts?} Paper 2 of this series examines human health data for analogous signatures.
-    \item \textbf{Can \QOR{} be derived from fundamental theory?} Paper 3 explores the connection to string theory moduli.
+    \item \textbf{Is the trend robust to the definition of environment?} This is the most consequential open question. The amplitude and significance reported here are conditional on the catalogue-based structure-membership classification, and weaken under fixed-radius density proxies. A homogeneous re-analysis using nearest-neighbour densities and halo-based classifications is required before the trend can be considered environmentally robust.
+    \item \textbf{Can a forward model be derived?} Without an explicit mapping from the parameters of the framework to the fitted curvature, the observational analysis tests the presence of a non-monotonic trend rather than the framework itself. Deriving that mapping is the step that would make the framework quantitatively falsifiable.
     \item \textbf{What is the cosmological evolution of the U-shape?} High-redshift surveys may reveal time dependence.
     \item \textbf{Can resolved observations distinguish \QOR{} from alternatives?} Next-generation IFU surveys will be decisive.
 \end{itemize}
+
+Two questions raised in the December 2025 version have since been closed rather than left open. Whether the framework could be derived from string theory was answered in the negative by direct computation (Section~\ref{sec:theory}). Whether the residual-diagnostic method extended to other domains, explored on clinical data in a companion document, was never validated and is not pursued; that material is preserved under \texttt{legacy/}.
 
 \subsection{Concluding Remarks}
 
