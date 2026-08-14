@@ -1,214 +1,110 @@
-﻿# QO+R Paper 1: U-Shaped BTFR Residuals
+# Paper 1: a non-monotonic environmental trend in BTFR residuals
 
-## Environmental Modulation of the Baryonic Tully-Fisher Relation
-
-**Author:** Jonathan Edouard Slama
-**Affiliation:** Metafund Research Division
-**Contact:** jonathan@metafund.in
-**ORCID:** [0009-0002-1292-4350](https://orcid.org/0009-0002-1292-4350)
-**Version:** 3.0 (December 2025)
-**Status:** Ready for arXiv submission
+**Author:** Jonathan Édouard Slama · Metafund Research Division, Strasbourg, France
+**Contact:** jonathan.slama@outlook.fr · **ORCID:** [0009-0002-1292-4350](https://orcid.org/0009-0002-1292-4350)
+**Version:** 4.0 (August 2026)
 
 ---
 
-## Key Results
+## Two documents, and the difference matters
 
-| Dataset | N | U-shape Coefficient (a) | p-value | Status |
-|---------|---|------------------------|---------|--------|
-| **SPARC** | 175 | +1.36 +/- 0.24 | < 10^-6 | Discovery |
-| **ALFALFA** | 21,834 | +0.07 +/- 0.03 | 0.0065 | **Independent Replication** |
-| **Little THINGS** | 40 | +0.29 +/- 0.32 | 0.19 | Consistent (small N) |
-| **TNG100-1** | 53,363 | +1.95 +/- 0.03 | < 10^-6 | Simulation validation |
+This directory contains two texts covering the same work. They are not
+interchangeable.
 
-### Killer Prediction Confirmed (TNG300)
+**`manuscript/` — the article.** The peer-reviewed version, accepted by
+*Scientific Reports* (2026). This is the paper of record. It is shorter, more
+cautious, and states its limitations explicitly. **Where the two documents
+disagree, the article prevails.**
 
-| Category | N | a | Interpretation |
-|----------|---|---|----------------|
-| Gas-rich (Q-dom) | 444,374 | **+0.017** | Standard U-shape |
-| Gas-poor + High M* | 8,779 | **-0.014** | **INVERTED U-shape!** |
-| Extreme R-dom | 16,924 | **-0.019** | **Inversion confirmed** |
+**`research_document/` — the research narrative.** A longer account of how the
+work was actually done, in the order it happened, including the hypotheses that
+were abandoned. Its second chapter, *Corrections following peer review*, records
+the claims withdrawn between December 2025 and July 2026 and why. It exists
+because a reader who encounters the December 2025 material, still archived under
+`legacy/`, deserves to know which parts survived.
 
-The inverted U-shape in gas-poor, high stellar mass systems is the **unique signature** of QO+R that distinguishes it from standard astrophysical explanations.
-
----
-
-## Scientific Narrative (13 Figures)
-
-The paper tells a complete scientific story in 5 acts:
-
-| Act | Figures | Theme | Key Message |
-|-----|---------|-------|-------------|
-| **1. Failure** | fig01-02 | QO model fails | Science progresses through falsification |
-| **2. Discovery** | fig03-04 | U-shape detected | From failure emerges structure |
-| **3. Validation** | fig05-08 | Robustness & replication | Pattern is robust and replicated |
-| **4. Constraints** | fig09-11 | Solar system & TNG | Model is consistent and testable |
-| **5. Future** | fig12-13 | Theory & predictions | Toward fundamental connection |
+All numerical values in both documents must agree with
+[`REFERENCE_VALUES.md`](REFERENCE_VALUES.md), which records each value together
+with the script that produces it.
 
 ---
 
-## Repository Structure
+## Main results
+
+| Dataset | N | Curvature coefficient a | Significance |
+|---|---|---|---|
+| SPARC, environmentally classified | 175 | +1.33 ± 0.25 | 5.26σ, p < 10⁻⁶ |
+| SPARC, full quality-cut sample | 181 | +1.36 ± 0.24 | p < 10⁻⁶ |
+| ALFALFA | 21,834 | +0.070 ± 0.028 | p = 0.0065 |
+| Little THINGS | 40 | +0.29 ± 0.32 | p = 0.39, not conclusive |
+
+The two SPARC values are both correct and differ only by the six galaxies
+lacking a documented environmental class. Quoting either without stating the
+sample invites confusion.
+
+### Sign inversion in IllustrisTNG
+
+| Population | N | a |
+|---|---|---|
+| Gas-rich | 444,374 | +0.017 ± 0.008 |
+| Gas-poor, high stellar mass | 8,779 | −0.014 ± 0.001 |
+| Extreme R-dominated | 16,924 | −0.019 ± 0.003 |
+
+Controlling for isolation, the inversion is strongest in the densest quartile
+(−0.048, 5.2σ) and absent in the most isolated (+0.003, not significant).
+
+In a multivariate treatment with environment as the primary variable and gas
+fraction and stellar mass as controls, the curvature survives but is attenuated
+by roughly a factor of eight, from +0.079 to +0.0095. A substantial part of the
+raw signal is carried by the covariance between environment and internal galaxy
+properties.
+
+---
+
+## What this work claims, and what it does not
+
+It reports a non-monotonic environmental trend and its qualitative consistency
+with a two-field phenomenological description. It is a **consistency test**.
+
+It does **not** constitute a quantitative test of that description: no forward
+model links the field-theoretic parameters to the fitted curvature, and no
+coupling constant is measured. The connection to moduli physics suggested in the
+December 2025 documents is withdrawn; see `research_document/`, chapter 2.
+
+Two limitations are load-bearing and stated in the article itself. The amplitude
+and significance of the SPARC result are conditional on the catalogue-based
+environmental classification: continuous density estimators built from 2MRS give
+curvatures consistent with zero. And the environmental variables used in SPARC,
+ALFALFA and IllustrisTNG are not equivalent, so the agreement across datasets is
+qualitative.
+
+---
+
+## Layout
 
 ```
-Paper1-BTFR-UShape/
-+-- manuscript/
-|   +-- paper1_qor_btfr_v3.tex     <- Complete manuscript (13 figures)
-|
-+-- figures/                        <- All 13 figures
-|   +-- fig01_qo_only_failure.png
-|   +-- fig02_forensic_analysis.png
-|   +-- fig03_ushape_discovery.png
-|   +-- fig04_calibration.png
-|   +-- fig05_robustness.png
-|   +-- fig06_replicability.png    * ALFALFA + Little THINGS
-|   +-- fig07_microphysics.png
-|   +-- fig08_q_hi_correlation.png
-|   +-- fig09_solar_system.png
-|   +-- fig10_tng_validation.png   * TNG100 validation
-|   +-- fig11_tng_multiscale.png   * Killer prediction
-|   +-- fig12_string_theory.png
-|   +-- fig13_predictions.png
-|
-+-- tests/                          <- 13 analysis scripts
-|   +-- 01_initial_qo_test/
-|   +-- 02_forensic_analysis/
-|   +-- 03_ushape_discovery/
-|   +-- 04_calibration/
-|   +-- 05_robustness/             <- Monte Carlo, Bootstrap, etc.
-|   +-- 06_replicability/          * REAL ALFALFA data
-|   +-- 07_microphysics/
-|   +-- 08_microphysics_qhi/
-|   +-- 09_solar_system/
-|   +-- 10_tng_validation/         * REAL TNG data
-|   +-- 11_tng_multiscale/         * Killer prediction
-|   +-- 12_string_theory_link/
-|   +-- 13_predictions/
-|
-+-- data/
-|   +-- sparc_with_environment.csv
-|
-+-- README.md                       <- This file
-+-- README_REPRODUCIBILITY.md       <- Full reproducibility guide
-+-- FIGURES_AUDIT.md               <- Data provenance for all 13 figures
-+-- requirements.txt
+manuscript/          the accepted article and its Supplementary Information
+research_document/   the research narrative v4.0, its figures and changelog
+data/                SPARC with environment, TNG derived tables
+scripts/             analysis scripts (see scripts/README.md for expected values)
+figures/             figures of the article
+tests/               the analysis chain, step by step, as originally run
+REFERENCE_VALUES.md  single source of truth for every reported number
 ```
 
----
+## Reproducing
 
-## Quick Start
-
-### 1. Clone and install
 ```bash
-git clone https://github.com/JonathanSlama/QO-R-JEDSLAMA.git
-cd QO-R-JEDSLAMA/Paper1-BTFR-UShape
-pip install -r requirements.txt
+cd scripts
+python multivariate_tng_analysis.py     # Supplementary S4
+python regenerate_figure2_inversion.py  # Figure 2
+python regenerate_figure3_robustness.py # Figure 3
 ```
 
-### 2. Run complete analysis pipeline
-```bash
-cd tests
+Expected outputs are listed in `scripts/README.md`. Any deviation means the
+input data or the software environment has changed.
 
-# Act 1: The Failure
-python 01_initial_qo_test/test_qo_only.py
-python 02_forensic_analysis/forensic_analysis.py
+## Citing
 
-# Act 2: The Discovery
-python 03_ushape_discovery/discover_ushape.py
-python 04_calibration/calibrate_params.py
-
-# Act 3: Validation
-python 05_robustness/robustness_tests.py
-python 06_replicability/replicability_tests.py      # * ALFALFA
-python 07_microphysics/microphysics_analysis.py
-python 08_microphysics_qhi/q_hi_analysis.py
-
-# Act 4: Constraints
-python 09_solar_system/solar_system_constraints.py
-python 10_tng_validation/tng_validation.py          # * TNG100
-python 11_tng_multiscale/tng_multiscale.py          # * Killer prediction
-
-# Act 5: Theory & Predictions
-python 12_string_theory_link/string_theory_link.py
-python 13_predictions/predictions.py
-```
-
-### 3. Compile manuscript
-```bash
-cd manuscript
-pdflatex paper1_qor_btfr_v3.tex
-pdflatex paper1_qor_btfr_v3.tex  # 2x for TOC and refs
-```
-
----
-
-## Data Sources (100% Real)
-
-| Dataset | N | Source | Reference |
-|---------|---|--------|-----------|
-| SPARC | 175 | [astroweb.cwru.edu](http://astroweb.cwru.edu/SPARC/) | Lelli et al. (2016) |
-| ALFALFA | 21,834 | [egg.astro.cornell.edu](http://egg.astro.cornell.edu/alfalfa/) | Haynes et al. (2018) |
-| Little THINGS | 40 | VLA archive | Hunter et al. (2012) |
-| TNG100-1 | 53,363 | [tng-project.org](https://www.tng-project.org/) | Pillepich et al. (2018) |
-| TNG300-1 | 623,609 | [tng-project.org](https://www.tng-project.org/) | Pillepich et al. (2018) |
-
-**Note: No synthetic data is used.** All scripts use only real observational and simulation data.
-
----
-
-## Scientific Summary
-
-### The Story in Brief
-
-1. **We started with a prediction** that a single scalar field would produce monotonic environmental dependence in BTFR residuals
-2. **The prediction failed** â€” data showed the opposite of what was expected
-3. **Forensic analysis revealed** a U-shaped pattern: both voids AND clusters show elevated residuals
-4. **We reformulated** with two antagonistic fields (Q and R) that naturally produce the U-shape
-5. **The pattern was replicated** on 21,834 independent ALFALFA galaxies
-6. **A killer prediction emerged**: R-dominated systems should show INVERTED U-shape
-7. **The prediction was confirmed** on 623,609 TNG300 galaxies
-
-### What this PROVES
-
-- The U-shape exists in SPARC (p < 10^-6)
-- The U-shape replicates in ALFALFA (p = 0.0065)
-- The killer prediction is confirmed in TNG300
-- QO+R satisfies solar system constraints
-
-### What this does NOT prove
-
-- The literal existence of Q and R fields
-- A rigorous derivation from string theory
-- Exclusion of all alternative explanations
-
-See `README_REPRODUCIBILITY.md` for complete scientific discussion.
-
----
-
-## Citation
-
-```bibtex
-@article{slama2025qor_btfr,
-  author  = {Slama, Jonathan Edouard},
-  title   = {Environmental Modulation of the Baryonic Tully-Fisher Relation:
-             A Two-Field Scalar Approach Revealing a U-Shaped Residual Pattern},
-  journal = {arXiv preprint},
-  year    = {2025},
-  note    = {Metafund Research Division}
-}
-```
-
----
-
-## Related Work
-
-Historical exploratory documents (December 2025) are preserved under `legacy/` at the repository root; they are superseded by the published version (see `legacy/README.md`).
-
----
-
-## License
-
-MIT License - See LICENSE file.
-
----
-
-*Last updated: December 3, 2025*
-
+Cite the article, and the Zenodo deposit for code and data. See `CITATION.cff`
+at the repository root.

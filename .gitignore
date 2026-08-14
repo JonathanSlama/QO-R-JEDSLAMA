@@ -1,4 +1,4 @@
-# =============================================================================
+﻿# =============================================================================
 # QO+R Project .gitignore
 # =============================================================================
 
@@ -159,6 +159,3 @@ combined_papers/
 !DATA_SOURCES.md
 !**/README.md
 
-# Work in progress: the narrative v4.0 PDF is committed only when the
-# corrections of PLAN steps 3-8 are complete
-Paper1-BTFR-UShape/research_document/*.pdf
