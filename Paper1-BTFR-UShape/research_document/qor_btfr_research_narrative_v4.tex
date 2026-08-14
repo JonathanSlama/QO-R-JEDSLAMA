@@ -69,7 +69,7 @@ Jonathan Édouard Slama\\[0.3cm]
 ORCID: \href{https://orcid.org/0009-0002-1292-4350}{0009-0002-1292-4350}
 }
 
-\date{Version 4.0 --- August 2026}
+\date{Version 4.0 - August 2026}
 
 \begin{document}
 
@@ -109,11 +109,11 @@ The tightness of this relation is remarkable: despite the diversity of galaxy mo
 
 Galaxies inhabit a cosmic web of filaments, walls, voids, and clusters, with local densities spanning several orders of magnitude. Environmental effects are well documented: galaxy morphology correlates with density \citep{Dressler1980}, star formation is quenched in clusters \citep{Gunn1972}, and gas content varies systematically across environments \citep{Haynes1984}.
 
-However, the question of whether the BTFR itself shows environmental dependence has received surprisingly little attention. Several studies have examined BTFR scatter without finding strong environmental signals \citep{Ponomareva2018, Lelli2019}, but these analyses typically searched for \textit{monotonic} trends. The possibility of a \textit{non-monotonic} dependence---where both density extremes behave differently from intermediate densities---has not been systematically explored.
+However, the question of whether the BTFR itself shows environmental dependence has received surprisingly little attention. Several studies have examined BTFR scatter without finding strong environmental signals \citep{Ponomareva2018, Lelli2019}, but these analyses typically searched for \textit{monotonic} trends. The possibility of a \textit{non-monotonic} dependence-where both density extremes behave differently from intermediate densities-has not been systematically explored.
 
 \subsection{Motivation and Approach}
 
-This study originated from a specific theoretical prediction: that a scalar field coupled to matter density would produce monotonic environmental dependence in galaxy dynamics. As we will demonstrate, this prediction \textit{failed}---but the failure itself revealed an unexpected pattern that ultimately led to a richer theoretical framework.
+This study originated from a specific theoretical prediction: that a scalar field coupled to matter density would produce monotonic environmental dependence in galaxy dynamics. As we will demonstrate, this prediction \textit{failed}-but the failure itself revealed an unexpected pattern that ultimately led to a richer theoretical framework.
 
 We adopt a hypothesis-driven approach:
 \begin{enumerate}
@@ -125,6 +125,73 @@ We adopt a hypothesis-driven approach:
 \end{enumerate}
 
 This paper documents this conceptual motivation, from initial failure to the discovery of a robust empirical pattern and its theoretical interpretation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Corrections following peer review}
+\label{sec:corrections}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This document has a history, and it seems more useful to state it than to quietly present a tidied version. The first version was written in December 2025, in the weeks following the discovery of the U-shaped pattern. It was accompanied by three companion documents that went considerably further: one derived the framework from string theory, one proposed a conservation law, one extended the residual method to clinical data. Between February and July 2026, partly through my own verification work and partly through peer review at \textit{Scientific Reports}, most of that theoretical superstructure turned out not to hold.
+
+What follows is a record of what was claimed, what checking it revealed, and what replaced it. I am including it because a reader who finds the December documents, which remain publicly archived, deserves to know which parts survived and which did not, and because the sequence itself is part of the result. The empirical observation that started all of this is unaffected by any of it.
+
+\subsection{The derivation from string theory}
+
+The December version claimed that the cross-coupling $\lambda_{QR}$ between the two fields could be derived from a Type IIB compactification with KKLT moduli stabilisation, and that the derivation gave a value of order unity, matching what the galaxy data seemed to indicate. That match was presented as the first quantitative bridge between string compactification geometry and galactic observations.
+
+It was not a derivation. When the cross-coupling is actually computed from the moduli stabilisation potential rather than estimated dimensionally, the result falls between $10^{-11}$ and $10^{-3}$ depending on the scenario, which is eight to fifteen orders of magnitude below the value that was supposed to have been derived. The order-unity result had been obtained by assuming the masses and the vacuum energy took values that would produce it. The reasoning was circular, and the circularity was not visible to me at the time because I was looking for the agreement rather than testing for it.
+
+The claim is withdrawn. Section~\ref{sec:theory} now states this outcome rather than stopping at the resemblance.
+
+\subsection{The universal coupling constant}
+
+A companion document reported $\lambda_{QR} = 1.23 \pm 0.35$, measured across 1.2 million objects and holding over fourteen orders of magnitude in spatial scale. A single constant governing physics from globular clusters to cosmological structure would have been a remarkable thing.
+
+Fitting the scales jointly rather than separately rejects that hypothesis: $\chi^2/\mathrm{dof} = 4.5$, $p = 0.001$. The scales do not share a common value. There was also a plainer problem, which I should have caught before anything was deposited: two of my own documents reported this same quantity as $1.23$ and as $31.4$, a factor of twenty-five apart, and neither referred to the other.
+
+No coupling constant is measured anywhere in this work. The values $C_Q$ and $C_R$ appearing in Section~\ref{sec:discovery} are calibration outputs specific to one sample, not physical constants.
+
+\subsection{The conservation law}
+
+A companion document proposed that the product of matter density and effective gravitational coupling is conserved, $\rho \cdot G_{\mathrm{eff}} = \mathrm{const}$, and derived it via Noether's theorem from a rotational symmetry between the two fields.
+
+The Lagrangian does not have that symmetry. An $SO(2)$ rotation between $Q$ and $R$ is broken twice over: by the unequal field masses, and by the quartic cross-coupling term that is the entire mechanism of the model. A Noether current requires the symmetry to hold, and it does not. The relation may still be an interesting empirical regularity, but it is not a conservation law and it was not derived.
+
+The claim is withdrawn, and I would ask that the name attached to it not be used.
+
+\subsection{The significance of the sign inversion}
+
+The December version reported the sign inversion between gas-rich and gas-poor populations at $26\sigma$. That number came from comparing populations selected by their internal properties without controlling for the environments those populations occupy. Gas-poor massive galaxies live preferentially in clusters, so a comparison of that kind measures the difference between two populations and their environments at once, and attributes all of it to the effect being tested.
+
+Controlling for isolation gives $5.3\sigma$ for the full R-dominated sample and $5.2\sigma$ in the densest quartile, with the effect vanishing in the most isolated quartile. Those are the values reported in the peer-reviewed article, and the vanishing in isolated systems is more informative than the significance, since it is what an environmental effect should do and what a population artefact should not.
+
+\subsection{What controlling for internal properties revealed}
+
+This subsection records something that was not wrong before, but that only became visible when the second referee insisted on a stronger test, and it is the most substantive thing peer review contributed to this work.
+
+The referee asked for the analysis to be redone with environment as the primary variable and gas fraction and stellar mass demoted to statistical controls, rather than selecting populations by internal properties first. Doing so on the 53{,}363 galaxies of TNG100-1 confirms the curvature: it stays positive and significant through every model in the hierarchy. But it also shows that the amplitude falls from $+0.079$ with environment alone, to $+0.029$ with controls, to $+0.0095$ once interaction terms are added. The coefficient in the fully controlled model is roughly eight times smaller than in the raw fit.
+
+A substantial part of what looked like an environmental signal is carried by the covariance between environment and the internal properties of galaxies. What survives is real and robustly non-zero, and it should be read as a lower bound on any genuinely environmental effect rather than as a measurement of one. I state this plainly because the raw number is the more impressive one, and it is the smaller number that is honest.
+
+\subsection{The Theory of Everything designation}
+
+One of the December documents described the framework as a candidate Theory of Everything, on the grounds that it contained General Relativity as a limiting case.
+
+It does not. The reduction presented recovers Newtonian gravity with a rescaled coupling constant. There is no light deflection, no perihelion precession, no tensor structure, none of the content that makes General Relativity a theory of gravity rather than a force law. The framework is a phenomenological description of one pattern in one relation. Calling it anything more was a category error, and an obvious one in retrospect.
+
+\subsection{The extension to clinical data}
+
+A companion document applied the residual-diagnostic method to health datasets, reporting signatures in several conditions. That work was exploratory, was never validated against clinical baselines, and was never reviewed by anyone with the relevant expertise. It is not part of this research programme and should not be cited. It remains archived under \texttt{legacy/} for completeness only.
+
+\subsection{What this leaves}
+
+Stripping all of that away leaves less than I had in December, and what remains is what the evidence supports: BTFR residuals depend on environment in a way that is not monotonic; the pattern recurs, qualitatively, across three independent datasets that measure environment differently; the environmental response inverts sign with gas content, and it survives multivariate control; and a two-field description with antagonistic couplings accommodates this where a single-field model with a monotonic coupling does not.
+
+That is a consistency test and not a proof of anything. No forward model connects the parameters of the framework to the numbers we fit, which means the framework is not yet quantitatively falsifiable, and building that model is the next real piece of work rather than a detail to be filled in later.
+
+I want to be clear about how these errors happened, because the mechanism matters more than the list. None of them came from bad data or from a mistake in the empirical analysis. They came from building a theoretical structure on top of a real signal faster than the structure could be checked, and from checking it afterwards in the way one checks something one hopes is true. The verification that caught them was not different in kind from the work that produced them. It was the same work done in the opposite spirit.
+
+The corrections in this section were identified by my own re-derivation and by the referees, before publication and without external challenge. That is the system working as intended, and it cost nothing except a theory I was attached to.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data and Methods}
@@ -200,7 +267,7 @@ Figure~\ref{fig:qo_failure} shows the dramatic failure of this prediction.
     \label{fig:qo_failure}
 \end{figure}
 
-The single-field model fails qualitatively: no choice of $C_Q$ can produce elevated residuals at both low and high density simultaneously. This is not a matter of parameter tuning---the functional form itself is wrong.
+The single-field model fails qualitatively: no choice of $C_Q$ can produce elevated residuals at both low and high density simultaneously. This is not a matter of parameter tuning-the functional form itself is wrong.
 
 \subsection{Forensic Analysis: What Went Wrong?}
 
@@ -481,7 +548,7 @@ The U-shape emerges from the competition:
 
 The two-field structure of \QOR{} is superficially reminiscent of string compactifications, in which the dilaton and a K\"ahler modulus provide two scalars with distinct couplings to matter. In the December 2025 version of this work we described that resemblance as suggestive, and a companion document attempted to make it quantitative by deriving the cross-coupling $\lambda_{QR}$ from a Type IIB compactification with KKLT moduli stabilisation. The argument concluded that $\lambda_{QR} \sim \mathcal{O}(1)$, and that this matched the value inferred from the data.
 
-That argument does not survive computation. Evaluating the cross-coupling from the moduli stabilisation potential itself, rather than assuming its magnitude, gives values in the range $10^{-11}$ to $10^{-3}$ across the compactification scenarios examined --- between eight and fifteen orders of magnitude below the value the resemblance was taken to explain. The agreement previously reported was not obtained from the compactification; it was presupposed and then found.
+That argument does not survive computation. Evaluating the cross-coupling from the moduli stabilisation potential itself, rather than assuming its magnitude, gives values in the range $10^{-11}$ to $10^{-3}$ across the compactification scenarios examined - between eight and fifteen orders of magnitude below the value the resemblance was taken to explain. The agreement previously reported was not obtained from the compactification; it was presupposed and then found.
 
 We therefore withdraw the claim entirely and do not pursue this line here. What remains is a structural analogy with no quantitative content: two scalars with opposite matter couplings arise naturally in several settings, string compactifications among them, and that observation constrains nothing. The framework as used in this document is phenomenological throughout, and the peer-reviewed article makes no claim of a derivation from fundamental theory. The historical material, including the attempted derivation, is preserved unchanged under \texttt{legacy/} in the repository, so that the reasoning and its failure can be examined.
 
