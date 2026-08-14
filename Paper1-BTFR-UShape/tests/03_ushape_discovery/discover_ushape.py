@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 03: U-Shape Discovery
@@ -6,9 +6,9 @@ QO+R Paper 1 - Step 03: U-Shape Discovery
 THE MAIN DISCOVERY: A robust U-shaped pattern in BTFR residuals vs density.
 
 This is the central empirical finding of Paper 1:
-- Quadratic coefficient a = +0.035 ± 0.008
+- Quadratic coefficient a = +0.035 Â± 0.008
 - Highly significant: p < 0.001
-- Model comparison: ΔAIC = +34.3 (cubic vs linear)
+- Model comparison: Î”AIC = +34.3 (cubic vs linear)
 
 The U-shape is the signature of TWO ANTAGONISTIC scalar fields.
 
@@ -119,7 +119,7 @@ def analyze_ushape(df):
             print(f"\n{name.upper()}:")
             print(f"  Parameters: {r['params']}")
             print(f"  Errors:     {r['errors']}")
-            print(f"  R² = {r['r_squared']:.4f}")
+            print(f"  RÂ² = {r['r_squared']:.4f}")
             print(f"  AIC = {r['aic']:.2f}")
             print(f"  BIC = {r['bic']:.2f}")
     
@@ -128,13 +128,13 @@ def analyze_ushape(df):
     
     if results['linear'] and results['quadratic']:
         delta_aic_ql = results['linear']['aic'] - results['quadratic']['aic']
-        print(f"  ΔAIC (Linear - Quadratic) = {delta_aic_ql:+.1f}")
-        print(f"  → {'Quadratic preferred' if delta_aic_ql > 0 else 'Linear preferred'}")
+        print(f"  Î”AIC (Linear - Quadratic) = {delta_aic_ql:+.1f}")
+        print(f"  â†’ {'Quadratic preferred' if delta_aic_ql > 0 else 'Linear preferred'}")
     
     if results['linear'] and results['cubic']:
         delta_aic_cl = results['linear']['aic'] - results['cubic']['aic']
-        print(f"  ΔAIC (Linear - Cubic) = {delta_aic_cl:+.1f}")
-        print(f"  → {'Cubic preferred' if delta_aic_cl > 0 else 'Linear preferred'}")
+        print(f"  Î”AIC (Linear - Cubic) = {delta_aic_cl:+.1f}")
+        print(f"  â†’ {'Cubic preferred' if delta_aic_cl > 0 else 'Linear preferred'}")
     
     # U-shape significance
     print("\n--- U-Shape Significance ---")
@@ -143,8 +143,8 @@ def analyze_ushape(df):
         a_quad = results['quadratic']['params']['a']
         a_err = results['quadratic']['errors']['a']
         
-        print(f"  Quadratic coefficient: a = {a_quad:.4f} ± {a_err:.4f}")
-        print(f"  U-shape (a > 0): {'YES ✓' if a_quad > 0 else 'NO ✗'}")
+        print(f"  Quadratic coefficient: a = {a_quad:.4f} Â± {a_err:.4f}")
+        print(f"  U-shape (a > 0): {'YES âœ“' if a_quad > 0 else 'NO âœ—'}")
         
         # Z-score for a > 0
         z_score = a_quad / a_err
@@ -162,7 +162,7 @@ def analyze_ushape(df):
         else:
             significance = "NOT SIGNIFICANT"
         
-        print(f"  → {significance}")
+        print(f"  â†’ {significance}")
         
         results['ushape_significance'] = {
             'a': a_quad,
@@ -192,7 +192,7 @@ def analyze_ushape(df):
         
         print(f"  At low density (0.2):  y = {y_low:+.4f}")
         print(f"  At high density (0.8): y = {y_high:+.4f}")
-        print(f"  Both ends elevated: {'YES ✓' if y_low > y_vertex and y_high > y_vertex else 'NO'}")
+        print(f"  Both ends elevated: {'YES âœ“' if y_low > y_vertex and y_high > y_vertex else 'NO'}")
         
         results['extrema'] = {
             'x_vertex': x_vertex,
@@ -248,7 +248,7 @@ def create_ushape_figure(df, results):
     # Add significance annotation
     if 'ushape_significance' in results:
         sig = results['ushape_significance']
-        text = f"a = {sig['a']:.4f} ± {sig['a_err']:.4f}\np < 0.001"
+        text = f"a = {sig['a']:.4f} Â± {sig['a_err']:.4f}\np < 0.001"
         ax.text(0.02, 0.98, text, transform=ax.transAxes, fontsize=11,
                 verticalalignment='top', fontfamily='monospace',
                 bbox=dict(boxstyle='round', facecolor='lightyellow', edgecolor='orange'))
@@ -267,7 +267,7 @@ def create_ushape_figure(df, results):
     colors = ['#3498db', '#e74c3c', '#9b59b6']
     bars = ax.bar(model_names, delta_aic, color=colors, edgecolor='black')
     
-    ax.set_ylabel('ΔAIC (relative to best model)', fontsize=12)
+    ax.set_ylabel('Î”AIC (relative to best model)', fontsize=12)
     ax.set_title('B) Model Comparison: AIC', fontsize=13, fontweight='bold')
     ax.grid(True, alpha=0.3, axis='y')
     
@@ -281,7 +281,7 @@ def create_ushape_figure(df, results):
                 fontsize=11, fontweight='bold', color='green',
                 arrowprops=dict(arrowstyle='->', color='green'))
     
-    ax.text(0.5, 0.95, f'ΔAIC(Linear - Quad) = +{delta_aic[0]:.1f}',
+    ax.text(0.5, 0.95, f'Î”AIC(Linear - Quad) = +{delta_aic[0]:.1f}',
             transform=ax.transAxes, ha='center', fontsize=11,
             bbox=dict(boxstyle='round', facecolor='white', edgecolor='gray'))
     
@@ -339,11 +339,11 @@ def create_ushape_figure(df, results):
     plt.tight_layout()
     
     # Save
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig03_ushape_discovery.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.show()
     
@@ -351,14 +351,14 @@ def create_ushape_figure(df, results):
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 03: U-SHAPE DISCOVERY                          ║
-    ║  The central empirical finding: non-linear pattern in BTFR          ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 03: U-SHAPE DISCOVERY                          â•‘
+    â•‘  The central empirical finding: non-linear pattern in BTFR          â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     df = load_sparc_data()
-    print(f"✓ Loaded {len(df)} galaxies\n")
+    print(f"âœ“ Loaded {len(df)} galaxies\n")
     
     results = analyze_ushape(df)
     
@@ -376,32 +376,33 @@ def main():
     
     BTFR residuals show a U-shaped dependence on environmental density:
     
-    • Quadratic coefficient: a = {sig['a']:.4f} ± {sig['a_err']:.4f}
-    • Statistical significance: {sig['significance']}
-    • Z-score: {sig['z_score']:.2f}
-    • P-value: {sig['p_value']:.2e}
+    â€¢ Quadratic coefficient: a = {sig['a']:.4f} Â± {sig['a_err']:.4f}
+    â€¢ Statistical significance: {sig['significance']}
+    â€¢ Z-score: {sig['z_score']:.2f}
+    â€¢ P-value: {sig['p_value']:.2e}
     
     MODEL COMPARISON:
     
-    • Linear:    AIC = {results['linear']['aic']:.1f}
-    • Quadratic: AIC = {results['quadratic']['aic']:.1f}  ← BEST
-    • Cubic:     AIC = {results['cubic']['aic']:.1f}
+    â€¢ Linear:    AIC = {results['linear']['aic']:.1f}
+    â€¢ Quadratic: AIC = {results['quadratic']['aic']:.1f}  â† BEST
+    â€¢ Cubic:     AIC = {results['cubic']['aic']:.1f}
     
-    ΔAIC (Linear - Quadratic) = +{results['linear']['aic'] - results['quadratic']['aic']:.1f}
+    Î”AIC (Linear - Quadratic) = +{results['linear']['aic'] - results['quadratic']['aic']:.1f}
     
     INTERPRETATION:
     
     The U-shape is the signature of TWO ANTAGONISTIC scalar fields:
-    - Q field: dominates at LOW density → pulls residual UP
-    - R field: dominates at HIGH density → pulls residual UP
-    - At INTERMEDIATE density: neither dominates → minimum
+    - Q field: dominates at LOW density â†’ pulls residual UP
+    - R field: dominates at HIGH density â†’ pulls residual UP
+    - At INTERMEDIATE density: neither dominates â†’ minimum
     
     This is EXACTLY what QO+R predicts!
     
-    → Next step: Calibrate the coupling constants C_Q and C_R
+    â†’ Next step: Calibrate the coupling constants C_Q and C_R
     """)
     
     return results
 
 if __name__ == "__main__":
     results = main()
+

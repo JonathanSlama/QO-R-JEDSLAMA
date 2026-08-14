@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 10: TNG Simulation Validation (REAL DATA VERSION)
@@ -12,8 +12,8 @@ THIS VERSION USES REAL TNG DATA FROM:
 NO SYNTHETIC DATA IS GENERATED OR USED.
 
 Key Results from Real TNG Analysis:
-- TNG100-1 (ΛCDM): a = 0.045, p = 0.075 → U-shape NOT significant
-- TNG100-1 + QO+R: a = 0.039, p = 0.004 → U-shape DETECTED with correction
+- TNG100-1 (Î›CDM): a = 0.045, p = 0.075 â†’ U-shape NOT significant
+- TNG100-1 + QO+R: a = 0.039, p = 0.004 â†’ U-shape DETECTED with correction
 
 Author: Jonathan Edouard SLAMA
 Email: jonathan@metafund.in
@@ -151,8 +151,8 @@ def create_tng_figure(df_sparc, df_tng, results_sparc, results_tng, validation_d
     ax.grid(True, alpha=0.3)
     
     if results_tng:
-        status = "✓" if results_tng['ushape'] else "✗"
-        text = f"a = {results_tng['a']:.4f} ± {results_tng['a_err']:.4f}\np = {results_tng['p_value']:.4f} {status}"
+        status = "âœ“" if results_tng['ushape'] else "âœ—"
+        text = f"a = {results_tng['a']:.4f} Â± {results_tng['a_err']:.4f}\np = {results_tng['p_value']:.4f} {status}"
         ax.text(0.02, 0.98, text, transform=ax.transAxes, fontsize=10,
                 verticalalignment='top', fontfamily='monospace',
                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
@@ -181,7 +181,7 @@ def create_tng_figure(df_sparc, df_tng, results_sparc, results_tng, validation_d
     ax.grid(True, alpha=0.3)
     
     if results_sparc:
-        text = f"a = {results_sparc['a']:.4f} ± {results_sparc['a_err']:.4f}\np < 0.001 ✓"
+        text = f"a = {results_sparc['a']:.4f} Â± {results_sparc['a_err']:.4f}\np < 0.001 âœ“"
         ax.text(0.02, 0.98, text, transform=ax.transAxes, fontsize=10,
                 verticalalignment='top', fontfamily='monospace',
                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
@@ -251,39 +251,39 @@ def create_tng_figure(df_sparc, df_tng, results_sparc, results_tng, validation_d
             
             # Annotation
             if a_vals[0] < 0:
-                ax.text(0.5, 0.95, '★ R-dominated shows INVERTED U! ★', 
+                ax.text(0.5, 0.95, 'â˜… R-dominated shows INVERTED U! â˜…', 
                        transform=ax.transAxes, ha='center', fontsize=11, fontweight='bold',
                        bbox=dict(boxstyle='round', facecolor='lightgreen', edgecolor='black'))
     
     plt.tight_layout()
     
     # Save
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig10_tng_validation.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.close()
     return fig
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 10: TNG VALIDATION (REAL DATA VERSION)         ║
-    ║                                                                      ║
-    ║  Using REAL IllustrisTNG data:                                       ║
-    ║  • TNG100-1: 53,363 galaxies from actual simulation                  ║
-    ║  • Pre-computed validation results                                   ║
-    ║                                                                      ║
-    ║  NO SYNTHETIC DATA IS USED.                                          ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 10: TNG VALIDATION (REAL DATA VERSION)         â•‘
+    â•‘                                                                      â•‘
+    â•‘  Using REAL IllustrisTNG data:                                       â•‘
+    â•‘  â€¢ TNG100-1: 53,363 galaxies from actual simulation                  â•‘
+    â•‘  â€¢ Pre-computed validation results                                   â•‘
+    â•‘                                                                      â•‘
+    â•‘  NO SYNTHETIC DATA IS USED.                                          â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     # Load data
     print("Loading SPARC data...")
     df_sparc = load_sparc_data()
-    print(f"✓ Loaded {len(df_sparc)} SPARC galaxies")
+    print(f"âœ“ Loaded {len(df_sparc)} SPARC galaxies")
     
     print("\nLoading TNG100-1 data...")
     df_tng = load_tng_data()
@@ -298,17 +298,17 @@ def main():
     
     results_sparc = test_ushape(df_sparc, 'SPARC')
     if results_sparc:
-        print(f"\n[SPARC] a = {results_sparc['a']:.4f} ± {results_sparc['a_err']:.4f}")
+        print(f"\n[SPARC] a = {results_sparc['a']:.4f} Â± {results_sparc['a_err']:.4f}")
         print(f"        p = {results_sparc['p_value']:.6f}")
-        print(f"        U-shape: {'✓ DETECTED' if results_sparc['ushape'] else '✗ Not detected'}")
+        print(f"        U-shape: {'âœ“ DETECTED' if results_sparc['ushape'] else 'âœ— Not detected'}")
     
     results_tng = None
     if df_tng is not None:
         results_tng = test_ushape(df_tng, 'TNG100-1')
         if results_tng:
-            print(f"\n[TNG100-1] a = {results_tng['a']:.4f} ± {results_tng['a_err']:.4f}")
+            print(f"\n[TNG100-1] a = {results_tng['a']:.4f} Â± {results_tng['a_err']:.4f}")
             print(f"           p = {results_tng['p_value']:.6f}")
-            print(f"           U-shape: {'✓ DETECTED' if results_tng['ushape'] else '✗ Not detected'}")
+            print(f"           U-shape: {'âœ“ DETECTED' if results_tng['ushape'] else 'âœ— Not detected'}")
     
     # Create figure
     print("\nGenerating TNG validation figure...")
@@ -322,14 +322,14 @@ def main():
     print("""
     KEY RESULTS FROM REAL TNG DATA:
     
-    1. TNG100-1 (pure ΛCDM):
+    1. TNG100-1 (pure Î›CDM):
        - U-shape coefficient a = 0.045
-       - p-value = 0.075 → NOT significant at 5% level
-       - Pure ΛCDM does NOT clearly produce U-shape
+       - p-value = 0.075 â†’ NOT significant at 5% level
+       - Pure Î›CDM does NOT clearly produce U-shape
     
     2. TNG100-1 + QO+R correction:
        - U-shape coefficient a = 0.039  
-       - p-value = 0.004 → SIGNIFICANT
+       - p-value = 0.004 â†’ SIGNIFICANT
        - QO+R correction REVEALS the U-shape
     
     3. KILLER PREDICTION (from TNG300 stratified analysis):
@@ -338,7 +338,7 @@ def main():
        - This confirms the antagonistic Q-R coupling!
     
     INTERPRETATION:
-    - ΛCDM alone produces weak/borderline U-shape
+    - Î›CDM alone produces weak/borderline U-shape
     - QO+R provides additional physics that strengthens the signal
     - The R-dominated inversion is a UNIQUE prediction of QO+R
     
@@ -349,3 +349,4 @@ def main():
 
 if __name__ == "__main__":
     results = main()
+

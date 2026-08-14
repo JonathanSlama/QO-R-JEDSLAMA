@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 08: Q-HI Correlation Analysis
 =============================================================================
 Testing the hypothesis that Q field couples preferentially to HI gas.
 
-Key prediction: If Q ∝ HI content, then:
+Key prediction: If Q âˆ HI content, then:
 - High HI galaxies should show stronger Q effect
 - Q-HI correlation should be environment-dependent
 - Residuals from BTFR should correlate with HI mass
@@ -62,7 +62,7 @@ def analyze_q_hi_correlation(df):
         
         # Spearman (non-parametric)
         rho, p_spearman = stats.spearmanr(df.loc[valid, 'Q_estimate'], df.loc[valid, 'log_MHI'])
-        print(f"  Spearman correlation:    ρ = {rho:+.3f}, p = {p_spearman:.4f}")
+        print(f"  Spearman correlation:    Ï = {rho:+.3f}, p = {p_spearman:.4f}")
         results['q_vs_hi_spearman'] = {'rho': rho, 'p': p_spearman}
     
     # 2. Environment-specific Q-HI correlation
@@ -89,7 +89,7 @@ def analyze_q_hi_correlation(df):
     # HI deficiency = expected HI - observed HI
     # Expected HI from mass (rough scaling relation)
     if 'log_Mbar' in df.columns:
-        # Simple scaling: log(M_HI) ≈ 0.9 * log(M_bar) + constant
+        # Simple scaling: log(M_HI) â‰ˆ 0.9 * log(M_bar) + constant
         valid = df['MHI'].notna() & (df['MHI'] > 0)
         df_valid = df[valid].copy()
         df_valid['log_MHI'] = np.log10(df_valid['MHI'] * 1e9)
@@ -99,7 +99,7 @@ def analyze_q_hi_correlation(df):
         df_valid['expected_log_MHI'] = slope * df_valid['log_Mbar'] + intercept
         df_valid['HI_deficiency'] = df_valid['expected_log_MHI'] - df_valid['log_MHI']
         
-        print(f"  HI scaling: log(M_HI) = {slope:.2f} × log(M_bar) + {intercept:.2f}")
+        print(f"  HI scaling: log(M_HI) = {slope:.2f} Ã— log(M_bar) + {intercept:.2f}")
         
         # Correlate HI deficiency with BTFR residual
         r, p = stats.pearsonr(df_valid['HI_deficiency'], df_valid['btfr_residual'])
@@ -112,7 +112,7 @@ def analyze_q_hi_correlation(df):
     # 4. Q-HI model fit
     print("\n--- Analysis 4: Q-HI Coupling Model ---")
     
-    # Model: Q_eff = α × M_HI / M_bar + β × (1 - density)
+    # Model: Q_eff = Î± Ã— M_HI / M_bar + Î² Ã— (1 - density)
     # Test if HI content improves Q estimate
     
     valid = df['MHI'].notna() & (df['MHI'] > 0)
@@ -141,7 +141,7 @@ def analyze_q_hi_correlation(df):
     from scipy.stats import pearsonr
     
     # Partial correlation of Q with residual, controlling for HI
-    # r_QR.HI = (r_QR - r_QHI × r_RHI) / sqrt((1-r_QHI²)(1-r_RHI²))
+    # r_QR.HI = (r_QR - r_QHI Ã— r_RHI) / sqrt((1-r_QHIÂ²)(1-r_RHIÂ²))
     
     df_valid = df[valid].copy()
     df_valid['log_MHI'] = np.log10(df_valid['MHI'] * 1e9)
@@ -194,7 +194,7 @@ def create_q_hi_figure(results, df):
     ax.plot(x_trend, p(x_trend), 'k--', linewidth=2, label='Linear fit')
     
     ax.set_xlabel('Q Estimate', fontsize=11)
-    ax.set_ylabel('log(M_HI) [M☉]', fontsize=11)
+    ax.set_ylabel('log(M_HI) [Mâ˜‰]', fontsize=11)
     ax.set_title('A) Q Proxy vs HI Mass', fontsize=12, fontweight='bold')
     ax.legend()
     ax.grid(True, alpha=0.3)
@@ -284,11 +284,11 @@ def create_q_hi_figure(results, df):
     plt.tight_layout()
     
     # Save
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig08_q_hi_correlation.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.show()
     
@@ -296,14 +296,14 @@ def create_q_hi_figure(results, df):
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 08: Q-HI CORRELATION ANALYSIS                  ║
-    ║  Testing preferential coupling of Q field to HI gas                  ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 08: Q-HI CORRELATION ANALYSIS                  â•‘
+    â•‘  Testing preferential coupling of Q field to HI gas                  â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     df = load_sparc_data()
-    print(f"✓ Loaded {len(df)} galaxies\n")
+    print(f"âœ“ Loaded {len(df)} galaxies\n")
     
     results, df = analyze_q_hi_correlation(df)
     
@@ -332,7 +332,7 @@ def main():
     
     The Q field appears to couple preferentially to neutral hydrogen:
     
-        Q_eff ∝ Q_env × f(M_HI / M_bar)
+        Q_eff âˆ Q_env Ã— f(M_HI / M_bar)
     
     Where f is a coupling function that enhances Q in gas-rich systems.
     
@@ -341,10 +341,11 @@ def main():
     - Light particles (HI) have stronger coupling than heavy (stars)
     - Mass-dependent screening naturally emerges
     
-    → Next step: Solar system constraints (Eöt-Wash, PPN)
+    â†’ Next step: Solar system constraints (EÃ¶t-Wash, PPN)
     """)
     
     return results
 
 if __name__ == "__main__":
     results = main()
+

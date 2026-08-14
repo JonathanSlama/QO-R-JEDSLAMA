@@ -178,6 +178,33 @@ and are **withdrawn**. They must not be quoted from any current document:
 
 ---
 
+## Two quantities that have both been called C_Q and C_R
+
+Earlier versions of the narrative document reported "C_Q = +2.82 +/- 0.15, C_R =
+-0.72 +/- 0.08" as coupling constants of the Lagrangian. They are not coupling
+constants, and the uncertainties quoted alongside them do not appear in any
+source file. The confusion is worth recording, since two distinct quantities
+carry the same symbols across the project.
+
+| Symbol as used | What it actually is | Value | Source |
+|---|---|---|---|
+| Curvature against the Q proxy | Curvature of the residual when environment is measured by gas content | +2.8156 | `BTFR/Test-MicrophysicsQHI/test_qhi_refined_results.csv`, column `curvature_Q_proxy` |
+| Curvature against the R proxy | Same, measured by stellar dominance | -0.7201 | idem, column `curvature_R_proxy` |
+| C_Q (calibration) | Fitted coefficient of the environmental response, Method 1 | +0.6082 +/- 0.1264 | `tests/04_calibration/calibrate_params.py` |
+| C_R (calibration) | idem | +0.7524 +/- 0.1153 | idem |
+
+The opposition of sign between the first two is the sign inversion measured on
+SPARC directly, and it is a real result. The two calibration coefficients are
+both positive because that fit parameterises the environmental response
+differently, and in that parameterisation two positive coefficients are what
+produces a U-shape. Neither pair measures a coupling of the Lagrangian: the
+framework contains no forward model that would allow such a conversion.
+
+The uncertainties +/-0.15 and +/-0.08 previously attached to +2.82 and -0.72 have
+no source and have been removed.
+
+---
+
 ## Known discrepancies
 
 **1. Figure 3 caption in the accepted article (open).**

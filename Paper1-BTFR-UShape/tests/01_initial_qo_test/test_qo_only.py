@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 01: Initial QO Test (FAILURE)
@@ -54,8 +54,8 @@ def test_q_only_hypothesis(df):
     should have HIGHER rotation velocities (positive residuals).
     
     Q_estimate column: proxy for Q field strength
-    - Low density (voids) → Q_estimate ~ 0.8
-    - High density (clusters) → Q_estimate ~ 0.2
+    - Low density (voids) â†’ Q_estimate ~ 0.8
+    - High density (clusters) â†’ Q_estimate ~ 0.2
     """
     
     print("=" * 70)
@@ -73,7 +73,7 @@ def test_q_only_hypothesis(df):
     print(f"Correlation r = {r_value:.4f}")
     print(f"P-value = {p_value:.4f}")
     
-    # Prediction was: higher Q → higher residual (positive slope)
+    # Prediction was: higher Q â†’ higher residual (positive slope)
     # Reality check
     if slope > 0:
         result = "CONFIRMED"
@@ -91,8 +91,8 @@ def test_q_only_hypothesis(df):
     clusters = df[df['env_class'] == 'cluster']['btfr_residual']
     
     print(f"\n--- Environmental comparison ---")
-    print(f"Void galaxies (high Q):    mean residual = {voids.mean():.4f} ± {voids.std():.4f}")
-    print(f"Cluster galaxies (low Q):  mean residual = {clusters.mean():.4f} ± {clusters.std():.4f}")
+    print(f"Void galaxies (high Q):    mean residual = {voids.mean():.4f} Â± {voids.std():.4f}")
+    print(f"Cluster galaxies (low Q):  mean residual = {clusters.mean():.4f} Â± {clusters.std():.4f}")
     
     # T-test
     t_stat, t_pvalue = stats.ttest_ind(voids, clusters)
@@ -103,7 +103,7 @@ def test_q_only_hypothesis(df):
     delta = voids.mean() - clusters.mean()
     print(f"\nDelta (void - cluster) = {delta:.4f}")
     print(f"Expected: POSITIVE (voids should be higher)")
-    print(f"Observed: {'POSITIVE ✓' if delta > 0 else 'NEGATIVE ✗ (INVERTED!)'}")
+    print(f"Observed: {'POSITIVE âœ“' if delta > 0 else 'NEGATIVE âœ— (INVERTED!)'}")
     
     return {
         'slope': slope,
@@ -195,12 +195,12 @@ def create_figure(df, results):
     plt.tight_layout()
     
     # Save figure
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     
     output_path = figures_dir / "fig01_qo_only_failure.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.show()
     
@@ -210,16 +210,16 @@ def main():
     """Main execution."""
     
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 01: INITIAL Q-ONLY TEST                        ║
-    ║  Testing the original Quotient Ontologique hypothesis               ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 01: INITIAL Q-ONLY TEST                        â•‘
+    â•‘  Testing the original Quotient Ontologique hypothesis               â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     # Load data
     print("Loading SPARC data...")
     df = load_sparc_data()
-    print(f"✓ Loaded {len(df)} galaxies")
+    print(f"âœ“ Loaded {len(df)} galaxies")
     print(f"  Environments: {df['env_class'].value_counts().to_dict()}")
     
     # Run test
@@ -247,10 +247,11 @@ def main():
     This failure motivated the introduction of the antagonistic R field,
     leading to the QO+R framework where Q and R have OPPOSITE effects.
     
-    → Next step: Forensic analysis to understand why Q-only fails
+    â†’ Next step: Forensic analysis to understand why Q-only fails
     """)
     
     return results
 
 if __name__ == "__main__":
     results = main()
+

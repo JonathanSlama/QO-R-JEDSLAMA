@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 04: Parameter Calibration
@@ -44,7 +44,7 @@ def qor_model(density, C_Q, C_R, offset):
     Q dominates at low density (voids): Q_eff = 1 - density
     R dominates at high density (clusters): R_eff = density
     
-    residual = C_Q * Q_eff² + C_R * R_eff² + offset
+    residual = C_Q * Q_effÂ² + C_R * R_effÂ² + offset
     
     For U-shape: C_Q and C_R should have SAME sign (both positive)
     But their PHYSICAL effects are opposite (one accelerates, one decelerates)
@@ -80,20 +80,20 @@ def calibrate_parameters(df):
         C_Q, C_R, offset = popt
         C_Q_err, C_R_err, offset_err = perr
         
-        print(f"  C_Q = {C_Q:.4f} ± {C_Q_err:.4f}")
-        print(f"  C_R = {C_R:.4f} ± {C_R_err:.4f}")
-        print(f"  offset = {offset:.4f} ± {offset_err:.4f}")
+        print(f"  C_Q = {C_Q:.4f} Â± {C_Q_err:.4f}")
+        print(f"  C_R = {C_R:.4f} Â± {C_R_err:.4f}")
+        print(f"  offset = {offset:.4f} Â± {offset_err:.4f}")
         
         # Check signs
         print(f"\n  Signs: C_Q {'>' if C_Q > 0 else '<'} 0, C_R {'>' if C_R > 0 else '<'} 0")
-        print(f"  → {'Both positive: U-shape confirmed!' if C_Q > 0 and C_R > 0 else 'Mixed signs'}")
+        print(f"  â†’ {'Both positive: U-shape confirmed!' if C_Q > 0 and C_R > 0 else 'Mixed signs'}")
         
         # R-squared
         y_pred = qor_model(x, *popt)
         ss_res = np.sum((y - y_pred)**2)
         ss_tot = np.sum((y - np.mean(y))**2)
         r_squared = 1 - ss_res / ss_tot
-        print(f"  R² = {r_squared:.4f}")
+        print(f"  RÂ² = {r_squared:.4f}")
         
         results_quad = {
             'C_Q': C_Q, 'C_Q_err': C_Q_err,
@@ -118,14 +118,14 @@ def calibrate_parameters(df):
     print(f"  Cluster mean (high R): {cluster_mean:.4f}")
     
     # Rough estimation:
-    # At void: Q_eff ≈ 0.8, R_eff ≈ 0.2 → C_Q * 0.64 + C_R * 0.04 ≈ void_mean
-    # At cluster: Q_eff ≈ 0.2, R_eff ≈ 0.8 → C_Q * 0.04 + C_R * 0.64 ≈ cluster_mean
+    # At void: Q_eff â‰ˆ 0.8, R_eff â‰ˆ 0.2 â†’ C_Q * 0.64 + C_R * 0.04 â‰ˆ void_mean
+    # At cluster: Q_eff â‰ˆ 0.2, R_eff â‰ˆ 0.8 â†’ C_Q * 0.04 + C_R * 0.64 â‰ˆ cluster_mean
     
     # Method 3: Physical interpretation
     print("\n--- Method 3: Physical Coupling Constants ---")
     
     # Scale to physical units (approximate)
-    # The coupling represents: Δlog(V) per unit field strength
+    # The coupling represents: Î”log(V) per unit field strength
     
     # From the quadratic fit, extract physical meaning
     if results_quad:
@@ -159,10 +159,10 @@ def calibrate_parameters(df):
         print(f"  C_R (scaled) = {C_R_scaled:.2f}")
         
         # Alternative: fit with prescribed functional form
-        # residual = C_Q * (1-ρ)² + C_R * ρ² → maps to a*ρ² + b*ρ + c
+        # residual = C_Q * (1-Ï)Â² + C_R * ÏÂ² â†’ maps to a*ÏÂ² + b*Ï + c
         # where a = C_Q + C_R, b = -2*C_Q, c = C_Q
         
-        # From quadratic fit: y = a*x² + b*x + c
+        # From quadratic fit: y = a*xÂ² + b*x + c
         def quadratic_func(x, a, b, c):
             return a * x**2 + b * x + c
         
@@ -216,7 +216,7 @@ def create_calibration_figure(df, results):
     
     # Add parameter box
     if results:
-        text = f"C_Q = {results['C_Q']:.4f}\nC_R = {results['C_R']:.4f}\nR² = {results['r_squared']:.4f}"
+        text = f"C_Q = {results['C_Q']:.4f}\nC_R = {results['C_R']:.4f}\nRÂ² = {results['r_squared']:.4f}"
         ax.text(0.02, 0.98, text, transform=ax.transAxes, fontsize=11,
                 verticalalignment='top', fontfamily='monospace',
                 bbox=dict(boxstyle='round', facecolor='lightyellow', edgecolor='orange'))
@@ -296,7 +296,7 @@ def create_calibration_figure(df, results):
         ax.axvline(0, color='gray', linestyle='--', linewidth=1)
         
         # Quadrants
-        ax.text(0.05, 0.05, 'Q↑, R↑\nU-shape', fontsize=10, transform=ax.transAxes,
+        ax.text(0.05, 0.05, 'Qâ†‘, Râ†‘\nU-shape', fontsize=10, transform=ax.transAxes,
                 bbox=dict(boxstyle='round', facecolor='lightgreen', alpha=0.5))
     
     ax.set_xlabel('C_Q', fontsize=12)
@@ -308,11 +308,11 @@ def create_calibration_figure(df, results):
     plt.tight_layout()
     
     # Save
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig04_calibration.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.show()
     
@@ -320,14 +320,14 @@ def create_calibration_figure(df, results):
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 04: PARAMETER CALIBRATION                      ║
-    ║  Determining C_Q and C_R from SPARC data                            ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 04: PARAMETER CALIBRATION                      â•‘
+    â•‘  Determining C_Q and C_R from SPARC data                            â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     df = load_sparc_data()
-    print(f"✓ Loaded {len(df)} galaxies\n")
+    print(f"âœ“ Loaded {len(df)} galaxies\n")
     
     results = calibrate_parameters(df)
     
@@ -342,8 +342,8 @@ def main():
         print(f"""
     CALIBRATED QO+R PARAMETERS:
     
-    • C_Q = {results['C_Q']:.4f} ± {results['C_Q_err']:.4f}
-    • C_R = {results['C_R']:.4f} ± {results['C_R_err']:.4f}
+    â€¢ C_Q = {results['C_Q']:.4f} Â± {results['C_Q_err']:.4f}
+    â€¢ C_R = {results['C_R']:.4f} Â± {results['C_R_err']:.4f}
     
     INTERPRETATION:
     
@@ -358,16 +358,17 @@ def main():
     PHYSICAL MEANING:
     
     The QO+R Lagrangian couples to matter as:
-        δV/V ≈ C_Q × Q_eff² + C_R × R_eff²
+        Î´V/V â‰ˆ C_Q Ã— Q_effÂ² + C_R Ã— R_effÂ²
     
     Where:
-    - Q_eff = effective Q field ∝ (1 - density)
-    - R_eff = effective R field ∝ density
+    - Q_eff = effective Q field âˆ (1 - density)
+    - R_eff = effective R field âˆ density
     
-    → Next step: Test robustness with Monte Carlo and Bootstrap
+    â†’ Next step: Test robustness with Monte Carlo and Bootstrap
     """)
     
     return results
 
 if __name__ == "__main__":
     results = main()
+

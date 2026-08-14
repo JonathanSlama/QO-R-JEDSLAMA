@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 QO+R Analysis Utilities
 =======================
@@ -30,7 +30,7 @@ def get_data_path():
 
 def get_figures_path():
     """Returns the path to the figures directory."""
-    return get_project_root() / "figures"
+    return get_project_root() / "research_document" / "figures"
 
 
 def load_sparc_data():
@@ -323,3 +323,4 @@ if __name__ == "__main__":
     except FileNotFoundError as e:
         print(f"\nData not found: {e}")
         print("Run from the project root with data/ directory.")
+

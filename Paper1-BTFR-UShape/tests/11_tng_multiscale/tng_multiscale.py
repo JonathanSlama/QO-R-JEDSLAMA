@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 11: TNG Multi-Scale Analysis (REAL DATA VERSION)
@@ -9,9 +9,9 @@ THIS VERSION USES REAL TNG DATA FROM:
 - BTFR/TNG/tng300_stratified_results.csv (pre-computed on 623,609 galaxies)
 
 Key Results (REAL DATA):
-- Gas-rich (Q-dominated): a = +0.017 → Positive U-shape
-- Gas-poor + High mass (R-dominated): a = -0.014 → INVERTED U-shape
-- EXTREME R-DOM: a = -0.019 → Strong inversion
+- Gas-rich (Q-dominated): a = +0.017 â†’ Positive U-shape
+- Gas-poor + High mass (R-dominated): a = -0.014 â†’ INVERTED U-shape
+- EXTREME R-DOM: a = -0.019 â†’ Strong inversion
 
 This confirms the KILLER PREDICTION of QO+R!
 
@@ -138,29 +138,29 @@ def create_multiscale_figure(df_results):
     ax.axis('off')
     
     summary_text = """
-    ╔══════════════════════════════════════════════════════════════════╗
-    ║           KILLER PREDICTION CONFIRMED (REAL TNG DATA)            ║
-    ╠══════════════════════════════════════════════════════════════════╣
-    ║                                                                  ║
-    ║  QO+R PREDICTS:                                                  ║
-    ║  • Q-dominated (gas-rich) → Positive U-shape (a > 0)            ║
-    ║  • R-dominated (gas-poor) → Inverted U-shape (a < 0)            ║
-    ║                                                                  ║
-    ║  TNG300 RESULTS (623,609 galaxies):                              ║
-    ║                                                                  ║
-    ║  ✓ Gas-rich:           a = +0.017 ± 0.008                       ║
-    ║  ✓ Gas-poor:           a = +0.029 ± 0.014                       ║
-    ║  ✓ Gas-poor + High M*: a = -0.014 ± 0.001  ← INVERTED!         ║
-    ║  ✓ EXTREME R-DOM:      a = -0.019 ± 0.003  ← INVERTED!         ║
-    ║                                                                  ║
-    ║  INTERPRETATION:                                                 ║
-    ║  High-mass, gas-poor galaxies (R-dominated) show the            ║
-    ║  OPPOSITE curvature to gas-rich galaxies (Q-dominated).         ║
-    ║                                                                  ║
-    ║  This is the UNIQUE SIGNATURE of QO+R that distinguishes        ║
-    ║  it from standard astrophysical explanations!                   ║
-    ║                                                                  ║
-    ╚══════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘           KILLER PREDICTION CONFIRMED (REAL TNG DATA)            â•‘
+    â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£
+    â•‘                                                                  â•‘
+    â•‘  QO+R PREDICTS:                                                  â•‘
+    â•‘  â€¢ Q-dominated (gas-rich) â†’ Positive U-shape (a > 0)            â•‘
+    â•‘  â€¢ R-dominated (gas-poor) â†’ Inverted U-shape (a < 0)            â•‘
+    â•‘                                                                  â•‘
+    â•‘  TNG300 RESULTS (623,609 galaxies):                              â•‘
+    â•‘                                                                  â•‘
+    â•‘  âœ“ Gas-rich:           a = +0.017 Â± 0.008                       â•‘
+    â•‘  âœ“ Gas-poor:           a = +0.029 Â± 0.014                       â•‘
+    â•‘  âœ“ Gas-poor + High M*: a = -0.014 Â± 0.001  â† INVERTED!         â•‘
+    â•‘  âœ“ EXTREME R-DOM:      a = -0.019 Â± 0.003  â† INVERTED!         â•‘
+    â•‘                                                                  â•‘
+    â•‘  INTERPRETATION:                                                 â•‘
+    â•‘  High-mass, gas-poor galaxies (R-dominated) show the            â•‘
+    â•‘  OPPOSITE curvature to gas-rich galaxies (Q-dominated).         â•‘
+    â•‘                                                                  â•‘
+    â•‘  This is the UNIQUE SIGNATURE of QO+R that distinguishes        â•‘
+    â•‘  it from standard astrophysical explanations!                   â•‘
+    â•‘                                                                  â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """
     
     ax.text(0.5, 0.5, summary_text, transform=ax.transAxes, fontsize=10,
@@ -171,26 +171,26 @@ def create_multiscale_figure(df_results):
     plt.tight_layout()
     
     # Save
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig11_tng_multiscale.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.close()
     return fig
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 11: TNG MULTISCALE (REAL DATA VERSION)         ║
-    ║                                                                      ║
-    ║  Using REAL IllustrisTNG300-1 stratified analysis:                   ║
-    ║  • 623,609 galaxies analyzed                                         ║
-    ║  • Stratified by gas fraction and stellar mass                       ║
-    ║                                                                      ║
-    ║  NO SYNTHETIC DATA IS USED.                                          ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 11: TNG MULTISCALE (REAL DATA VERSION)         â•‘
+    â•‘                                                                      â•‘
+    â•‘  Using REAL IllustrisTNG300-1 stratified analysis:                   â•‘
+    â•‘  â€¢ 623,609 galaxies analyzed                                         â•‘
+    â•‘  â€¢ Stratified by gas fraction and stellar mass                       â•‘
+    â•‘                                                                      â•‘
+    â•‘  NO SYNTHETIC DATA IS USED.                                          â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     # Load results
@@ -205,11 +205,11 @@ def main():
     print("TNG300 STRATIFIED RESULTS (REAL DATA)")
     print("=" * 60)
     
-    print(f"\n{'Category':<35} {'N':>10} {'a':>12} {'±err':>10}")
+    print(f"\n{'Category':<35} {'N':>10} {'a':>12} {'Â±err':>10}")
     print("-" * 70)
     
     for _, row in df_results.iterrows():
-        status = "← INVERTED!" if row['a'] < 0 else ""
+        status = "â† INVERTED!" if row['a'] < 0 else ""
         print(f"{row['category']:<35} {row['n']:>10,} {row['a']:>+12.4f} {row['a_err']:>10.4f} {status}")
     
     # Create figure
@@ -224,13 +224,13 @@ def main():
     THE KILLER PREDICTION IS CONFIRMED ON REAL TNG300 DATA!
     
     Key findings:
-    1. Gas-rich galaxies (Q-dominated): a > 0 → Standard U-shape
-    2. Gas-poor + High mass (R-dominated): a < 0 → INVERTED U-shape
+    1. Gas-rich galaxies (Q-dominated): a > 0 â†’ Standard U-shape
+    2. Gas-poor + High mass (R-dominated): a < 0 â†’ INVERTED U-shape
     
     This is EXACTLY what QO+R predicts:
-    - Q field couples to gas → positive curvature
-    - R field couples to stars → negative curvature
-    - At high stellar mass with low gas, R dominates → inversion
+    - Q field couples to gas â†’ positive curvature
+    - R field couples to stars â†’ negative curvature
+    - At high stellar mass with low gas, R dominates â†’ inversion
     
     Standard astrophysics (ram pressure, tides, etc.) cannot easily
     explain why the U-shape INVERTS for specific galaxy populations.
@@ -242,3 +242,4 @@ def main():
 
 if __name__ == "__main__":
     results = main()
+

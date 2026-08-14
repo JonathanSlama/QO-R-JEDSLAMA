@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 13: Falsifiable Predictions
@@ -14,7 +14,7 @@ QO+R makes specific, testable predictions:
 2. GRAVITATIONAL LENSING vs DYNAMICS:
    - Lensing measures total mass (including scalar contribution)
    - Dynamics measures "felt" gravity
-   - QO+R predicts: M_lens / M_dyn ≠ 1 with environmental dependence
+   - QO+R predicts: M_lens / M_dyn â‰  1 with environmental dependence
 
 3. REDSHIFT EVOLUTION:
    - Q and R fields evolve cosmologically
@@ -58,9 +58,9 @@ def prediction_udg():
     
     For UDGs in EXTREME VOIDS:
     
-    • Q field reaches maximum value (no nearby matter to suppress it)
-    • R field is minimal
-    • Net effect: STRONG Q coupling to rotation
+    â€¢ Q field reaches maximum value (no nearby matter to suppress it)
+    â€¢ R field is minimal
+    â€¢ Net effect: STRONG Q coupling to rotation
     
     The BTFR fit should show:
     
@@ -74,17 +74,17 @@ def prediction_udg():
     SPECIFIC NUMBERS:
     
     For UDGs with:
-    - Surface brightness μ_0 > 24 mag/arcsec²
-    - Environmental density ρ/ρ_crit < 0.1
+    - Surface brightness Î¼_0 > 24 mag/arcsecÂ²
+    - Environmental density Ï/Ï_crit < 0.1
     - Effective radius R_e > 1.5 kpc
     
     Predicted BTFR residual:
     
-        Δlog(V_flat) = -0.05 to -0.10 dex  (BELOW standard BTFR)
+        Î”log(V_flat) = -0.05 to -0.10 dex  (BELOW standard BTFR)
     
     This contrasts with cluster UDGs which should show:
     
-        Δlog(V_flat) = +0.05 to +0.15 dex  (ABOVE standard BTFR)
+        Î”log(V_flat) = +0.05 to +0.15 dex  (ABOVE standard BTFR)
     
     FALSIFICATION:
     
@@ -126,34 +126,34 @@ def prediction_lensing():
     
     The Q and R fields modify the effective gravitational coupling:
     
-        G_eff = G_N × (1 + α_Q × Q² + α_R × R²)
+        G_eff = G_N Ã— (1 + Î±_Q Ã— QÂ² + Î±_R Ã— RÂ²)
     
     But lensing and dynamics couple DIFFERENTLY to the scalars:
     
-    • Lensing: photons couple to the TOTAL metric (incl. scalars)
-    • Dynamics: matter couples through the JORDAN frame metric
+    â€¢ Lensing: photons couple to the TOTAL metric (incl. scalars)
+    â€¢ Dynamics: matter couples through the JORDAN frame metric
     
     Result:
     
-        η ≡ M_lensing / M_dynamical ≠ 1
+        Î· â‰¡ M_lensing / M_dynamical â‰  1
     
     With ENVIRONMENTAL DEPENDENCE:
     
-        η_void ≈ 0.92 - 0.98     (Q dominates, dynamics enhanced)
-        η_field ≈ 0.98 - 1.02    (balanced)
-        η_cluster ≈ 1.02 - 1.10  (R dominates, lensing enhanced)
+        Î·_void â‰ˆ 0.92 - 0.98     (Q dominates, dynamics enhanced)
+        Î·_field â‰ˆ 0.98 - 1.02    (balanced)
+        Î·_cluster â‰ˆ 1.02 - 1.10  (R dominates, lensing enhanced)
     
     SPECIFIC PREDICTION:
     
     For a sample of ~100 galaxies spanning void to cluster:
     
-        Δη = η_cluster - η_void ≈ 0.08 - 0.15
+        Î”Î· = Î·_cluster - Î·_void â‰ˆ 0.08 - 0.15
     
     This is DETECTABLE with current weak lensing + rotation curve data.
     
     FALSIFICATION:
     
-    If η = 1.00 ± 0.02 across all environments with no trend,
+    If Î· = 1.00 Â± 0.02 across all environments with no trend,
     QO+R is FALSIFIED.
     
     HOW TO TEST:
@@ -162,16 +162,16 @@ def prediction_lensing():
        - Weak lensing mass (e.g., KiDS, DES)
        - Rotation curve mass (e.g., SPARC)
     2. Classify by environment
-    3. Compute η for each
+    3. Compute Î· for each
     4. Test for environmental correlation
     """)
     
     return {
-        'prediction': 'η = M_lens/M_dyn has environmental dependence',
+        'prediction': 'Î· = M_lens/M_dyn has environmental dependence',
         'eta_void': 0.95,
         'eta_cluster': 1.05,
         'delta_eta': 0.10,
-        'falsification': 'η = 1.00 ± 0.02 with no environmental trend'
+        'falsification': 'Î· = 1.00 Â± 0.02 with no environmental trend'
     }
 
 def prediction_redshift():
@@ -191,29 +191,29 @@ def prediction_redshift():
     This is because:
     - Scalar field potentials drive time evolution
     - Environmental conditions were different at high z
-    - Matter density ρ(z) = ρ_0 × (1+z)³
+    - Matter density Ï(z) = Ï_0 Ã— (1+z)Â³
     
     QO+R PREDICTION:
     
     The U-shape amplitude 'a' evolves with redshift:
     
-        a(z) = a_0 × (1 + z)^β
+        a(z) = a_0 Ã— (1 + z)^Î²
     
-    Where β is determined by the scalar potential.
+    Where Î² is determined by the scalar potential.
     
     For typical string-inspired potentials:
     
-        β ≈ 0.5 to 1.5
+        Î² â‰ˆ 0.5 to 1.5
     
     This means at z = 1:
     
-        a(z=1) ≈ 1.4 × a(z=0)  to  2.8 × a(z=0)
+        a(z=1) â‰ˆ 1.4 Ã— a(z=0)  to  2.8 Ã— a(z=0)
     
     The U-shape was STRONGER in the past!
     
     SPECIFIC NUMBERS:
     
-    Current (z=0):   a = 1.36 ± 0.24
+    Current (z=0):   a = 1.36 Â± 0.24
     At z=0.5:        a = 1.6 - 2.0 (predicted)
     At z=1.0:        a = 1.9 - 3.0 (predicted)
     At z=2.0:        a = 2.4 - 5.0 (predicted)
@@ -241,11 +241,11 @@ def prediction_redshift():
     """)
     
     return {
-        'prediction': 'a(z) increases with redshift as (1+z)^β',
+        'prediction': 'a(z) increases with redshift as (1+z)^Î²',
         'beta_range': (0.5, 1.5),
         'a_z0': 1.36,
         'a_z1': 2.0,  # Central prediction
-        'falsification': 'a(z) = constant within ±20% out to z~1'
+        'falsification': 'a(z) = constant within Â±20% out to z~1'
     }
 
 def create_predictions_figure(pred_udg, pred_lens, pred_z):
@@ -296,11 +296,11 @@ def create_predictions_figure(pred_udg, pred_lens, pred_z):
     
     bars = ax.bar(range(4), eta_values, color=colors, edgecolor='black', alpha=0.8)
     ax.axhline(1.0, color='red', linestyle='--', linewidth=2, label='GR prediction')
-    ax.axhspan(0.98, 1.02, alpha=0.2, color='red', label='±2% band')
+    ax.axhspan(0.98, 1.02, alpha=0.2, color='red', label='Â±2% band')
     
     ax.set_xticks(range(4))
     ax.set_xticklabels(envs)
-    ax.set_ylabel('η = M_lens / M_dyn', fontsize=11)
+    ax.set_ylabel('Î· = M_lens / M_dyn', fontsize=11)
     ax.set_title('B) Prediction 2: Lensing/Dynamics Ratio', fontsize=12, fontweight='bold')
     ax.legend()
     ax.grid(True, alpha=0.3, axis='y')
@@ -319,14 +319,14 @@ def create_predictions_figure(pred_udg, pred_lens, pred_z):
     a_z_high = pred_z['a_z0'] * (1 + z)**pred_z['beta_range'][1]
     
     ax.fill_between(z, a_z_low, a_z_high, alpha=0.3, color='blue', label='QO+R prediction band')
-    ax.plot(z, a_z_mid, 'b-', linewidth=2.5, label='β = 1.0')
+    ax.plot(z, a_z_mid, 'b-', linewidth=2.5, label='Î² = 1.0')
     
     # No evolution (GR)
     ax.axhline(pred_z['a_z0'], color='red', linestyle='--', linewidth=2, label='No evolution (falsification)')
     
     # Current measurement
     ax.errorbar([0], [pred_z['a_z0']], yerr=0.24, fmt='ko', markersize=10, 
-                capsize=5, capthick=2, label='SPARC (z≈0)')
+                capsize=5, capthick=2, label='SPARC (zâ‰ˆ0)')
     
     ax.set_xlabel('Redshift z', fontsize=11)
     ax.set_ylabel('U-shape amplitude (a)', fontsize=11)
@@ -340,37 +340,37 @@ def create_predictions_figure(pred_udg, pred_lens, pred_z):
     ax.axis('off')
     
     summary = """
-    ╔═════════════════════════════════════════════════════════════════╗
-    ║  FALSIFIABLE PREDICTIONS - SUMMARY                             ║
-    ╚═════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  FALSIFIABLE PREDICTIONS - SUMMARY                             â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     
     PREDICTION 1: Ultra-Diffuse Galaxies
-    ─────────────────────────────────────
-    • Void UDGs: Δlog(V) = -0.05 to -0.10 dex
-    • Cluster UDGs: Δlog(V) = +0.05 to +0.15 dex
-    • Falsified if: No environmental dependence
+    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    â€¢ Void UDGs: Î”log(V) = -0.05 to -0.10 dex
+    â€¢ Cluster UDGs: Î”log(V) = +0.05 to +0.15 dex
+    â€¢ Falsified if: No environmental dependence
     
     PREDICTION 2: Lensing vs Dynamics
-    ─────────────────────────────────────
-    • η_void ≈ 0.95 (dynamics enhanced)
-    • η_cluster ≈ 1.05 (lensing enhanced)
-    • Falsified if: η = 1.00 ± 0.02 everywhere
+    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    â€¢ Î·_void â‰ˆ 0.95 (dynamics enhanced)
+    â€¢ Î·_cluster â‰ˆ 1.05 (lensing enhanced)
+    â€¢ Falsified if: Î· = 1.00 Â± 0.02 everywhere
     
     PREDICTION 3: Redshift Evolution
-    ─────────────────────────────────────
-    • a(z) ∝ (1+z)^β with β ∈ [0.5, 1.5]
-    • a(z=1) ≈ 2× a(z=0)
-    • Falsified if: a = constant to z ~ 1
+    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    â€¢ a(z) âˆ (1+z)^Î² with Î² âˆˆ [0.5, 1.5]
+    â€¢ a(z=1) â‰ˆ 2Ã— a(z=0)
+    â€¢ Falsified if: a = constant to z ~ 1
     
-    ═════════════════════════════════════════════════════════════════
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     
     THESE PREDICTIONS ARE:
-    ✓ Specific (numerical values given)
-    ✓ Testable (with current/near-future data)
-    ✓ Falsifiable (clear failure criteria)
+    âœ“ Specific (numerical values given)
+    âœ“ Testable (with current/near-future data)
+    âœ“ Falsifiable (clear failure criteria)
     
-    IF ALL THREE PREDICTIONS FAIL → QO+R IS WRONG
-    IF ANY PREDICTION SUCCEEDS → QO+R GAINS SUPPORT
+    IF ALL THREE PREDICTIONS FAIL â†’ QO+R IS WRONG
+    IF ANY PREDICTION SUCCEEDS â†’ QO+R GAINS SUPPORT
     """
     
     ax.text(0.05, 0.95, summary, transform=ax.transAxes, fontsize=10,
@@ -382,11 +382,11 @@ def create_predictions_figure(pred_udg, pred_lens, pred_z):
     plt.tight_layout()
     
     # Save
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig13_predictions.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.show()
     
@@ -394,10 +394,10 @@ def create_predictions_figure(pred_udg, pred_lens, pred_z):
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 13: FALSIFIABLE PREDICTIONS                    ║
-    ║  The ultimate scientific test: specific, testable predictions        ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 13: FALSIFIABLE PREDICTIONS                    â•‘
+    â•‘  The ultimate scientific test: specific, testable predictions        â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     pred_udg = prediction_udg()
@@ -411,16 +411,16 @@ def main():
     print("FINAL CONCLUSION: PAPER 1")
     print("=" * 70)
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║                        PAPER 1: COMPLETE                            ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘                        PAPER 1: COMPLETE                            â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     
     We have presented:
     
     1. DISCOVERY (Steps 1-3)
        - Q-only hypothesis FAILED
        - Forensic analysis revealed U-SHAPE
-       - Quadratic coefficient a = 1.36 ± 0.24, p < 0.001
+       - Quadratic coefficient a = 1.36 Â± 0.24, p < 0.001
     
     2. CHARACTERIZATION (Steps 4-5)
        - Calibrated C_Q = 0.61, C_R = 0.75
@@ -432,10 +432,10 @@ def main():
        - Microphysics: Q couples to HI gas
        - Consistent with Solar System constraints
        - TNG simulations reproduce pattern
-       - λ_QR stable across scales
+       - Î»_QR stable across scales
     
     4. THEORY (Step 12)
-       - Q²R² maps to dilaton-Kähler coupling
+       - QÂ²RÂ² maps to dilaton-KÃ¤hler coupling
        - String theory provides UV completion
        - Paper 3 will derive full connection
     
@@ -444,20 +444,20 @@ def main():
        - Lensing/dynamics discrepancy
        - Redshift evolution of U-shape
     
-    ════════════════════════════════════════════════════════════════════════
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     
     THE U-SHAPE IN BTFR RESIDUALS IS:
     
-    ✓ Statistically significant (p < 10^-8)
-    ✓ Robust to all tests
-    ✓ Physically interpretable (two scalar fields)
-    ✓ Theoretically motivated (string theory)
-    ✓ Falsifiable (specific predictions)
+    âœ“ Statistically significant (p < 10^-8)
+    âœ“ Robust to all tests
+    âœ“ Physically interpretable (two scalar fields)
+    âœ“ Theoretically motivated (string theory)
+    âœ“ Falsifiable (specific predictions)
     
     This may be the first empirical signature of string theory moduli
     in the low-energy universe.
     
-    ════════════════════════════════════════════════════════════════════════
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     return {
@@ -468,3 +468,4 @@ def main():
 
 if __name__ == "__main__":
     predictions = main()
+

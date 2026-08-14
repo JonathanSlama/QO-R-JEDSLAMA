@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 02: Forensic Analysis
@@ -6,8 +6,8 @@ QO+R Paper 1 - Step 02: Forensic Analysis
 Deep investigation into WHY the Q-only hypothesis failed.
 
 Key finding: The failure reveals the need for an ANTAGONISTIC second field.
-- Voids: Q dominates → should accelerate, but something DECELERATES
-- Clusters: Something else dominates → accelerates despite low Q
+- Voids: Q dominates â†’ should accelerate, but something DECELERATES
+- Clusters: Something else dominates â†’ accelerates despite low Q
 
 This "something else" is the R field (Reliquat), which has OPPOSITE effect.
 
@@ -210,7 +210,7 @@ def create_forensic_figure(df, results, means):
     bars = ax.bar(x_pos, means, width=0.15, color=colors, edgecolor='black')
     ax.set_xticks(x_pos)
     ax.set_xticklabels(['Void', 'Field', 'Group', 'Cluster'])
-    ax.set_xlabel('Environment (increasing density →)', fontsize=11)
+    ax.set_xlabel('Environment (increasing density â†’)', fontsize=11)
     ax.set_ylabel('Mean BTFR Residual', fontsize=11)
     ax.set_title('C) Non-monotonic pattern revealed', fontsize=12, fontweight='bold')
     ax.axhline(0, color='gray', linestyle='-', linewidth=0.5)
@@ -234,19 +234,19 @@ def create_forensic_figure(df, results, means):
     ax.annotate('', xy=(2, 7), xytext=(2, 3),
                 arrowprops=dict(arrowstyle='->', color='blue', lw=3))
     ax.text(2, 8, 'Q Field\n(voids)', ha='center', fontsize=11, fontweight='bold', color='blue')
-    ax.text(2, 2, 'Effect: ↓', ha='center', fontsize=10, color='blue')
+    ax.text(2, 2, 'Effect: â†“', ha='center', fontsize=10, color='blue')
     
     # R field arrow (right side - clusters)
     ax.annotate('', xy=(8, 7), xytext=(8, 3),
                 arrowprops=dict(arrowstyle='->', color='red', lw=3))
     ax.text(8, 8, 'R Field\n(clusters)', ha='center', fontsize=11, fontweight='bold', color='red')
-    ax.text(8, 2, 'Effect: ↑', ha='center', fontsize=10, color='red')
+    ax.text(8, 2, 'Effect: â†‘', ha='center', fontsize=10, color='red')
     
     # Middle - antagonism
     ax.annotate('', xy=(6, 5), xytext=(4, 5),
                 arrowprops=dict(arrowstyle='<->', color='green', lw=3))
     ax.text(5, 6, 'ANTAGONISM', ha='center', fontsize=12, fontweight='bold', color='green')
-    ax.text(5, 4, 'Q ↔ R', ha='center', fontsize=14, fontweight='bold')
+    ax.text(5, 4, 'Q â†” R', ha='center', fontsize=14, fontweight='bold')
     
     ax.text(5, 1, 'Two competing scalar fields explain the U-shape', 
             ha='center', fontsize=11, style='italic')
@@ -257,11 +257,11 @@ def create_forensic_figure(df, results, means):
     plt.tight_layout()
     
     # Save
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig02_forensic_analysis.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.show()
     
@@ -269,14 +269,14 @@ def create_forensic_figure(df, results, means):
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 02: FORENSIC ANALYSIS                          ║
-    ║  Understanding why Q-only failed → Birth of QO+R                    ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 02: FORENSIC ANALYSIS                          â•‘
+    â•‘  Understanding why Q-only failed â†’ Birth of QO+R                    â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     df = load_sparc_data()
-    print(f"✓ Loaded {len(df)} galaxies")
+    print(f"âœ“ Loaded {len(df)} galaxies")
     
     results, means = forensic_analysis(df)
     
@@ -297,14 +297,15 @@ def main():
     
     The QO+R framework is born:
     
-        L = ½(∂Q)² + ½(∂R)² - V(Q,R) - λ_QR·Q²R²
+        L = Â½(âˆ‚Q)Â² + Â½(âˆ‚R)Â² - V(Q,R) - Î»_QRÂ·QÂ²RÂ²
     
     Where Q and R have OPPOSITE couplings to matter.
     
-    → Next step: Quantify the U-shape and calibrate Q,R parameters
+    â†’ Next step: Quantify the U-shape and calibrate Q,R parameters
     """)
     
     return results
 
 if __name__ == "__main__":
     results = main()
+

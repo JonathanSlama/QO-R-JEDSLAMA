@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 07: Microphysics Analysis
@@ -81,7 +81,7 @@ def analyze_microphysics(df):
                 a = popt[0]
                 a_err = perr[0]
                 
-                print(f"  {label:10s}: a = {a:+.4f} ± {a_err:.4f}, n = {len(subset)}")
+                print(f"  {label:10s}: a = {a:+.4f} Â± {a_err:.4f}, n = {len(subset)}")
                 
                 results[f'gas_{label.lower().replace("-", "_")}'] = {
                     'a': a, 'a_err': a_err, 'n': len(subset), 'popt': popt
@@ -108,7 +108,7 @@ def analyze_microphysics(df):
             a_err = perr[0]
             
             mass_range = f"[{subset['log_Mbar'].min():.1f}, {subset['log_Mbar'].max():.1f}]"
-            print(f"  {mass_label:6s} mass {mass_range}: a = {a:+.4f} ± {a_err:.4f}, n = {len(subset)}")
+            print(f"  {mass_label:6s} mass {mass_range}: a = {a:+.4f} Â± {a_err:.4f}, n = {len(subset)}")
             
             results[f'mass_{mass_label.lower()}'] = {
                 'a': a, 'a_err': a_err, 'n': len(subset), 'popt': popt,
@@ -288,11 +288,11 @@ def create_microphysics_figure(results, df):
     plt.tight_layout()
     
     # Save
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig07_microphysics.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.show()
     
@@ -300,14 +300,14 @@ def create_microphysics_figure(results, df):
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 07: MICROPHYSICS ANALYSIS                      ║
-    ║  Testing differentiated couplings by galaxy properties               ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 07: MICROPHYSICS ANALYSIS                      â•‘
+    â•‘  Testing differentiated couplings by galaxy properties               â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     df = load_sparc_data()
-    print(f"✓ Loaded {len(df)} galaxies\n")
+    print(f"âœ“ Loaded {len(df)} galaxies\n")
     
     results, df = analyze_microphysics(df)
     
@@ -335,16 +335,17 @@ def main():
     PHYSICAL INTERPRETATION:
     
     If Q couples more strongly to HI gas than to stars:
-    - Q_eff ∝ M_HI / M_baryonic × (environmental factor)
+    - Q_eff âˆ M_HI / M_baryonic Ã— (environmental factor)
     
     This is consistent with string theory where:
     - Q (dilaton) couples to different matter species differently
     - Light particles (gas) couple more strongly than heavy (stars)
     
-    → Next step: Direct Q-HI correlation analysis
+    â†’ Next step: Direct Q-HI correlation analysis
     """)
     
     return results
 
 if __name__ == "__main__":
     results = main()
+

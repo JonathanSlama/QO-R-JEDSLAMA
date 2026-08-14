@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 06: Replicability Tests (REAL DATA VERSION)
@@ -6,15 +6,15 @@ QO+R Paper 1 - Step 06: Replicability Tests (REAL DATA VERSION)
 Testing the U-shape on INDEPENDENT datasets with REAL OBSERVATIONAL DATA:
 
 1. SPARC (reference): 175 galaxies with rotation curves
-2. ALFALFA (replication): ~21,834 HI-selected galaxies from α.100 catalog
+2. ALFALFA (replication): ~21,834 HI-selected galaxies from Î±.100 catalog
 3. Little THINGS (replication): ~40 dwarf irregular galaxies
 
 THIS VERSION USES ONLY REAL DATA - NO SYNTHETIC GENERATION.
 
 Results from execution (2025-12-03):
-- SPARC: a = 1.3606 ± 0.2368, p < 0.000001 → U-SHAPE CONFIRMED
-- ALFALFA: a = 0.0701 ± 0.0282, p = 0.0065 → U-SHAPE REPLICATED  
-- Little THINGS: a = 0.2891 ± 0.3242, p = 0.186 → Not significant (small N)
+- SPARC: a = 1.3606 Â± 0.2368, p < 0.000001 â†’ U-SHAPE CONFIRMED
+- ALFALFA: a = 0.0701 Â± 0.0282, p = 0.0065 â†’ U-SHAPE REPLICATED  
+- Little THINGS: a = 0.2891 Â± 0.3242, p = 0.186 â†’ Not significant (small N)
 
 Author: Jonathan Edouard SLAMA
 Email: jonathan@metafund.in
@@ -60,10 +60,10 @@ def load_sparc_data():
 
 def load_alfalfa_data():
     """
-    Load REAL ALFALFA data from α.100 catalog.
+    Load REAL ALFALFA data from Î±.100 catalog.
     
     ALFALFA = Arecibo Legacy Fast ALFA survey
-    HI-selected galaxy catalog covering ~7000 deg² 
+    HI-selected galaxy catalog covering ~7000 degÂ² 
     Reference: Haynes et al. (2018)
     """
     data_path = get_data_root() / "alfalfa.csv"
@@ -76,7 +76,7 @@ def load_alfalfa_data():
     df = pd.read_csv(data_path)
     
     print(f"[ALFALFA] Loaded {len(df):,} galaxies (REAL DATA)")
-    print(f"          Source: α.100 catalog (Haynes et al. 2018)")
+    print(f"          Source: Î±.100 catalog (Haynes et al. 2018)")
     print(f"          Environments: {df['env_class'].value_counts().to_dict()}")
     
     return df
@@ -192,11 +192,11 @@ def run_replicability_tests():
     if results['SPARC']:
         r = results['SPARC']
         print(f"\n  N = {r['n']} galaxies")
-        print(f"  a = {r['a']:.4f} ± {r['a_err']:.4f}")
+        print(f"  a = {r['a']:.4f} Â± {r['a_err']:.4f}")
         print(f"  Z-score = {r['z_score']:.2f}, p = {r['p_value']:.6f}")
-        print(f"  R² = {r['r_squared']:.4f}")
-        print(f"  ΔAIC (linear - quadratic) = {r['delta_aic']:.1f}")
-        print(f"  U-shape: {'✓ DETECTED' if r['ushape'] else '✗ Not detected'}")
+        print(f"  RÂ² = {r['r_squared']:.4f}")
+        print(f"  Î”AIC (linear - quadratic) = {r['delta_aic']:.1f}")
+        print(f"  U-shape: {'âœ“ DETECTED' if r['ushape'] else 'âœ— Not detected'}")
     
     # 2. ALFALFA (replication)
     print("\n" + "-" * 50)
@@ -210,11 +210,11 @@ def run_replicability_tests():
         if results['ALFALFA']:
             r = results['ALFALFA']
             print(f"\n  N = {r['n']:,} galaxies")
-            print(f"  a = {r['a']:.4f} ± {r['a_err']:.4f}")
+            print(f"  a = {r['a']:.4f} Â± {r['a_err']:.4f}")
             print(f"  Z-score = {r['z_score']:.2f}, p = {r['p_value']:.6f}")
-            print(f"  R² = {r['r_squared']:.4f}")
-            print(f"  ΔAIC (linear - quadratic) = {r['delta_aic']:.1f}")
-            print(f"  U-shape: {'✓ REPLICATED' if r['ushape'] else '✗ Not replicated'}")
+            print(f"  RÂ² = {r['r_squared']:.4f}")
+            print(f"  Î”AIC (linear - quadratic) = {r['delta_aic']:.1f}")
+            print(f"  U-shape: {'âœ“ REPLICATED' if r['ushape'] else 'âœ— Not replicated'}")
     
     # 3. Little THINGS (replication)
     print("\n" + "-" * 50)
@@ -228,11 +228,11 @@ def run_replicability_tests():
         if results['Little_THINGS']:
             r = results['Little_THINGS']
             print(f"\n  N = {r['n']} galaxies")
-            print(f"  a = {r['a']:.4f} ± {r['a_err']:.4f}")
+            print(f"  a = {r['a']:.4f} Â± {r['a_err']:.4f}")
             print(f"  Z-score = {r['z_score']:.2f}, p = {r['p_value']:.6f}")
-            print(f"  R² = {r['r_squared']:.4f}")
-            print(f"  ΔAIC (linear - quadratic) = {r['delta_aic']:.1f}")
-            print(f"  U-shape: {'✓ REPLICATED' if r['ushape'] else '✗ Not replicated (small N)'}")
+            print(f"  RÂ² = {r['r_squared']:.4f}")
+            print(f"  Î”AIC (linear - quadratic) = {r['delta_aic']:.1f}")
+            print(f"  U-shape: {'âœ“ REPLICATED' if r['ushape'] else 'âœ— Not replicated (small N)'}")
     
     # Summary
     print("\n" + "=" * 70)
@@ -246,12 +246,12 @@ def run_replicability_tests():
     print()
     
     # Table
-    print(f"  {'Dataset':<15} {'N':>8} {'a':>10} {'±err':>8} {'p-value':>12} {'Result':>15}")
+    print(f"  {'Dataset':<15} {'N':>8} {'a':>10} {'Â±err':>8} {'p-value':>12} {'Result':>15}")
     print(f"  {'-'*68}")
     
     for name, r in results.items():
         if r:
-            status = "✓ U-shape" if r['ushape'] else "✗ No"
+            status = "âœ“ U-shape" if r['ushape'] else "âœ— No"
             print(f"  {name:<15} {r['n']:>8,} {r['a']:>+10.4f} {r['a_err']:>8.4f} {r['p_value']:>12.6f} {status:>15}")
     
     return results, datasets
@@ -305,7 +305,7 @@ def create_replicability_figure(results, datasets):
         ax.set_xlabel('Density Proxy', fontsize=11)
         ax.set_ylabel('BTFR Residual', fontsize=11)
         
-        status = "✓" if res and res['ushape'] else "✗"
+        status = "âœ“" if res and res['ushape'] else "âœ—"
         data_type = "REAL DATA"
         ax.set_title(f'{chr(65+idx)}) {name} (N={len(df):,}) - {data_type} {status}', 
                      fontsize=12, fontweight='bold')
@@ -314,7 +314,7 @@ def create_replicability_figure(results, datasets):
         
         # Stats box
         if res:
-            text = f"a = {res['a']:.4f} ± {res['a_err']:.4f}\np = {res['p_value']:.4f}\nΔAIC = {res['delta_aic']:.1f}"
+            text = f"a = {res['a']:.4f} Â± {res['a_err']:.4f}\np = {res['p_value']:.4f}\nÎ”AIC = {res['delta_aic']:.1f}"
             ax.text(0.02, 0.98, text, transform=ax.transAxes, fontsize=9,
                     verticalalignment='top', fontfamily='monospace',
                     bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
@@ -344,17 +344,17 @@ def create_replicability_figure(results, datasets):
     # Significance markers
     for i, (a, err, r) in enumerate(zip(a_values, a_errors, [r for _, r in valid_results])):
         if r['ushape']:
-            ax.text(i, a + err + 0.02, '★\np<0.05', ha='center', fontsize=10, 
+            ax.text(i, a + err + 0.02, 'â˜…\np<0.05', ha='center', fontsize=10, 
                    color='gold', fontweight='bold')
     
     plt.tight_layout()
     
     # Save to figures directory
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig06_replicability.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.close()
     
@@ -382,22 +382,22 @@ def save_results_csv(results):
     df_results = pd.DataFrame(rows)
     output_path = Path(__file__).parent / "replicability_REAL_results.csv"
     df_results.to_csv(output_path, index=False)
-    print(f"✓ Results saved: {output_path}")
+    print(f"âœ“ Results saved: {output_path}")
     
     return df_results
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - REPLICABILITY TESTS (REAL DATA VERSION)             ║
-    ║                                                                      ║
-    ║  This script uses ONLY real observational data:                      ║
-    ║  • SPARC: Rotation curve sample (Lelli et al. 2016)                  ║
-    ║  • ALFALFA: α.100 HI catalog (Haynes et al. 2018)                   ║
-    ║  • Little THINGS: Dwarf irregulars (Hunter et al. 2012)              ║
-    ║                                                                      ║
-    ║  NO SYNTHETIC DATA IS GENERATED OR USED.                             ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - REPLICABILITY TESTS (REAL DATA VERSION)             â•‘
+    â•‘                                                                      â•‘
+    â•‘  This script uses ONLY real observational data:                      â•‘
+    â•‘  â€¢ SPARC: Rotation curve sample (Lelli et al. 2016)                  â•‘
+    â•‘  â€¢ ALFALFA: Î±.100 HI catalog (Haynes et al. 2018)                   â•‘
+    â•‘  â€¢ Little THINGS: Dwarf irregulars (Hunter et al. 2012)              â•‘
+    â•‘                                                                      â•‘
+    â•‘  NO SYNTHETIC DATA IS GENERATED OR USED.                             â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     # Run tests
@@ -427,12 +427,12 @@ def main():
     
     for name, r in results.items():
         if r:
-            status = "✓ U-SHAPE CONFIRMED" if r['ushape'] else "✗ Not significant"
-            print(f"    • {name}: a = {r['a']:.4f}, p = {r['p_value']:.6f} → {status}")
+            status = "âœ“ U-SHAPE CONFIRMED" if r['ushape'] else "âœ— Not significant"
+            print(f"    â€¢ {name}: a = {r['a']:.4f}, p = {r['p_value']:.6f} â†’ {status}")
     
     if n_confirmed >= 2:
         print(f"""
-    ═══════════════════════════════════════════════════════════════════════
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     REPLICABILITY ESTABLISHED: The U-shape pattern is detected in {n_confirmed}
     independent observational datasets, confirming it is not an artifact
     of the SPARC sample.
@@ -445,7 +445,7 @@ def main():
     3. Environmental coverage differences
     
     This amplitude difference should be discussed in the paper.
-    ═══════════════════════════════════════════════════════════════════════
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     else:
         print(f"""
@@ -457,3 +457,4 @@ def main():
 
 if __name__ == "__main__":
     results = main()
+

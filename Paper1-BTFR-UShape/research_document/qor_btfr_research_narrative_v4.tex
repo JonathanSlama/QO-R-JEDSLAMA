@@ -300,14 +300,21 @@ Figure~\ref{fig:ushape} presents the formal detection of the U-shaped pattern.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{fig03_ushape_discovery.png}
-    \caption{\textbf{Discovery of the U-shaped pattern in SPARC.} BTFR residuals plotted against environmental density proxy for the 175 galaxies carrying a documented environmental classification. Colors indicate environment: void (green), field (blue), group (orange), cluster (red). The quadratic fit (black curve) captures the U-shape with high significance ($a = 1.33 \pm 0.25$, $5.26\sigma$, $p < 10^{-6}$).}
+    \caption{\textbf{Discovery of the U-shaped pattern in SPARC.} BTFR residuals plotted against environmental density proxy for the full quality-cut sample of 181 galaxies. Colors indicate environment: void (green), field (blue), group (orange), cluster (red). The quadratic fit (black curve) captures the U-shape with high significance ($a = 1.36 \pm 0.24$, $p < 10^{-6}$). Restricting to the 175 galaxies that carry a documented environmental classification gives $a = 1.33 \pm 0.25$ at $5.26\sigma$, which is the value reported in the peer-reviewed article.}
     \label{fig:ushape}
 \end{figure}
 
-The quadratic regression yields:
+The quadratic regression on the full quality-cut sample yields:
 \begin{equation}
-a = 1.33 \pm 0.25, \quad \sigma = 5.26, \quad p < 10^{-6}
+a = 1.36 \pm 0.24, \quad p < 10^{-6} \qquad (N = 181)
 \end{equation}
+
+and on the environmentally classified subsample:
+\begin{equation}
+a = 1.33 \pm 0.25, \quad \sigma = 5.26, \quad p < 10^{-6} \qquad (N = 175)
+\end{equation}
+
+The two differ only by the six galaxies that lack a documented environmental class. The second is the value reported in the article, since the analysis there is environmental; the first is the one plotted above and used in the robustness suite that follows. Quoting either without saying which sample it comes from invites exactly the confusion this document is trying to avoid.
 
 Model comparison using AIC/BIC strongly prefers the quadratic model over linear ($\Delta$AIC = 28.8).
 
@@ -346,19 +353,19 @@ Figure~\ref{fig:calibration} shows the calibration of the two-field model parame
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{fig04_calibration.png}
-    \caption{\textbf{Calibration of the \QOR{} model parameters.} Grid search over coupling constants $C_Q$ and $C_R$ to minimize residuals. The optimal values are $C_Q = +2.82$ (positive, gas-coupled) and $C_R = -0.72$ (negative, star-coupled). The sign difference is essential for producing the U-shape.}
+    \caption{\textbf{Calibration of the \QOR{} model parameters.} Grid search over the model coefficients on the SPARC sample. This parameterisation returns $C_Q = 0.61 \pm 0.13$ and $C_R = 0.75 \pm 0.12$, both positive: in this form of the model it is two positive coefficients acting on opposite ends of the environmental range that produce the U-shape. These are fitted coefficients of the environmental response, not couplings of the Lagrangian, and they are not the same quantities as the curvature coefficients quoted in the text.}
     \label{fig:calibration}
 \end{figure}
 
-The calibrated parameters are:
+Fitting the residuals against each proxy separately gives:
 \begin{align}
-C_Q &= +2.82 \pm 0.15 \quad \text{(gas coupling)} \\
-C_R &= -0.72 \pm 0.08 \quad \text{(stellar coupling)}
+\text{curvature against the gas proxy } (Q) &= +2.82 \\
+\text{curvature against the stellar proxy } (R) &= -0.72
 \end{align}
 
-The opposite signs are physically meaningful: $Q$ enhances gravitational effects (positive residuals) while $R$ suppresses them (negative residuals), but they dominate in opposite environments.
+These are curvature coefficients, not coupling constants, and the distinction matters. They say that the residual bends upward when environment is measured by gas content and downward when it is measured by stellar dominance. That opposition is the sign inversion, measured here directly on SPARC rather than in simulation, and it is the empirical fact the two-field description was built to accommodate: $Q$ and $R$ respond to environment in opposite directions.
 
-These two coupling values are specific to this document. They are the output of a grid search calibrated on the SPARC sample, they are not reported in the peer-reviewed article, and they should not be read as measurements of physical constants: the framework contains no forward model that would give them a scale-independent meaning, and a calibration performed on a different sample returns different values. They are retained here because they document how the two-field description was tuned to the data, which is what this narrative records.
+What these numbers are not is a measurement of the couplings appearing in the Lagrangian. The framework contains no forward model connecting the two, so no fitted curvature can be converted into a coupling strength. An independent calibration of the model parameters on the same sample returns $C_Q = 0.61 \pm 0.13$ and $C_R = 0.75 \pm 0.12$, both positive, because that fit parameterises the environmental response differently; in that parameterisation two positive coefficients are what produces a U-shape. Two different quantities have been called $C_Q$ and $C_R$ in earlier versions of this work, which is how the confusion arose, and it is worth stating plainly rather than leaving a reader to discover it.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results III: Robustness Testing}

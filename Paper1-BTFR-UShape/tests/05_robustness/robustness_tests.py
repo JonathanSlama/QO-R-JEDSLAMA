@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 =============================================================================
 QO+R Paper 1 - Step 05: Robustness Tests
@@ -112,10 +112,10 @@ def monte_carlo_test(df, n_iterations=1000, seed=42):
     survival_rate = (ushape_count / len(a_values)) * 100
     
     print(f"\n  Results:")
-    print(f"  • Successful fits: {len(a_values)}/{n_iterations}")
-    print(f"  • U-shape survival: {survival_rate:.1f}%")
-    print(f"  • Mean a: {np.mean(a_values):.4f} ± {np.std(a_values):.4f}")
-    print(f"  • 95% CI: [{np.percentile(a_values, 2.5):.4f}, {np.percentile(a_values, 97.5):.4f}]")
+    print(f"  â€¢ Successful fits: {len(a_values)}/{n_iterations}")
+    print(f"  â€¢ U-shape survival: {survival_rate:.1f}%")
+    print(f"  â€¢ Mean a: {np.mean(a_values):.4f} Â± {np.std(a_values):.4f}")
+    print(f"  â€¢ 95% CI: [{np.percentile(a_values, 2.5):.4f}, {np.percentile(a_values, 97.5):.4f}]")
     
     return {
         'a_values': a_values,
@@ -163,11 +163,11 @@ def bootstrap_test(df, n_bootstrap=1000, seed=42):
     ci_high = np.percentile(a_values, 97.5)
     
     print(f"\n  Results:")
-    print(f"  • Successful fits: {len(a_values)}/{n_bootstrap}")
-    print(f"  • U-shape rate: {ushape_rate:.1f}%")
-    print(f"  • Mean a: {np.mean(a_values):.4f} ± {np.std(a_values):.4f}")
-    print(f"  • 95% CI: [{ci_low:.4f}, {ci_high:.4f}]")
-    print(f"  • CI excludes zero: {'YES ✓' if ci_low > 0 else 'NO'}")
+    print(f"  â€¢ Successful fits: {len(a_values)}/{n_bootstrap}")
+    print(f"  â€¢ U-shape rate: {ushape_rate:.1f}%")
+    print(f"  â€¢ Mean a: {np.mean(a_values):.4f} Â± {np.std(a_values):.4f}")
+    print(f"  â€¢ 95% CI: [{ci_low:.4f}, {ci_high:.4f}]")
+    print(f"  â€¢ CI excludes zero: {'YES âœ“' if ci_low > 0 else 'NO'}")
     
     return {
         'a_values': a_values,
@@ -206,7 +206,7 @@ def jackknife_test(df):
                 'n': len(df_jack)
             }
             
-            status = "✓ U-shape" if a > 0 else "✗ Inverted"
+            status = "âœ“ U-shape" if a > 0 else "âœ— Inverted"
             print(f"  Without {env_out:8s}: a = {a:+.4f} {status} (n={len(df_jack)})")
             
         except Exception as e:
@@ -264,10 +264,10 @@ def cross_validation_test(df, k=10, seed=42):
     mean_rmse_quad = np.mean(rmse_quadratic)
     
     print(f"\n  Results:")
-    print(f"  • Linear RMSE:    {mean_rmse_lin:.4f} ± {np.std(rmse_linear):.4f}")
-    print(f"  • Quadratic RMSE: {mean_rmse_quad:.4f} ± {np.std(rmse_quadratic):.4f}")
-    print(f"  • Improvement: {(mean_rmse_lin - mean_rmse_quad) / mean_rmse_lin * 100:.1f}%")
-    print(f"  • Best model: {'QUADRATIC ✓' if mean_rmse_quad < mean_rmse_lin else 'Linear'}")
+    print(f"  â€¢ Linear RMSE:    {mean_rmse_lin:.4f} Â± {np.std(rmse_linear):.4f}")
+    print(f"  â€¢ Quadratic RMSE: {mean_rmse_quad:.4f} Â± {np.std(rmse_quadratic):.4f}")
+    print(f"  â€¢ Improvement: {(mean_rmse_lin - mean_rmse_quad) / mean_rmse_lin * 100:.1f}%")
+    print(f"  â€¢ Best model: {'QUADRATIC âœ“' if mean_rmse_quad < mean_rmse_lin else 'Linear'}")
     
     return {
         'rmse_linear': mean_rmse_lin,
@@ -315,12 +315,12 @@ def permutation_test(df, n_permutations=1000, seed=42):
     p_value = np.mean(np.abs(a_perm) >= np.abs(a_orig))
     
     print(f"\n  Results:")
-    print(f"  • Permuted mean: {np.mean(a_perm):.4f} ± {np.std(a_perm):.4f}")
-    print(f"  • P-value: {p_value:.4f}")
-    print(f"  • Significant: {'YES ✓ (p < 0.05)' if p_value < 0.05 else 'NO'}")
+    print(f"  â€¢ Permuted mean: {np.mean(a_perm):.4f} Â± {np.std(a_perm):.4f}")
+    print(f"  â€¢ P-value: {p_value:.4f}")
+    print(f"  â€¢ Significant: {'YES âœ“ (p < 0.05)' if p_value < 0.05 else 'NO'}")
     
     if p_value < 0.001:
-        print(f"  • HIGHLY SIGNIFICANT (p < 0.001)")
+        print(f"  â€¢ HIGHLY SIGNIFICANT (p < 0.001)")
     
     return {
         'a_orig': a_orig,
@@ -423,22 +423,22 @@ def create_robustness_figure(mc_results, boot_results, jack_results, cv_results,
     
     summary_text = f"""
     ROBUSTNESS SUMMARY
-    ══════════════════════════════════
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     
-    ✓ Monte Carlo:     {mc_results['survival_rate']:.0f}% U-shape survival
+    âœ“ Monte Carlo:     {mc_results['survival_rate']:.0f}% U-shape survival
     
-    ✓ Bootstrap:       {boot_results['ushape_rate']:.1f}% confidence
+    âœ“ Bootstrap:       {boot_results['ushape_rate']:.1f}% confidence
                        95% CI excludes zero
     
-    ✓ Jackknife:       {n_pass}/{len(envs)} environments pass
+    âœ“ Jackknife:       {n_pass}/{len(envs)} environments pass
     
-    ✓ Cross-Val:       Quadratic preferred
+    âœ“ Cross-Val:       Quadratic preferred
                        {cv_results['improvement']:.1f}% RMSE improvement
     
-    ✓ Permutation:     p = {perm_results['p_value']:.4f}
+    âœ“ Permutation:     p = {perm_results['p_value']:.4f}
                        {'HIGHLY SIGNIFICANT' if perm_results['p_value'] < 0.001 else 'Significant'}
     
-    ══════════════════════════════════
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     CONCLUSION: U-SHAPE IS ROBUST
     """
     
@@ -449,11 +449,11 @@ def create_robustness_figure(mc_results, boot_results, jack_results, cv_results,
     plt.tight_layout()
     
     # Save
-    figures_dir = get_project_root() / "figures"
+    figures_dir = get_project_root() / "research_document" / "figures"
     figures_dir.mkdir(exist_ok=True)
     output_path = figures_dir / "fig05_robustness.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"\n✓ Figure saved: {output_path}")
+    print(f"\nâœ“ Figure saved: {output_path}")
     
     plt.show()
     
@@ -461,14 +461,14 @@ def create_robustness_figure(mc_results, boot_results, jack_results, cv_results,
 
 def main():
     print("""
-    ╔══════════════════════════════════════════════════════════════════════╗
-    ║  QO+R PAPER 1 - STEP 05: ROBUSTNESS TESTS                           ║
-    ║  Comprehensive validation of the U-shape discovery                   ║
-    ╚══════════════════════════════════════════════════════════════════════╝
+    â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+    â•‘  QO+R PAPER 1 - STEP 05: ROBUSTNESS TESTS                           â•‘
+    â•‘  Comprehensive validation of the U-shape discovery                   â•‘
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     """)
     
     df = load_sparc_data()
-    print(f"✓ Loaded {len(df)} galaxies")
+    print(f"âœ“ Loaded {len(df)} galaxies")
     
     # Run all tests
     mc_results = monte_carlo_test(df, n_iterations=1000)
@@ -491,41 +491,41 @@ def main():
     total_tests = 5
     
     if mc_results['survival_rate'] > 90:
-        print("✅ Monte Carlo: PASS (>90% survival)")
+        print("âœ… Monte Carlo: PASS (>90% survival)")
         tests_passed += 1
     else:
-        print(f"⚠️ Monte Carlo: {mc_results['survival_rate']:.0f}% survival")
+        print(f"âš ï¸ Monte Carlo: {mc_results['survival_rate']:.0f}% survival")
     
     if boot_results['ci_low'] > 0:
-        print("✅ Bootstrap: PASS (95% CI excludes zero)")
+        print("âœ… Bootstrap: PASS (95% CI excludes zero)")
         tests_passed += 1
     else:
-        print("⚠️ Bootstrap: CI includes zero")
+        print("âš ï¸ Bootstrap: CI includes zero")
     
     jack_pass = sum(1 for r in jack_results.values() if r and r['ushape'])
     if jack_pass >= 3:
-        print(f"✅ Jackknife: PASS ({jack_pass}/4 stable)")
+        print(f"âœ… Jackknife: PASS ({jack_pass}/4 stable)")
         tests_passed += 1
     else:
-        print(f"⚠️ Jackknife: {jack_pass}/4 stable")
+        print(f"âš ï¸ Jackknife: {jack_pass}/4 stable")
     
     if cv_results['improvement'] > 0:
-        print("✅ Cross-Val: PASS (quadratic preferred)")
+        print("âœ… Cross-Val: PASS (quadratic preferred)")
         tests_passed += 1
     else:
-        print("⚠️ Cross-Val: linear preferred")
+        print("âš ï¸ Cross-Val: linear preferred")
     
     if perm_results['p_value'] < 0.05:
-        print(f"✅ Permutation: PASS (p = {perm_results['p_value']:.4f})")
+        print(f"âœ… Permutation: PASS (p = {perm_results['p_value']:.4f})")
         tests_passed += 1
     else:
-        print(f"⚠️ Permutation: not significant (p = {perm_results['p_value']:.4f})")
+        print(f"âš ï¸ Permutation: not significant (p = {perm_results['p_value']:.4f})")
     
     print(f"\n{'='*70}")
     print(f"TOTAL: {tests_passed}/{total_tests} tests passed")
     
     if tests_passed >= 4:
-        print("\n🎉 THE U-SHAPE IS ROBUST AND READY FOR PUBLICATION!")
+        print("\nðŸŽ‰ THE U-SHAPE IS ROBUST AND READY FOR PUBLICATION!")
     
     return {
         'monte_carlo': mc_results,
@@ -537,3 +537,4 @@ def main():
 
 if __name__ == "__main__":
     results = main()
+
