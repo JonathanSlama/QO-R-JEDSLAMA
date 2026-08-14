@@ -126,6 +126,8 @@ We adopt a hypothesis-driven approach:
 
 This paper documents this conceptual motivation, from initial failure to the discovery of a robust empirical pattern and its theoretical interpretation.
 
+A word on what this document is. It is a research narrative: it records how the work was done, in the order it happened, including the hypotheses that were abandoned. It is not the paper of record. The peer-reviewed results are published as Slama (2026) in \textit{Scientific Reports}, and where the two disagree the article prevails. The article is shorter, more cautious, and says less; this document says more, and part of what it says is how the shorter version came to be.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Corrections following peer review}
 \label{sec:corrections}
@@ -309,6 +311,24 @@ a = 1.33 \pm 0.25, \quad \sigma = 5.26, \quad p < 10^{-6}
 
 Model comparison using AIC/BIC strongly prefers the quadratic model over linear ($\Delta$AIC = 28.8).
 
+\subsection{Is the quadratic form required by the data?}
+
+Choosing a quadratic is a choice, and it is fair to ask whether the shape is in the data or in the model. We fitted five functional forms to the 181 galaxies of the full quality-cut sample and compared them with information criteria, which penalise added parameters.
+
+The answer separates cleanly into two parts. Non-monotonic dependence is strongly preferred: all three non-monotonic forms beat the monotonic ones by $\Delta$AIC $> 39$ and $\Delta$BIC $> 32$, corresponding to relative likelihoods of order $10^{-7}$ to $10^{-10}$ against a linear or flat trend. That conclusion does not depend on the quadratic.
+
+But the quadratic is not the best of the non-monotonic forms. A cubic spline and a broken line, which have more freedom, fit somewhat better ($\Delta$AIC $\approx 11$, $\Delta$BIC $\approx 7$), which suggests the true shape may be asymmetric or have a sharper transition than a parabola allows. We keep the quadratic in the main analysis because its single curvature coefficient has a direct interpretation in the two-field description and can be compared across datasets of very different sizes, not because it is the best fit. The difference between quadratic and the more flexible forms is much smaller than the difference between quadratic and any monotonic alternative.
+
+\subsection{How much does the result depend on how environment is defined?}
+
+This is the weakest point of the SPARC analysis, and it is better stated plainly than discovered by a reader.
+
+The environmental classification used above comes from documented membership of structures: the Virgo cluster, the Ursa Major group, and so on. To test whether the result depends on that choice, we rebuilt the environmental variable from scratch using galaxy counts in fixed-radius spheres of 1, 2, 3, 5, 7 and 10 Mpc, computed from the 2MASS Redshift Survey as an independent catalogue.
+
+The U-shape is strongest under the original classification ($a = +1.33$, $5.26\sigma$) and weakens considerably under the fixed-radius proxies, becoming non-significant at 2 and 3 Mpc and changing sign at 10 Mpc. We read this as a distinction between two things that both get called environment: membership of a virialised structure, which reflects a galaxy's long-term history, and instantaneous local density, which does not. A galaxy in the outskirts of Virgo belongs to a cluster whatever its immediate surroundings contain.
+
+That reading is plausible, and it is an interpretation rather than a validation. It does not substitute for testing against the environmental estimators most used in the literature, nearest-neighbour densities, host halo mass, central and satellite classification, none of which is available homogeneously for SPARC. The honest summary is that the amplitude and significance reported here are conditional on the environmental definition adopted, and that a homogeneous re-analysis is needed before the trend can be called environmentally robust.
+
 \subsection{The Two-Field Solution}
 
 The U-shape suggests that \textit{two} processes with opposite environmental preferences are at work. We propose:
@@ -463,6 +483,10 @@ In the high-density environment of the solar system, both fields are suppressed,
     \item Nordtvedt effect: Suppressed by factor $>10^4$ \checkmark
 \end{itemize}
 
+These are consistency checks and not predictions, and the distinction matters enough to spell out. The screening density $\rho_{\text{screen}} \sim 10^{-24}$ g cm$^{-3}$ is not derived from anything in the framework. It is a free parameter, fixed after the fact by requiring that the fields remain active at galactic densities and be suppressed at solar system densities. The framework contains no independent way to determine it.
+
+So the agreement above is not a test the framework passed. It is a requirement that was imposed, and then satisfied by construction. The exponential form of the suppression is likewise adopted by analogy with the Chameleon, Symmetron and Vainshtein mechanisms rather than derived. What the checks do establish is more modest but still worth having: with a screening scale of this order, the framework is not in conflict with precision gravity, which would not have been guaranteed. A framework that could not be reconciled with solar system tests at any value of its parameters would be dead on arrival, and this one is not.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results VII: Simulation Validation}
 \label{sec:simulations}
@@ -517,7 +541,39 @@ Gas-poor (low mass) & 115,980 & $+0.052$ & $0.014$ & Standard U-shape \\
 \end{tabular}
 \end{table}
 
-The inverted U-shape in R-dominated systems is \textbf{exactly as predicted} and is difficult to explain with standard astrophysics alone.
+The inverted U-shape in R-dominated systems is what the two-field description predicted, and it is not readily produced by the astrophysical explanations we were able to test. Two caveats, both added after peer review, bound how far that statement goes.
+
+\subsection{Controlling for isolation}
+
+The stratification above selects populations by their internal properties, gas fraction and stellar mass, and only then looks at how they respond to environment. That design cannot separate an environmental effect from a difference between populations, because gas-poor massive galaxies are not distributed through space at random: they sit preferentially in dense regions. A comparison built this way measures both things at once.
+
+We therefore repeated the test with an explicit environmental variable, the distance to the fifth nearest neighbour, computed from the simulation's own positions and independent of any internal property. Within the R-dominated population the inversion is strongest in the densest quartile ($a = -0.048$, $5.2\sigma$), weakens as isolation increases, and disappears entirely in the most isolated quartile ($a = +0.003$, not significant). That monotonic dependence on isolation is the informative part. An environmental effect should behave this way; a difference driven purely by the internal physics of gas-poor galaxies should not care whether the galaxy is isolated.
+
+\subsection{Environment as the primary variable}
+
+The second referee asked for the stronger version of this test: environment as the independent variable, with gas fraction and stellar mass demoted to statistical controls rather than used for selection. We fitted three nested regressions to the individual residuals of the 53{,}363 TNG100-1 galaxies, with standardised predictors and heteroskedasticity-robust errors: environment alone, environment with controls, and environment with controls and interaction terms.
+
+The curvature survives every level of the hierarchy, remaining positive with $p < 10^{-7}$ throughout. The amplitude, however, does not survive intact:
+
+\begin{table}[H]
+\centering
+\caption{Quadratic environmental coefficient across the nested models (TNG100-1, $N = 53{,}363$, standardised predictors).}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Model} & \textbf{Coefficient} & \textbf{Significance} \\
+\midrule
+Environment only & $+0.0790 \pm 0.0019$ & $42.6\sigma$ \\
+$+$ controls ($f_{\mathrm{gas}}$, $\log M_*$) & $+0.0285 \pm 0.0015$ & $19.0\sigma$ \\
+$+$ interaction terms & $+0.0095 \pm 0.0017$ & $5.7\sigma$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The fully controlled coefficient is about eight times smaller than the raw one. A substantial part of what looked like an environmental signal is carried by the covariance between environment and the internal properties of galaxies, and only the remainder is attributable to environment with those properties held fixed. That remainder is robustly non-zero, and it should be read as a lower bound rather than as a measurement.
+
+The same regression recovers the sign inversion without selecting any population in advance. The marginal environmental slope, evaluated at fixed stellar mass, crosses zero as a continuous function of gas content: $-0.077 \pm 0.002$ for gas-rich systems, $+0.141 \pm 0.006$ for gas-poor ones, with an interaction coefficient of $-0.109 \pm 0.003$. No threshold is imposed; the inversion emerges from the interaction structure itself.
+
+This is the strongest form of the test we have been able to run, and it is worth being explicit about what it still does not do. It controls for two internal properties, not for every property that varies with environment in a hydrodynamical simulation, and morphology, assembly history, quenching state and satellite status are all left uncontrolled. It is a regression, so it establishes association and not causation.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theoretical Framework}
