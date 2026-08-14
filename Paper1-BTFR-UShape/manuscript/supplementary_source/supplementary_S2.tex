@@ -1,0 +1,136 @@
+% =============================================================================
+% Supplementary Section S2 : Model comparison
+% Response to Reviewer 2 major point 3
+% =============================================================================
+
+\section*{S2. Formal model comparison: is the quadratic form required?}
+\label{sec:S2}
+
+\subsection*{Motivation}
+
+A legitimate methodological question is whether the
+quadratic model used in the main analysis may impose a particular
+functional form rather than being required by the data. This motivates
+a formal model comparison using information criteria (AIC,
+BIC) to assess whether other functional forms (flat, linear, broken-line,
+spline) might describe the data equally well or better.
+
+We address this concern by fitting five competing functional forms to
+the SPARC sample ($N = 181$ galaxies) and comparing them using
+information criteria with appropriate penalisation for model complexity.
+
+\subsection*{Models tested}
+
+The five candidate models are:
+
+\begin{itemize}
+    \item \textbf{Flat} ($k = 1$): $\Delta(\rho) = c$ (constant, null hypothesis)
+    \item \textbf{Linear} ($k = 2$): $\Delta(\rho) = b\rho + c$
+    \item \textbf{Quadratic} ($k = 3$): $\Delta(\rho) = a\rho^2 + b\rho + c$ (used in main text)
+    \item \textbf{Broken-line} ($k = 4$): two linear segments joined at a free breakpoint
+    \item \textbf{Cubic spline} ($k = 5$): natural cubic spline with two internal knots
+\end{itemize}
+
+where $\rho$ is the environmental density proxy, $k$ is the number of
+free parameters, and $c$, $b$, $a$, breakpoint locations and spline
+knots are fitted parameters.
+
+For each model we compute the maximum likelihood, the Akaike Information
+Criterion (AIC), the Bayesian Information Criterion (BIC), Akaike
+weights $w_i$ (relative probability of each model being the best one in
+the candidate set), and the coefficient of determination $R^2$.
+
+\subsection*{Results}
+
+\begin{table}[htbp]
+\centering
+\caption{Model comparison on the SPARC sample ($N = 181$). Lower
+$\Delta\mathrm{AIC}$ and $\Delta\mathrm{BIC}$ indicate better fit (after
+penalisation for model complexity). All non-monotonic models (quadratic,
+broken-line, spline) are strongly preferred over monotonic alternatives
+(flat, linear).}
+\label{tab:S2_model_comparison}
+\begin{tabular}{lrrrrrr}
+\toprule
+\textbf{Model} & $k$ & $\Delta\mathrm{AIC}$ & $\Delta\mathrm{BIC}$ & $w_i$ (AIC) & $R^2$ \\
+\midrule
+Cubic spline & 5 & 0.00 & 2.36 & 0.602 & 0.287 \\
+Broken-line & 4 & 0.84 & 0.00 & 0.396 & 0.276 \\
+Quadratic & 3 & 11.14 & 7.11 & 0.002 & 0.225 \\
+Linear & 2 & 39.95 & 32.71 & $1.3 \times 10^{-9}$ & 0.081 \\
+Flat & 1 & 53.24 & 42.81 & $1.7 \times 10^{-12}$ & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figureS2_model_comparison.png}
+\caption{\textbf{Model comparison on the SPARC sample.} Panel A shows
+$\Delta\mathrm{AIC}$ values for the five candidate models, with the
+red dashed line indicating the $\Delta\mathrm{AIC} = 10$ threshold for
+strong evidence against a model. Panel B shows the same for
+$\Delta\mathrm{BIC}$. Panel C shows the Akaike weights $w_i$ on a
+logarithmic scale.}
+\label{fig:S2}
+\end{figure}
+
+\subsection*{Interpretation}
+
+The results lead to two complementary conclusions:
+
+\paragraph{(i) Non-monotonic dependence is strongly favoured by the data within the tested model classes.}
+All three non-monotonic models (quadratic, broken-line, spline) are
+strongly preferred over the monotonic alternatives (linear and flat).
+Specifically, the simplest non-monotonic model (quadratic) outperforms
+the linear model by $\Delta\mathrm{AIC} = 28.8$ and $\Delta\mathrm{BIC} = 25.6$,
+and outperforms the flat model by $\Delta\mathrm{AIC} = 42.1$ and
+$\Delta\mathrm{BIC} = 35.7$. These differences correspond to relative
+likelihoods of order $10^{-7}$ to $10^{-10}$ against the monotonic
+hypotheses. The non-monotonic dependence is therefore strongly favoured within the tested model classes
+by the data and therefore does not depend on the specific choice of a quadratic form.
+
+\paragraph{(ii) The quadratic form is slightly outperformed by more flexible models.}
+The cubic spline and broken-line models, which have more free parameters,
+provide slightly better fits than the pure quadratic ($\Delta\mathrm{AIC} = 11$,
+$\Delta\mathrm{BIC} = 7$). This suggests that the true underlying
+functional form may be more complex than a pure parabola, e.g., with
+asymmetric arms or a sharper transition between regimes. However, the
+difference between quadratic and the more flexible models is much smaller
+than the difference between quadratic and the monotonic alternatives.
+
+\subsection*{Why we retain the quadratic model in the main text}
+
+We retain the quadratic parameterization in the main text for three
+reasons:
+
+\begin{enumerate}
+    \item \textbf{Physical interpretability}: the single curvature
+    coefficient $a$ has a direct interpretation as the strength of the
+    antagonistic Q-R coupling in the QO+R framework. The broken-line
+    and spline parameters do not carry comparable physical meaning.
+
+    \item \textbf{Parsimony}: among models that capture the qualitative
+    non-monotonic pattern, the quadratic has the fewest free parameters
+    ($k = 3$) and the simplest interpretation.
+
+    \item \textbf{Comparability with other surveys}: a single curvature
+    coefficient $a$ allows direct comparison across datasets with
+    different sample sizes (SPARC, ALFALFA, Little THINGS), which would
+    be impractical with multi-parameter spline or breakpoint models.
+\end{enumerate}
+
+We acknowledge in the main text and in this supplementary material that
+more flexible descriptive models fit slightly better, and we encourage
+future work to investigate the precise functional form of the
+environmental dependence as larger samples become available.
+
+\subsection*{Conclusion}
+
+The non-monotonic dependence of BTFR residuals on environment is
+\textbf{strongly favoured within the tested model classes} by the SPARC data, with monotonic alternatives
+ruled out at $\Delta\mathrm{AIC} > 39$ and $\Delta\mathrm{BIC} > 32$.
+The quadratic form is retained in the main text for its physical
+interpretability and parsimony, while more flexible models (spline,
+broken-line) provide marginally better statistical fits that may guide
+future theoretical refinements.

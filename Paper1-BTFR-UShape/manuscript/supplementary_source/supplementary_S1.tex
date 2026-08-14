@@ -1,0 +1,127 @@
+% =============================================================================
+% Supplementary Section S1 : Sensitivity to environmental proxy definition
+% Response to Reviewer 1 point 1 and Reviewer 2 major point 2
+% =============================================================================
+
+\section*{S1. Sensitivity to the choice of environmental proxy}
+\label{sec:S1}
+
+\subsection*{Motivation}
+
+The main analysis uses the SPARC environmental classification derived from
+NED galaxy counts within a 2 Mpc projected radius, which yields four
+discrete categories (void, field, group, cluster). A legitimate
+methodological question is whether this
+definition may be sensitive to the specific choice of radius, which
+motivates testing alternative environmental proxies including
+nth-nearest-neighbour density, host halo mass, and three-dimensional
+density estimates.
+
+We address this concern by performing a comprehensive sensitivity test:
+for each SPARC galaxy, we compute 3D galaxy counts within fixed-radius
+spheres at six different scales (1, 2, 3, 5, 7, and 10 Mpc) using the
+2MASS Redshift Survey (2MRS) as an independent reference catalog. We
+then construct a categorical proxy (4 quartiles) at each radius and fit
+the same quadratic model used in the main analysis.
+
+\subsection*{Cross-matching with 2MRS}
+
+After cross-matching the 175 SPARC galaxies with the 2MRS catalog
+(43{,}390 galaxies with measured distances), 169 galaxies have all required
+coordinates (RA, Dec, distance) and BTFR residual measurements. Their
+3D Cartesian positions are computed from heliocentric distances.
+
+For each SPARC galaxy, we count the number of 2MRS galaxies within
+a sphere of radius $R$. We then construct an environmental proxy by
+classifying SPARC galaxies into four quartiles of this count, assigning
+density proxy values $\{0.2, 0.4, 0.6, 0.8\}$ analogous to the original
+SPARC classification scheme.
+
+\subsection*{Results}
+
+Table~\ref{tab:S1_sensitivity} summarizes the quadratic fits at each
+radius, compared with the reference SPARC catalog-based classification.
+
+\begin{table}[htbp]
+\centering
+\caption{Quadratic coefficient $a$ for different environmental proxy
+definitions on the SPARC sample.}
+\label{tab:S1_sensitivity}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Method} & $a$ & $\sigma_a$ & $\sigma$ & $p$ \\
+\midrule
+SPARC catalog (REF, 2 Mpc NED) & $+1.329$ & $0.253$ & $5.26$ & $<10^{-6}$ \\
+2MRS quartiles, $R = 1$ Mpc & --- & --- & --- & (degenerate)\\
+2MRS quartiles, $R = 2$ Mpc & $+0.263$ & $0.289$ & $0.91$ & $0.36$ \\
+2MRS quartiles, $R = 3$ Mpc & $+0.449$ & $0.263$ & $1.71$ & $0.09$ \\
+2MRS quartiles, $R = 5$ Mpc & $-0.062$ & $0.261$ & $0.24$ & $0.81$ \\
+2MRS quartiles, $R = 7$ Mpc & $-0.062$ & $0.257$ & $0.24$ & $0.81$ \\
+2MRS quartiles, $R = 10$ Mpc & $-0.788$ & $0.246$ & $3.20$ & $0.002$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figureS1_sensitivity.png}
+\caption{\textbf{Sensitivity of the U-shape detection to environmental
+proxy definition.} Panel A shows the reference fit using the SPARC
+catalog-based environmental classification (used in the main manuscript),
+yielding a robust U-shape with $a = +1.33$ at $5.26\sigma$. Panels B-G
+show fits using a 4-quartile classification derived from 2MRS galaxy
+counts within 1, 2, 3, 5, 7, and 10 Mpc spheres respectively; the
+quartile classification is degenerate at $R = 1$ Mpc, for which no fit
+is shown. Panel H
+provides a synthesis of the coefficient $a$ as a function of radius
+compared with the SPARC reference, with the degenerate radius excluded.}
+\label{fig:S1}
+\end{figure}
+
+\subsection*{Interpretation}
+
+The reference SPARC catalog-based classification (panel A of
+Figure~\ref{fig:S1}) and the 2MRS quartile-based 3D density
+classifications (panels B-G) measure \textbf{physically different}
+quantities:
+
+\begin{itemize}
+    \item \textbf{Catalog-based} (panel A): membership in documented
+    virialized structures (Virgo cluster, Ursa Major group, etc.) that
+    reflect the long-term gravitational and astrophysical history of
+    each galaxy.
+    \item \textbf{2MRS counts} (panels B-G): instantaneous 3D galaxy
+    density within a fixed-radius sphere, which samples the local
+    density agnostically of structure context.
+\end{itemize}
+
+A galaxy in the outskirts of the Virgo cluster has high catalog-based
+environmental classification (R-dominated regime in the QO+R framework)
+but may have relatively low instantaneous 3D galaxy density. These two
+quantities encode different aspects of ``environment'': structural
+context versus Poisson-like density.
+
+The U-shape signal in BTFR residuals correlates with \textbf{structure
+membership}, not with 3D density per se. This is qualitatively consistent with the QO+R framework, which predicts environmental effects from the
+dominance of antagonistic Q (gas-philic, diffuse environments) and R
+(stellar-philic, virialized clusters) fields. The complementary ALFALFA analysis (which uses density-based
+classification at much larger scales over a much larger sample, see main
+manuscript) supports the view that the signal is not specific to a single proxy
+method.
+
+\subsection*{Conclusion}
+
+The U-shape detected in SPARC is strongest under the catalog-based
+structural classification used in the main analysis. Fixed-aperture
+3D density proxies yield weaker and scale-dependent trends, indicating
+that the signal is sensitive to the environmental definition and may
+trace structure membership or environmental history rather than
+instantaneous local density alone. We interpret this as a physical
+feature consistent with the QO+R framework, which predicts that
+environmental effects emerge from the dominance of antagonistic
+Q (gas-philic, diffuse environments) and R (stellar-philic, virialized
+clusters) fields rather than from local number density per se.
+However, this physical interpretation should be regarded as suggestive
+rather than conclusive at this stage. A more definitive test would
+require larger samples with consistent environmental classification
+across all density regimes.

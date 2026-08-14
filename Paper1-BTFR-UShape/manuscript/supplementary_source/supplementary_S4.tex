@@ -1,0 +1,159 @@
+﻿% =============================================================================
+% Supplementary Section S4
+% Multivariate analysis of the IllustrisTNG catalogue:
+% environment as the primary independent variable
+% Response to Reviewer 2, Major Comment 3 (revision v2, 2026-07)
+% =============================================================================
+
+\section*{S4. Multivariate analysis: environment as the primary variable}
+\label{sec:S4}
+
+\subsection*{Motivation}
+
+The stratified analysis presented in the main text and in Section S3 defines the
+Q- and R-dominated populations using \textit{internal} galaxy properties (gas
+fraction and stellar mass) before examining their environmental dependence. By
+construction, this design cannot by itself separate environmental effects
+from population-dependent differences associated with morphology, quenching
+history or baryonic subgrid physics. This section reports an analysis in which
+the roles are reversed: environment is treated as the primary independent
+variable and the internal properties are demoted to statistical controls.
+
+\subsection*{Sample and method}
+
+We use the TNG100-1 catalogue at $z = 0$, selecting galaxies with
+$M_* > 10^9\,M_\odot$, giving $N = 53{,}363$ objects. Each galaxy contributes its
+individual BTFR residual, computed exactly as for the observational samples
+(vertical offset from a single global fit, no clipping, no outlier rejection).
+
+Three predictors are used: the logarithmic local environmental density
+$\rho \equiv \log \rho_{\mathrm{env}}$, the gas fraction
+$f_{\mathrm{gas}} = M_{\mathrm{gas}}/(M_{\mathrm{gas}} + M_*)$, and $\log M_*$.
+All three are standardised to zero mean and unit variance, so that fitted
+coefficients are directly comparable in magnitude and the quadratic term is
+evaluated about the sample mean. We fit three nested ordinary-least-squares
+models with heteroskedasticity-consistent (HC3) standard errors:
+
+\begin{align}
+\text{M0:}\quad & \Delta \sim \rho + \rho^2 \\
+\text{M1:}\quad & \Delta \sim \rho + \rho^2 + f_{\mathrm{gas}} + \log M_* \\
+\text{M2:}\quad & \Delta \sim \rho + \rho^2 + f_{\mathrm{gas}} + \log M_*
+  + \rho\!\cdot\!f_{\mathrm{gas}} + \rho\!\cdot\!\log M_* + \rho^2\!\cdot\!f_{\mathrm{gas}}
+\end{align}
+
+\subsection*{Results}
+
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Nested regression models, TNG100-1 ($N = 53{,}363$).} Standardised
+predictors, HC3 robust standard errors. The quadratic environmental coefficient
+remains positive and significant at every level, but is attenuated by roughly a
+factor of eight between M0 and M2.}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Term} & \textbf{M0} & \textbf{M1} & \textbf{M2} \\
+\midrule
+Intercept                        & $-0.0790 \pm 0.0023$ & $-0.0285 \pm 0.0016$ & $-0.0683 \pm 0.0018$ \\
+$\rho$                           & $-0.3092 \pm 0.0016$ & $-0.0226 \pm 0.0018$ & $+0.0323 \pm 0.0030$ \\
+$\rho^2$                         & $+0.0790 \pm 0.0019$ & $+0.0285 \pm 0.0015$ & $+0.0095 \pm 0.0017$ \\
+$f_{\mathrm{gas}}$               & ---                  & $+0.3509 \pm 0.0018$ & $+0.3680 \pm 0.0022$ \\
+$\log M_*$                       & ---                  & $+0.0103 \pm 0.0010$ & $+0.0280 \pm 0.0011$ \\
+$\rho \cdot f_{\mathrm{gas}}$    & ---                  & ---                  & $-0.1089 \pm 0.0033$ \\
+$\rho \cdot \log M_*$            & ---                  & ---                  & $-0.0305 \pm 0.0013$ \\
+$\rho^2 \cdot f_{\mathrm{gas}}$  & ---                  & ---                  & $+0.0467 \pm 0.0019$ \\
+\midrule
+$R^2$                            & 0.375   & 0.679  & 0.698 \\
+AIC                              & 37313   & 1716   & $-1426$ \\
+BIC                              & 37339   & 1761   & $-1355$ \\
+\midrule
+$\rho^2$ significance            & $42.6\sigma$ & $19.0\sigma$ & $5.7\sigma$ \\
+\bottomrule
+\end{tabular}
+\label{tab:S4_nested}
+\end{table}
+
+\textbf{Survival of the quadratic term.} The environmental curvature remains
+positive and formally significant in all three specifications
+($p < 10^{-7}$ throughout). We draw attention, however, to the amplitude rather
+than to the significance. Introducing gas fraction and stellar mass as controls
+reduces the coefficient by approximately a factor of three, and adding the
+interaction terms reduces it by a further factor of three; the coefficient in the
+fully controlled model is therefore about eight times smaller than in the
+environment-only fit. A substantial fraction of the raw environmental curvature
+is thus attributable to the covariance between environment and internal galaxy
+properties. Only a residual---robustly non-zero, but much reduced---component is
+associated with environment once those properties are held fixed.
+
+\textbf{Continuous sign inversion.} The interaction structure of M2 permits the
+sign inversion to be examined without any prior subsample selection. The marginal
+environmental slope at fixed stellar mass,
+\begin{equation}
+\frac{\partial \Delta}{\partial \rho}\bigg|_{\log M_*}
+= \beta_\rho + \beta_{\rho f}\, f_{\mathrm{gas}},
+\end{equation}
+changes sign as a continuous function of gas content:
+
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Marginal environmental slope as a function of gas fraction (model M2).}}
+\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Population} & \textbf{$\partial \Delta / \partial \rho$} & \textbf{Significance} \\
+\midrule
+Gas-rich ($f_{\mathrm{gas}}$ at $+1\sigma$)      & $-0.0765 \pm 0.0024$ & $31.7\sigma$ \\
+Star-dominated ($f_{\mathrm{gas}}$ at $-1\sigma$) & $+0.1412 \pm 0.0059$ & $24.1\sigma$ \\
+\midrule
+Interaction $\rho \cdot f_{\mathrm{gas}}$         & $-0.1089 \pm 0.0033$ & $33.0\sigma$ \\
+\bottomrule
+\end{tabular}
+\label{tab:S4_marginal}
+\end{table}
+
+No population is defined in advance: the inversion emerges from the interaction
+structure itself, as a continuous function of gas fraction.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figureS4_multivariate.png}
+\caption{\textbf{Multivariate analysis of the TNG100-1 catalogue with environment as
+the primary variable.} \textbf{a}, The quadratic environmental coefficient across the
+nested model hierarchy, with 95\% confidence intervals; the coefficient remains
+positive throughout but is attenuated by roughly a factor of eight between M0 and
+M2. \textbf{b}, The marginal environmental slope $\partial \Delta / \partial \rho$
+from model M2, evaluated at fixed stellar mass, as a continuous function of gas
+fraction, with its 95\% confidence band; the slope crosses zero, demonstrating the
+sign inversion without any subsample pre-selection. \textbf{c}, Partial BTFR
+residuals (gas fraction and stellar mass regressed out) binned by environmental
+density, shown separately for the gas-rich upper quartile and the quenched lower
+quartile; the two populations respond to environment in opposite directions.}
+\label{fig:S4}
+\end{figure}
+
+\subsection*{Limitations}
+
+We state the limitations of this analysis explicitly. The treatment controls for
+gas fraction and stellar mass, but not for every galaxy property that co-varies
+with environment in a hydrodynamical simulation---morphology, assembly and
+quenching history, black-hole feedback state and satellite status among them. It
+is a regression analysis and establishes association, not causality. The
+attenuation of the curvature under controls should be read as evidence that a
+meaningful fraction of the raw signal is population-driven; the surviving
+component should be read as a lower bound on any genuinely environmental effect
+within TNG, not as a measurement of a physical coupling.
+
+We also note a feature of the catalogue relevant to the interpretation of the
+quartile split in panel \textbf{c}: approximately 25\% of galaxies in the sample
+have $f_{\mathrm{gas}} = 0$ exactly (fully quenched systems), so the lower
+quartile consists of quenched galaxies rather than of a continuum of gas-poor
+objects.
+
+\subsection*{Reproducibility}
+
+The analysis is implemented in \texttt{multivariate\_tng\_analysis.py}, archived
+in the Zenodo deposit cited in the Code availability section of the main
+manuscript. The script reads the derived TNG catalogue, fits the three nested
+models, writes the full regression tables and generates
+Figure~\ref{fig:S4} in a single execution.
+
