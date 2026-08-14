@@ -68,7 +68,7 @@ ax.set_title('(c) Opposite environmental response', fontsize=14)
 ax.legend(fontsize=11, loc='upper left')
 
 plt.tight_layout()
-plt.savefig('./multivariate_tng_analysis.png', dpi=200, bbox_inches='tight')
+plt.savefig('../figures/figureS4_multivariate.png', dpi=200, bbox_inches='tight')
 print('Figure saved.')
 
 # Save results table
@@ -77,4 +77,5 @@ with open('./multivariate_results.txt','w') as f:
         f.write('='*78+f'\n{lab} | N={int(m.nobs)} R2={m.rsquared:.4f} AIC={m.aic:.0f} BIC={m.bic:.0f}\n')
         f.write(m.summary().tables[1].as_text()+'\n\n')
 print('Results table saved.')
+
 
